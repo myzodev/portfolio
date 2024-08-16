@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'GeneralSans';
+    src: url('../fonts/GeneralSans-Semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GeneralSans';
+    src: url('../fonts/GeneralSans-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('../fonts/Quicksand-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('../fonts/Quicksand-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@layer base {
+    body {
+        @apply relative antialiased text-base text-black-600 bg-white;
+    }
+
+    a,
+    label {
+        @apply inline-block;
+    }
+
+    h1 {
+        @apply h1;
+    }
+
+    h2 {
+        @apply h2;
+    }
+
+    h3 {
+        @apply h3;
+    }
+
+    h4 {
+        @apply h4;
+    }
+
+    h5 {
+        @apply h5;
+    }
+
+    h6 {
+        @apply h6;
+    }
+
+    p,
+    small {
+        @apply block;
+    }
+
+    strong {
+        @apply font-semibold;
+    }
+
+    span {
+        @apply block;
+    }
+
+    img,
+    svg {
+        @apply w-full h-full;
+    }
+
+    input,
+    textarea {
+        @apply px-16 lg:px-24 py-8 lg:py-[12px] border border-black-50 outline-none bg-white;
+    }
+
+    input {
+        @apply rounded-full;
+    }
+
+    textarea {
+        @apply h-200 rounded-16;
+    }
+
+    label {
+        @apply mb-2 text-xs md:text-sm font-bold;
+    }
+}

@@ -38,8 +38,8 @@ export default {
         },
 
         fontFamily: {
-            heading: ['var(--font-heading)', 'sans-serif'],
-            body: ['var(--font-body)', 'sans-serif'],
+            heading: ['GeneralSans', 'sans-serif'],
+            body: ['Quicksand', 'sans-serif'],
         },
 
         fontSize: {
