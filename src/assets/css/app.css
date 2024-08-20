@@ -77,10 +77,6 @@
         @apply font-semibold;
     }
 
-    span {
-        @apply block;
-    }
-
     img,
     svg {
         @apply w-full h-full;
@@ -97,6 +93,14 @@
 }
 
 @layer utilities {
+    .writing-vertical {
+        writing-mode: vertical-lr;
+    }
+
+    .orientation-sideways {
+        text-orientation: sideways;
+    }
+
     .animation-delay-100 {
         animation-delay: 100ms;
     }
@@ -108,19 +112,19 @@
 
 @layer components {
     .section-offset {
-        @apply py-96 lg:py-160;
+        @apply py-80 lg:py-136;
     }
 
     .section-offset-bottom {
-        @apply pb-96 lg:pb-160;
+        @apply pb-80 lg:pb-136;
     }
 
     .navbar {
-        @apply relative z-100;
+        @apply container relative z-100;
     }
 
     .navbar-container {
-        @apply container lg:py-32 flex justify-between items-center;
+        @apply lg:py-32 flex justify-between items-center border-b border-neutral-500;
     }
 
     .navbar-logo {

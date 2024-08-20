@@ -1,9 +1,32 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
 <Layout title="Domov" description=''>
-    <section class="section-offset container">
-        <h1>Domov</h1>
-    </section>
+    <header class="section-offset container relative">
+        <article class="max-w-[926px] relative">
+            <h1 class="display mb-64 lg:mb-120 font-semibold">Zdokonalte vašu online identitu</h1>
+
+            <p class="pl-16 md:pl-24 py-16 max-w-[507px] text-subheading border-l border-neutral-500 text-neutral-40">
+                Pretváram vaše nápady do digitálnej formy spájaním kreativity a technológie. Posuňte svoju online prítomnosť na novú úroveň.
+            </p>
+
+            <figure class="max-w-[1700px] absolute -top-[160px] md:-top-[300px] lg:-top-[470px] -left-[200px] lg:-left-[480px] scale-150 md:scale-100 -z-10">
+                <img src="/images/hero-gradient.png" alt="Gradient mesh">
+            </figure>
+        </article>
+
+        <aside class="hidden md:block absolute top-1/2 -translate-y-1/2 right-24 writing-vertical">
+            <p class="flex items-center font-extrabold orientation-sideways">
+                Dizajn 
+                <span class="text-primary-300">&nbsp;&&nbsp;</span> 
+                Development
+
+                <span class="mt-24">
+                    <img src="/images/hero-arrow.svg" alt="Arrow down icon">
+                </span>
+            </p>
+        </aside>
+    </header>
 </Layout>

@@ -33,7 +33,10 @@ export default {
 
         container: {
             center: true,
-            padding: '2rem',
+            padding: {
+                DEFAULT: '1.5rem',
+                sm: '2rem',
+            },
         },
 
         fontFamily: {
@@ -218,7 +221,7 @@ export default {
                     fontFamily: theme('fontFamily.heading'),
                     lineHeight: '115%',
                     '@media (max-width: 1024px)': {
-                        fontSize: '4.2rem',
+                        fontSize: '3.6rem',
                     },
                 },
             });

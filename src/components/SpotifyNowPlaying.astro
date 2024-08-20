@@ -1,3 +1,7 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
 <a 
     class="space-x-8 my-48 md:my-0 flex shrink-0 items-center group" 
     href="https://open.spotify.com/playlist/1p2lZTlEB2PY6um9c7nLGP?si=7129cf72cd4140fb" 
@@ -10,14 +14,7 @@
     </div>
 
     <figure class="size-40 relative rounded-8 overflow-hidden bg-neutral-700 transition-colors duration-200 group-hover:bg-neutral-600">
-        <img
-            class="p-8 w-full h-full absolute top-0 left-0 transition-transform duration-300"
-            src="/icons/spotify.svg"
-            alt="Spotify logo"
-            width={40}
-            height={40}
-            data-song-logo
-        />
+        <Icon name="spotify" class="p-8 w-full h-full absolute top-0 left-0 transition-transform duration-300" data-song-logo />
 
         <span
             class="p-8 space-x-5 w-full flex justify-center absolute top-0 left-0 -translate-y-full transition-transform duration-300"
