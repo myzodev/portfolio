@@ -136,7 +136,7 @@
     }
 
     .navbar-menu-link {
-        @apply h2 py-10 lg:py-0 block lg:text-sm font-extrabold;
+        @apply h2 py-10 lg:py-0 block lg:text-sm lg:font-body font-extrabold;
     }
 
     .navbar-menu-button {
