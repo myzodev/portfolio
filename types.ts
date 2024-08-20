@@ -6,6 +6,12 @@ export type Project = {
     backgroundColor: string;
 };
 
+export type Experience = {
+    company: string;
+    slug: string;
+    role: string;
+};
+
 export type Song = {
     isPlaying: boolean;
     name: string;

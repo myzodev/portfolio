@@ -1,9 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Projects from '../components/Projects.astro';
+import projects from '../../projects';
 ---
 
 <Layout title="Projekty" description=''>
-    <section class="section-offset container">
-        <h1>Projekty</h1>
+    <section class="section-offset container pt-64 lg:pt-136">
+        <h2 class="display pb-96 mb-112 border-b border-neutral-600">Bringing Figma <br /> designs to life</h2>
+        <Projects projects={ projects } />
     </section>
 </Layout>

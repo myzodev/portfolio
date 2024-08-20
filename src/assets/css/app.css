@@ -128,7 +128,7 @@
     }
 
     .navbar-container {
-        @apply lg:py-32 flex justify-between items-center border-b border-neutral-500;
+        @apply lg:py-32 flex justify-between items-center;
     }
 
     .navbar-logo {

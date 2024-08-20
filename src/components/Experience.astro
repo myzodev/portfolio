@@ -1,0 +1,33 @@
+---
+import type { Experience } from "../../types";
+
+const experience: Experience[] = [
+    {
+        company: 'Webikon s.r.o.',
+        slug: 'webikon',
+        role: 'Frontend Developer • Brigáda'
+    },
+    {
+        company: 'VOLITA GROUP a.s.',
+        slug: 'volita',
+        role: 'Fullstack Developer & Dizajner'
+    }
+]
+---
+
+<ul class="col-span-12 md:col-span-8">
+    {experience.map(item => (
+        <li class="py-24 first:pt-0 flex items-center border-b border-neutral-600">
+            <div class="p-10 mr-16 rounded-8 bg-primary-300">
+                <figure class="size-24">
+                    <img src={`/images/logos/${item.slug}.svg`} alt="" />
+                </figure>
+            </div>
+
+            <article>
+                <p class="font-semibold">{ item.company }</p>
+                <p class="text-neutral-80">{ item.role }</p>
+            </article>
+        </li>
+    ))}
+</ul>

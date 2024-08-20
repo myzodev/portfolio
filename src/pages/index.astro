@@ -1,16 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Projects from '../components/Projects.astro';
+import Experience from '../components/Experience.astro';
 import Button from '../components/ui/Button.astro';
 import { Icon } from 'astro-icon/components';
+import projects from '../../projects';
 ---
 
 <Layout title="Domov" description=''>
-    <header class="section-offset container relative">
+    <header class="section-offset container pt-64 lg:pt-136 relative">
         <article class="max-w-[926px] relative">
             <h1 class="display mb-64 lg:mb-120 font-semibold">Zdokonalte vašu online identitu</h1>
 
-            <p class="pl-16 md:pl-24 py-16 max-w-[507px] text-subheading border-l border-neutral-500 text-neutral-40">
+            <p class="pl-16 md:pl-24 py-10 md:py-16 max-w-[507px] md:text-subheading border-l border-neutral-500 text-neutral-40">
                 Pretváram vaše nápady do digitálnej formy spájaním kreativity a technológie. Posuňte svoju online prítomnosť na novú úroveň.
             </p>
 
@@ -41,8 +43,18 @@ import { Icon } from 'astro-icon/components';
             </figure>
         </header>
 
-        <Projects>
-            <Button>More work</Button>
+        <Projects projects={ projects.slice(0, 4) }>
+            <div class="mt-72 md:mt-96 flex justify-center">
+                <Button href="/projekty">More work</Button>
+            </div>
         </Projects>
+    </section>
+
+    <section class="section-offset-bottom container grid grid-cols-12 gap-16">
+        <div class="col-span-12 md:col-span-4">
+            <h2 class="mb-24">Pracovné skúsenosti</h2>
+        </div>
+
+        <Experience />
     </section>
 </Layout>

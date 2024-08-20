@@ -1,12 +1,32 @@
 ---
-import ProjectsItem from './ProjectsItem.astro';
-import projects from '../../projects';
+import type { Project } from "../../types";
+
+type Props = {
+    projects: Project[];
+}
+
+const { projects } = Astro.props;
 ---
 
-<ul class="gap-x-24 lg:gap-x-48 gap-y-80 lg:gap-y-96 grid grid-cols-1 md:grid-cols-2">
-    {projects.slice(0, 4).map(project => <ProjectsItem project={project} />)}
+<ul class="gap-x-24 lg:gap-x-48 gap-y-88 lg:gap-y-96 grid grid-cols-1 md:grid-cols-2">
+    {projects.map(project => (
+        <li>
+            <a class="w-full group" href={ project.url } target="_blank">
+                <div class="aspect-w-1 aspect-h-1 rounded-24 bg-neutral-800" style={ `background-color: ${project.backgroundColor}` }>
+                    <figure class="p-24 md:p-32 flex justify-center items-center">
+                        <img 
+                            class="h-auto rounded-8 transition-transform duration-300 group-hover:scale-[1.025]" src={ `/images/projects/${project.slug}.png` } alt={ project.name }
+                        />
+                    </figure>
+                </div>
+            
+                <div class="py-24 flex justify-between items-center border-b border-neutral-600 transition-opacity duration-300 group-hover:opacity-70">
+                    <h4>{ project.name }</h4>
+                    <small class="text-neutral-80">{ project.role }</small>
+                </div>
+            </a>
+        </li>
+    ))}
 </ul>
 
-<div class="mt-72 md:mt-96 flex justify-center">
-    <slot />
-</div>
+<slot />
