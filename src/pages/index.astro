@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Projects from '../components/Projects.astro';
+import Button from '../components/ui/Button.astro';
 import { Icon } from 'astro-icon/components';
 ---
 
@@ -40,6 +41,8 @@ import { Icon } from 'astro-icon/components';
             </figure>
         </header>
 
-        <Projects />
+        <Projects>
+            <Button>More work</Button>
+        </Projects>
     </section>
 </Layout>
