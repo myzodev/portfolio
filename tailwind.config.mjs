@@ -1,8 +1,8 @@
-const plugin = require('tailwindcss/plugin')
+const plugin = require('tailwindcss/plugin');
 
 export default {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
-	theme: {
+    content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+    theme: {
         extend: {
             zIndex: {
                 60: '60',
@@ -28,8 +28,7 @@ export default {
             sm: '580px',
             md: '768px',
             lg: '1024px',
-            xl: '1280px',
-            '2xl': '1366px',
+            xl: '1240px',
         },
 
         container: {
@@ -38,15 +37,15 @@ export default {
         },
 
         fontFamily: {
-            heading: ['GeneralSans', 'sans-serif'],
-            body: ['Quicksand', 'sans-serif'],
+            heading: ['ClashDisplay', 'sans-serif'],
+            body: ['Nunito', 'sans-serif'],
         },
 
         fontSize: {
-            xs: ['0.75rem', '170%'],
-            sm: ['0.88rem', '170%'],
-            base: ['1rem', '170%'],
-            subheading: ['1.13rem', '170%'],
+            xs: ['0.75rem', '160%'],
+            sm: ['0.88rem', '160%'],
+            base: ['1rem', '160%'],
+            subheading: ['1.13rem', '160%'],
         },
 
         spacing: {
@@ -110,28 +109,37 @@ export default {
 
         colors: {
             transparent: 'transparent',
-            primary: '#0FD783',
-            white: '#F8F7F9',
+            white: '#EEF0F2',
 
-            black: {
-                10: '#fafafb',
-                20: '#f5f6f6',
-                30: '#ececed',
-                40: '#e0e0e2',
-                50: '#c3c4c8',
-                60: '#b4b6ba',
-                70: '#a8aaaf',
-                80: '#999ca2',
-                90: '#8b8e94',
-                100: '#7c8087',
-                200: '#6e717a',
-                300: '#5f636c',
-                400: '#535761',
-                500: '#454954',
-                600: '#393d49',
-                700: '#282d39',
-                800: '#191f2c',
-                900: '#0d1321',
+            primary: {
+                50: '#f1f1ff',
+                75: '#c6c5fe',
+                100: '#aeadfd',
+                200: '#8b89fd',
+                300: '#7371fc',
+                400: '#514fb0',
+                500: '#46459a',
+            },
+
+            neutral: {
+                10: '#fafafa',
+                20: '#f6f6f6',
+                30: '#ededed',
+                40: '#e1e1e1',
+                50: '#c6c6c6',
+                60: '#b9b9b9',
+                70: '#adadad',
+                80: '#a0a0a0',
+                90: '#929292',
+                100: '#848484',
+                200: '#777777',
+                300: '#696969',
+                400: '#5e5e5e',
+                500: '#505050',
+                600: '#454545',
+                700: '#353535',
+                800: '#272727',
+                900: '#1c1c1c',
             },
         },
     },
@@ -149,7 +157,7 @@ export default {
                     fontSize: '3.81rem',
                     fontFamily: theme('fontFamily.heading'),
                     fontWeight: theme('fontWeight.normal'),
-                    lineHeight: '120%',
+                    lineHeight: '115%',
                     '@media (max-width: 1024px)': {
                         fontSize: '3rem',
                     },
@@ -159,7 +167,7 @@ export default {
                     fontSize: '3rem',
                     fontFamily: theme('fontFamily.heading'),
                     fontWeight: theme('fontWeight.normal'),
-                    lineHeight: '120%',
+                    lineHeight: '115%',
                     '@media (max-width: 1024px)': {
                         fontSize: '2.5rem',
                     },
@@ -169,7 +177,7 @@ export default {
                     fontSize: '2.44rem',
                     fontFamily: theme('fontFamily.heading'),
                     fontWeight: theme('fontWeight.normal'),
-                    lineHeight: '120%',
+                    lineHeight: '115%',
                     '@media (max-width: 1024px)': {
                         fontSize: '2.1rem',
                     },
@@ -179,7 +187,7 @@ export default {
                     fontSize: '1.94rem',
                     fontFamily: theme('fontFamily.heading'),
                     fontWeight: theme('fontWeight.normal'),
-                    lineHeight: '120%',
+                    lineHeight: '115%',
                     '@media (max-width: 1024px)': {
                         fontSize: '1.75rem',
                     },
@@ -189,7 +197,7 @@ export default {
                     fontSize: '1.56rem',
                     fontFamily: theme('fontFamily.heading'),
                     fontWeight: theme('fontWeight.normal'),
-                    lineHeight: '120%',
+                    lineHeight: '115%',
                     '@media (max-width: 1024px)': {
                         fontSize: '1.44rem',
                     },
@@ -199,7 +207,7 @@ export default {
                     fontSize: '1.25rem',
                     fontFamily: theme('fontFamily.heading'),
                     fontWeight: theme('fontWeight.normal'),
-                    lineHeight: '120%',
+                    lineHeight: '115%',
                     '@media (max-width: 1024px)': {
                         fontSize: '1.19rem',
                     },
@@ -208,12 +216,12 @@ export default {
                 '.display': {
                     fontSize: '5.63rem',
                     fontFamily: theme('fontFamily.heading'),
-                    lineHeight: '120%',
+                    lineHeight: '115%',
                     '@media (max-width: 1024px)': {
                         fontSize: '4.2rem',
                     },
                 },
-            })
+            });
         }),
     ],
-}
+};
