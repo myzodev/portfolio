@@ -95,3 +95,59 @@
         @apply h-200 max-h-240 min-h-96;
     }
 }
+
+@layer utilities {
+    .animation-delay-100 {
+        animation-delay: 100ms;
+    }
+
+    .animation-delay-125 {
+        animation-delay: 200ms;
+    }
+}
+
+@layer components {
+    .section-offset {
+        @apply py-96 lg:py-160;
+    }
+
+    .section-offset-bottom {
+        @apply pb-96 lg:pb-160;
+    }
+
+    .navbar {
+        @apply relative z-100;
+    }
+
+    .navbar-container {
+        @apply container lg:py-32 flex justify-between items-center;
+    }
+
+    .navbar-logo {
+        @apply h6 font-semibold z-90;
+    }
+
+    .navbar-menu {
+        @apply pt-80 px-32 lg:p-0 w-full lg:w-auto h-screen lg:h-auto lg:flex items-center fixed lg:static top-0 left-0 bg-neutral-800 lg:bg-transparent transition-transform duration-300;
+    }
+
+    .navbar-menu-link {
+        @apply h2 py-10 lg:py-0 block lg:text-sm font-extrabold;
+    }
+
+    .navbar-menu-button {
+        @apply p-32 -mr-32 block lg:hidden z-10;
+    }
+
+    .navbar-menu-button .line {
+        @apply my-4 w-[20px] h-2 bg-white transition-transform;
+    }
+
+    .navbar-menu-button__open .line-01 {
+        transform: translate(0, 3px) rotate(45deg);
+    }
+
+    .navbar-menu-button__open .line-02 {
+        transform: translate(0, -3px) rotate(-45deg);
+    }
+}

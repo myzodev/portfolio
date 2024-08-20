@@ -1,3 +1,42 @@
-<nav>
-    nav
+<nav class="navbar">
+    <div class="navbar-container">
+        <a class="navbar-logo" href="/">
+            myžo
+        </a>
+
+        <button class="navbar-menu-button" type="button" data-navbar-menu-button>
+            <div class="line line-01"></div>
+            <div class="line line-02"></div>
+        </button>
+
+        <ul class="navbar-menu lg:space-x-48 translate-x-full lg:translate-x-0" data-navbar-menu>
+            <li>
+                <a class="navbar-menu-link" href="/projekty">Projekty</a>
+            </li>
+
+            <li>
+                <a class="navbar-menu-link" href="/kontakt">Kontakt</a>
+            </li>
+
+            <li>
+                <a class="navbar-menu-link" href="https://github.com/michalvalo" target="_blank">Github</a>
+            </li>
+        </ul>
+    </div>
 </nav>
+
+<script>
+    document.addEventListener('astro:page-load', () => {
+        const navbarMenu = document.querySelector('[data-navbar-menu]') as HTMLUListElement;
+        const navbarMenuButton = document.querySelector('[data-navbar-menu-button]') as HTMLButtonElement;
+    
+        const toggleMenuOpen = () => {
+            navbarMenuButton.classList.toggle('navbar-menu-button__open');
+            navbarMenu.classList.toggle('translate-x-full');
+        }
+    
+        if (navbarMenuButton) {
+            navbarMenuButton.onclick = () => toggleMenuOpen();
+        }
+    });
+</script>

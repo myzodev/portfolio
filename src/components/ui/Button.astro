@@ -1,0 +1,29 @@
+---
+interface Props {
+    class?: string;
+    href?: string;
+    type?: string;
+    style?: 'light' | 'light-ghost' | 'primary';
+}
+
+const { class: classes, href, style } = Astro.props;
+
+const buttonTypeClasses = (): string => {
+    switch (style) {
+        case 'light':
+            return 'text-neutral-800 bg-white';
+        case 'light-ghost':
+            return 'text-white border border-neutral-100';
+        default:
+            return 'text-neutral-900 bg-primary-300';
+    }
+}
+
+const buttonClasses: string = `px-40 md:px-48 py-[12px] md:py-16 relative align-middle font-bold text-center rounded-full overflow-hidden group transition-colors duration-500 ease-in-out ${classes} ${buttonTypeClasses()}`;
+
+const Component = href ? 'a' : 'button';
+---
+
+<Component class={buttonClasses} href={href}>
+    <slot />
+</Component>

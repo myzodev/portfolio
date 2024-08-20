@@ -1,3 +1,66 @@
-<footer>
-    footer
-</footer>
+---
+import Button from "../ui/Button.astro";
+import SpotifyNowPlaying from "../SpotifyNowPlaying.astro";
+
+type Social = {
+    name: string;
+    url: string;
+}
+
+const socials: Social[] = [
+    {
+        name: 'Instagram',
+        url: 'https://instagram.com'
+    }
+]
+---
+
+<div class="p-16 md:p-32 pt-0">
+    <div class="p-24 md:p-72 md:pb-24 rounded-24 bg-neutral-800">
+        <header class="md:mb-96 flex flex-col md:flex-row justify-between items-end md:items-start">
+            <div class="w-full">
+                <div class="mb-32 flex justify-between md:justify-normal items-end">
+                    <h2 class="md:mr-64">Napíšme si <br /> o vašom nápade</h2>
+    
+                    <figure class="mb-6 size-24">
+                        <img src="/icons/down-left-arrow.svg" alt="Arrow down left icon">
+                    </figure>
+                </div>
+    
+                <div class="gap-16 flex flex-col md:flex-row items-center">
+                    <Button class="w-full md:w-auto" href="/kontakt" style="light">Kontakt</Button>
+                    <Button class="w-full md:w-auto" href="mailto:hello@myzo.sk" style="light-ghost">hello@myzo.sk</Button>
+                </div>
+            </div>
+
+            <SpotifyNowPlaying />
+        </header>
+
+        <aside class="pt-24 flex justify-between items-center border-t border-neutral-600">
+            <div>
+                <p class="text-xs md:text-sm font-extrabold">Made in</p>
+                <p class="text-xs md:text-sm text-neutral-80">2024</p>
+            </div>
+
+            <div>
+                <p class="mb-4 text-xs md:text-sm font-extrabold">Sociálne média</p>
+
+                <ul class="gap-8 flex items-center">
+                    {socials.map(social => (
+                        <li>
+                            <a class="px-7 py-5 flex items-center rounded-8 bg-neutral-700 transition-colors hover:bg-neutral-600" href={ social.url } target="_blank">
+                                <figure class="size-24">
+                                    <img src="/icons/instagram.svg" alt={ social.name }>
+                                </figure>
+    
+                                <span class="mx-8 w-2 h-16 bg-neutral-100"></span>
+    
+                                <span class="pb-1 text-xs font-extrabold">{ social.name }</span>
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </aside>
+    </div>
+</div>
