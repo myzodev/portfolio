@@ -1,0 +1,8 @@
+---
+import ProjectsItem from './ProjectsItem.astro';
+import projects from '../../projects';
+---
+
+<ul class="gap-x-48 gap-y-80 md:gap-y-96 grid grid-cols-1 md:grid-cols-2">
+    {projects.slice(0, 4).map(project => <ProjectsItem project={project} />)}
+</ul>

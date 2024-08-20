@@ -68,6 +68,10 @@
         @apply h6;
     }
 
+    small {
+        @apply text-sm;
+    }
+
     p,
     small {
         @apply block;
@@ -112,11 +116,11 @@
 
 @layer components {
     .section-offset {
-        @apply py-80 lg:py-136;
+        @apply py-112 lg:py-136;
     }
 
     .section-offset-bottom {
-        @apply pb-80 lg:pb-136;
+        @apply pb-112 lg:pb-136;
     }
 
     .navbar {

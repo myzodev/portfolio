@@ -28,12 +28,7 @@ import { Icon } from 'astro-icon/components';
 </a>
 
 <script>
-    type Song = {
-        isPlaying: boolean
-        name: string
-        artistName: string
-        songURL: string
-    }
+    import type { Song } from "../../types";
 
     const fetchSpotyifyData = async (): Promise<Song> => {
         const response = await fetch('https://spotify.myzo.sk/');
