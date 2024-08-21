@@ -2,12 +2,12 @@
 type Props = {
     class?: string;
     href?: string;
-    type?: string;
     style?: 'light' | 'light-ghost' | 'primary';
     size: 'xs' | 'sm' | 'base';
+    [key: string]: any;
 }
 
-const { class: classes, href, style, size } = Astro.props;
+const { class: classes, href, style, size, ...props } = Astro.props;
 
 const buttonTypeClasses = (): string => {
     switch (style) {
@@ -36,6 +36,6 @@ const buttonClasses: string = `relative align-middle font-bold text-center round
 const Component = href ? 'a' : 'button';
 ---
 
-<Component class={buttonClasses} href={href}>
+<Component class={buttonClasses} href={href} { ...props }>
     <slot />
 </Component>

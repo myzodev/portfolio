@@ -7,7 +7,10 @@ import { Icon } from 'astro-icon/components';
 import projects from '../../projects';
 ---
 
-<Layout title="Domov" description=''>
+<Layout 
+    title="Myžo | Web Developer"
+    description="Pretváram vaše nápady do digitálnej formy spájaním kreativity a technológie. Posuňte svoju online prítomnosť na novú úroveň."
+>
     <header class="relative">
         <figure class="w-full md:h-full lg:h-auto absolute -top-80 lg:-top-120 left-0 -z-10">
             <picture>
@@ -51,7 +54,7 @@ import projects from '../../projects';
         <Projects projects={ projects.slice(0, 4) } />
 
         <div class="mt-72 md:mt-96 flex justify-center">
-            <Button href="/projekty" style="light">Zobraziť práce</Button>
+            <Button href="/projekty" style="light" size="sm">Zobraziť práce</Button>
         </div>
     </section>
 
