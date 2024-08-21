@@ -40,5 +40,19 @@
         if (navbarMenuButton) {
             navbarMenuButton.onclick = () => toggleMenuOpen();
         }
+    
+        const navbarMenuLinks = document.querySelectorAll('.navbar-menu-link') as NodeListOf<HTMLAnchorElement>;
+    
+        navbarMenuLinks.forEach((link) => {
+            link.classList.remove('navbar-menu-link__active');
+    
+            const currentPath = window.location.pathname.slice(1);
+            const hrefArray = link.href.split('/');
+            const thisPath = hrefArray[hrefArray.length - 1];
+    
+            if (currentPath === thisPath) {
+                link.classList.add('navbar-menu-link__active');
+            }
+        });
     });
 </script>

@@ -149,7 +149,11 @@
     }
 
     .navbar-menu-link {
-        @apply h2 py-10 lg:py-0 block lg:text-sm lg:font-body font-extrabold;
+        @apply h2 py-10 lg:py-0 block lg:text-sm lg:font-body font-extrabold relative;
+    }
+
+    .navbar-menu-link__active::before {
+        @apply content-[""] w-3/4 h-10 absolute -left-2 bottom-4 -z-10 bg-primary-300;
     }
 
     .navbar-menu-button {
