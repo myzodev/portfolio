@@ -3,31 +3,42 @@ import type { Experience } from "../../types";
 
 const experience: Experience[] = [
     {
-        company: 'Webikon s.r.o.',
-        slug: 'webikon',
-        role: 'Frontend Developer • Brigáda'
+        title: 'Prvý riadok kódu',
+        icon: 'school',
+        year: '2019'
     },
     {
-        company: 'VOLITA GROUP a.s.',
-        slug: 'volita',
-        role: 'Fullstack Developer & Dizajner'
+        title: 'Webikon s.r.o.',
+        icon: 'webikon',
+        role: 'Frontend Developer • Brigáda',
+        year: '2020 - 2021'
+    },
+    {
+        title: 'VOLITA GROUP a.s.',
+        icon: 'volita',
+        role: 'Fullstack Developer & Dizajner',
+        year: '2022 - 2023'
     }
 ]
 ---
 
-<ul class="col-span-12 md:col-span-8">
+<ul class="col-span-12 lg:col-span-8">
     {experience.map(item => (
-        <li class="py-24 first:pt-0 flex items-center border-b border-neutral-600">
-            <div class="p-10 mr-16 rounded-8 bg-primary-300">
-                <figure class="size-24">
-                    <img src={`/images/logos/${item.slug}.svg`} alt="" />
-                </figure>
+        <li class="py-24 first:pt-0 flex justify-between items-center border-b border-neutral-600">
+            <div class="flex items-center">
+                <div class="p-8 mr-16 rounded-8 bg-primary-300">
+                    <figure class="size-24">
+                        <img src={`/images/logos/${item.icon}.svg`} alt={ item.title } loading="lazy" />
+                    </figure>
+                </div>
+
+                <article>
+                    <p class="text-sm md:text-base font-semibold">{ item.title }</p>
+                    <p class="text-sm md:text-base text-neutral-80">{ item.role }</p>
+                </article>
             </div>
 
-            <article>
-                <p class="font-semibold">{ item.company }</p>
-                <p class="text-neutral-80">{ item.role }</p>
-            </article>
+            <small class="text-xs md:text-sm font-extrabold text-neutral-80">{ item.year }</small>
         </li>
     ))}
 </ul>

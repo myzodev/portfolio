@@ -4,9 +4,10 @@ type Props = {
     href?: string;
     type?: string;
     style?: 'light' | 'light-ghost' | 'primary';
+    size: 'xs' | 'sm' | 'base';
 }
 
-const { class: classes, href, style } = Astro.props;
+const { class: classes, href, style, size } = Astro.props;
 
 const buttonTypeClasses = (): string => {
     switch (style) {
@@ -19,7 +20,18 @@ const buttonTypeClasses = (): string => {
     }
 }
 
-const buttonClasses: string = `px-40 md:px-48 py-[12px] md:py-16 relative align-middle font-bold text-center rounded-full overflow-hidden group transition-colors duration-500 ease-in-out ${classes} ${buttonTypeClasses()}`;
+const buttonSizeClasses = (): string => {
+    switch (size) {
+        case 'xs':
+            return 'px-10 py-[20px] text-xs';
+        case 'sm':
+            return 'px-[28px] py-[12px] text-sm';
+        default:
+            return 'px-32 py-[14px]';
+    }
+}
+
+const buttonClasses: string = `relative align-middle font-bold text-center rounded-full overflow-hidden group transition-colors duration-500 ease-in-out ${classes} ${buttonTypeClasses()} ${buttonSizeClasses()}`;
 
 const Component = href ? 'a' : 'button';
 ---

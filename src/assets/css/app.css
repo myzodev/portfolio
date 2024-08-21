@@ -88,7 +88,7 @@
 
     input,
     textarea {
-        @apply py-8 lg:py-[12px] border-b border-neutral-600 outline-none bg-white;
+        @apply py-8 lg:py-[12px] border-b border-neutral-600 outline-none bg-neutral-900;
     }
 
     textarea {
@@ -116,11 +116,11 @@
 
 @layer components {
     .section-offset {
-        @apply py-112 lg:py-136;
+        @apply py-96 lg:py-136;
     }
 
     .section-offset-bottom {
-        @apply pb-112 lg:pb-136;
+        @apply pb-96 lg:pb-136;
     }
 
     .navbar {
@@ -136,7 +136,7 @@
     }
 
     .navbar-menu {
-        @apply pt-80 px-32 lg:p-0 w-full lg:w-auto h-screen lg:h-auto lg:flex items-center fixed lg:static top-0 left-0 bg-neutral-800 lg:bg-transparent transition-transform duration-300;
+        @apply pt-80 px-24 lg:p-0 w-full lg:w-auto h-[100dvh] lg:h-auto lg:flex items-center fixed lg:static top-0 left-0 bg-neutral-800 lg:bg-transparent transition-transform duration-300;
     }
 
     .navbar-menu-link {

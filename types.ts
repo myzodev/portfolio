@@ -7,9 +7,10 @@ export type Project = {
 };
 
 export type Experience = {
-    company: string;
-    slug: string;
-    role: string;
+    title: string;
+    icon: string;
+    role?: string;
+    year: string | number;
 };
 
 export type Song = {

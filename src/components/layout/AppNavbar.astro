@@ -27,10 +27,12 @@
 
 <script>
     document.addEventListener('astro:page-load', () => {
+        const body = document.body as HTMLBodyElement;
         const navbarMenu = document.querySelector('[data-navbar-menu]') as HTMLUListElement;
         const navbarMenuButton = document.querySelector('[data-navbar-menu-button]') as HTMLButtonElement;
     
         const toggleMenuOpen = () => {
+            body.classList.toggle('overflow-hidden');
             navbarMenuButton.classList.toggle('navbar-menu-button__open');
             navbarMenu.classList.toggle('translate-x-full');
         }

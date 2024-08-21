@@ -8,30 +8,35 @@ import projects from '../../projects';
 ---
 
 <Layout title="Domov" description=''>
-    <header class="section-offset container pt-64 lg:pt-136 relative">
-        <article class="max-w-[926px] relative">
-            <h1 class="display mb-64 lg:mb-120 font-semibold">Zdokonalte vašu online identitu</h1>
-
-            <p class="pl-16 md:pl-24 py-10 md:py-16 max-w-[507px] md:text-subheading border-l border-neutral-500 text-neutral-40">
-                Pretváram vaše nápady do digitálnej formy spájaním kreativity a technológie. Posuňte svoju online prítomnosť na novú úroveň.
-            </p>
-
-            <figure class="max-w-full md:max-w-[1700px] absolute -top-[120px] md:-top-[470px] -left-[100px] md:-left-[480px] scale-150 md:scale-100 -z-10">
+    <header class="relative">
+        <figure class="w-full md:h-full lg:h-auto absolute -top-80 lg:-top-120 left-0 -z-10">
+            <picture>
+                <source media="(max-width: 768px)" srcset="/images/hero-gradient-mobile.png" />
                 <img src="/images/hero-gradient.png" alt="Gradient mesh">
-            </figure>
-        </article>
+            </picture>
+        </figure>
 
-        <aside class="hidden md:block absolute top-1/2 -translate-y-1/2 right-24 writing-vertical">
-            <p class="flex items-center font-extrabold orientation-sideways">
-                Dizajn 
-                <span class="text-primary-300">&nbsp;&&nbsp;</span> 
-                Development
-
-                <span class="mt-24">
-                    <img src="/images/hero-arrow.svg" alt="Arrow down icon">
-                </span>
-            </p>
-        </aside>
+        <div class="section-offset container relative">
+            <article class="max-w-[926px]">
+                <h1 class="display mb-96 lg:mb-112 font-semibold">Zdokonalte vašu online identitu</h1>
+    
+                <p class="pl-16 md:pl-24 py-10 md:py-16 max-w-[507px] md:text-subheading border-l border-neutral-500 text-neutral-40">
+                    Pretváram vaše nápady do digitálnej formy spájaním kreativity a technológie. Posuňte svoju online prítomnosť na novú úroveň.
+                </p>
+            </article>
+    
+            <aside class="hidden md:block absolute top-1/2 -translate-y-1/2 right-24 writing-vertical">
+                <p class="flex items-center font-extrabold orientation-sideways">
+                    Dizajn 
+                    <span class="text-primary-300">&nbsp;&&nbsp;</span> 
+                    Development
+    
+                    <span class="mt-24">
+                        <img src="/images/hero-arrow.svg" alt="Arrow down icon">
+                    </span>
+                </p>
+            </aside>
+        </div>
     </header>
 
     <section class="section-offset-bottom container">
@@ -43,15 +48,15 @@ import projects from '../../projects';
             </figure>
         </header>
 
-        <Projects projects={ projects.slice(0, 4) }>
-            <div class="mt-72 md:mt-96 flex justify-center">
-                <Button href="/projekty" style="light">More work</Button>
-            </div>
-        </Projects>
+        <Projects projects={ projects.slice(0, 4) } />
+
+        <div class="mt-72 md:mt-96 flex justify-center">
+            <Button href="/projekty" style="light">Zobraziť práce</Button>
+        </div>
     </section>
 
     <section class="section-offset-bottom container grid grid-cols-12 gap-16">
-        <div class="col-span-12 md:col-span-4">
+        <div class="col-span-12 lg:col-span-4">
             <h2 class="mb-24">Pracovné skúsenosti</h2>
         </div>
 
