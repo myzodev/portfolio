@@ -95,6 +95,11 @@
         @apply h-200 max-h-240 min-h-96;
     }
 
+    input:focus,
+    textarea:focus {
+        @apply border-b-primary-300;
+    }
+
     button:disabled {
         @apply opacity-50;
     }

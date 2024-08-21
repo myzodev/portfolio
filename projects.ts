@@ -2,20 +2,6 @@ import type { Project } from './types';
 
 const projects: Project[] = [
     {
-        name: 'Nivy',
-        slug: 'nivy',
-        role: 'Development',
-        url: 'https://nivy.com',
-        backgroundColor: '#3C3A36',
-    },
-    {
-        name: 'Volita',
-        slug: 'volitaservis',
-        role: 'Development & Dizajn',
-        url: 'https://volitaservis.sk',
-        backgroundColor: '#363A3C',
-    },
-    {
         name: 'RaceTime',
         slug: 'racetime',
         role: 'Development & Dizajn',
@@ -30,6 +16,27 @@ const projects: Project[] = [
         backgroundColor: '#272727',
     },
     {
+        name: 'Volita',
+        slug: 'volitaservis',
+        role: 'Development & Dizajn',
+        url: 'https://volitaservis.sk',
+        backgroundColor: '#363A3C',
+    },
+    {
+        name: 'Nivy',
+        slug: 'nivy',
+        role: 'Development',
+        url: 'https://nivy.com',
+        backgroundColor: '#3C3A36',
+    },
+    {
+        name: 'Excenter',
+        slug: 'excenter',
+        role: 'Development',
+        url: 'https://excenter.sk',
+        backgroundColor: '#3C3A36',
+    },
+    {
         name: 'ŠARMDENT',
         slug: 'sarmdent',
         role: 'Development',
@@ -42,13 +49,6 @@ const projects: Project[] = [
         role: 'Development & Dizajn',
         url: 'https://testar.sk',
         backgroundColor: '#36373C',
-    },
-    {
-        name: 'Excenter',
-        slug: 'excenter',
-        role: 'Development',
-        url: 'https://excenter.sk',
-        backgroundColor: '#3C3A36',
     },
 ];
 
