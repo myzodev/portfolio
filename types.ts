@@ -23,4 +23,5 @@ export type Song = {
 export type Social = {
     name: string;
     url: string;
+    iconName: string;
 };
