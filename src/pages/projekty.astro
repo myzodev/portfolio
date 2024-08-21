@@ -1,12 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Projects from '../components/Projects.astro';
+import { Icon } from 'astro-icon/components';
 import projects from '../../projects';
 ---
 
 <Layout title="Projekty" description=''>
     <section class="section-offset container pt-64 lg:pt-136">
-        <h2 class="display pb-96 mb-112 border-b border-neutral-600">Od Figma dizajnu <br /> po hotový projekt</h2>
+        <header class="mb-112 flex justify-between items-end">
+            <h2 class="h1">Od Figma dizajnu <br /> po hotový produkt</h2>
+
+            <figure class="mb-9 size-24">
+                <Icon name="down-left-arrow" class="text-white" />
+            </figure>
+        </header>
+
         <Projects projects={ projects } />
     </section>
 </Layout>
