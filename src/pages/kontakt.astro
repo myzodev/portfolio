@@ -17,14 +17,14 @@ import Button from '../components/ui/Button.astro';
 
         <div class="lg:gap-48 grid grid-cols-12">
             <div class="col-span-12 lg:col-span-7 mb-96 lg:mb-0">
-                <form action="">
+                <form method="POST" data-contact-form>
                     <div class="space-y-24 flex flex-col">
-                        <input type="text" placeholder="Meno">
-                        <input type="text" placeholder="Email">
-                        <textarea name="" id="" placeholder="Správa"></textarea>
+                        <input type="text" name="name" placeholder="Meno">
+                        <input type="text" name="email" placeholder="Email">
+                        <textarea name="text" placeholder="Správa"></textarea>
                     </div>
 
-                    <Button class="mt-40" type="submit" size='sm'>Odoslať správu</Button>
+                    <Button class="mt-40" type="submit" size="sm" data-contact-form-submit>Odoslať správu</Button>
                 </form>
             </div>
 
@@ -37,3 +37,50 @@ import Button from '../components/ui/Button.astro';
         </div>
     </section>
 </Layout>
+
+<script>
+    const contactForm = document.querySelector('[data-contact-form]') as HTMLFormElement;
+    const contactFormSubmit = document.querySelector('[data-contact-form-submit]') as HTMLButtonElement;
+
+    if (contactForm) {
+        contactForm.onsubmit = (event: any) => {
+            event.preventDefault();
+            getFromData(contactForm);
+        }
+    }
+
+    const getFromData = async (form: HTMLFormElement) => {
+        const formData = new FormData(form);
+
+        const formValues = Array.from(formData.values()) as string[];
+        const trimmedFormValues = formValues.map(value => value.trim()) as string[];
+
+        if (trimmedFormValues.includes('')) {
+            return;
+        }
+
+        let isLoading = false;
+
+        if (!isLoading) {
+            isLoading = true;
+            contactFormSubmit.disabled = true;
+
+            const response = await fetch('https://contact.myzo.sk', {
+                method: 'POST',
+                body: formData
+            });
+    
+            const data: any = await response.json();
+
+            if (data) {
+                isLoading = false;
+                contactFormSubmit.disabled = false;
+            }
+    
+            if (data.type === 'success') {
+                form.reset();
+            }
+        }
+        
+    };
+</script>

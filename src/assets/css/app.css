@@ -94,6 +94,10 @@
     textarea {
         @apply h-200 max-h-240 min-h-96;
     }
+
+    button:disabled {
+        @apply opacity-50;
+    }
 }
 
 @layer utilities {
