@@ -2,6 +2,7 @@
 import ViewTransitions from 'astro/components/ViewTransitions.astro';
 import AppNavbar from '../components/layout/AppNavbar.astro';
 import AppFooter from '../components/layout/AppFooter.astro';
+import MouseElement from '../components/layout/MouseElement.astro';
 
 import '../assets/css/app.css';
 
@@ -33,6 +34,8 @@ const { title, description } = Astro.props;
         <ViewTransitions />
 	</head>
 	<body>
+        <MouseElement />
+        
         <header>
             <AppNavbar />
         </header>

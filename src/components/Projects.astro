@@ -9,10 +9,6 @@ const { projects } = Astro.props;
 ---
 
 <ul class="gap-x-24 lg:gap-x-48 gap-y-72 lg:gap-y-96 grid grid-cols-1 md:grid-cols-2" data-projects-grid>
-    <div class="size-112 fixed top-0 left-0 flex justify-center items-center scale-0 z-100 rounded-full font-extrabold text-sm pointer-events-none bg-primary-300 transition-transform" data-hover-element>
-        Zobraziť
-    </div>
-
     {projects.map(project => (
         <li>
             <a class="projects-item w-full group" href={ project.url } target="_blank">
@@ -41,42 +37,3 @@ const { projects } = Astro.props;
         </li>
     ))}
 </ul>
-
-<script>
-    import gsap from 'gsap';
-
-    document.addEventListener('astro:page-load', () => {
-        const hoverElement = document.querySelector('[data-hover-element]') as HTMLDivElement;
-
-        if (!hoverElement) return;
-
-        const updateCoords = (event: MouseEvent) => {
-            const { clientX, clientY } = event;
-            const newX = clientX - 56;
-            const newY = clientY - 64;
-
-            gsap.to(hoverElement, {
-                left: newX,
-                top: newY,
-                duration: 0.3,
-            });
-        }
-
-        const elements = document.querySelectorAll('.projects-item') as NodeListOf<HTMLAnchorElement>;
-
-        elements.forEach((element) => {
-            element.onmouseenter = (event) => {
-                updateCoords(event);
-                hoverElement.classList.add('!scale-100');
-            }
-
-            element.onmouseleave = () => {
-                hoverElement.classList.remove('!scale-100');
-            }
-
-            element.onmousemove = (event) => {
-                requestAnimationFrame(() => updateCoords(event));
-            }
-        });
-    });
-</script>
