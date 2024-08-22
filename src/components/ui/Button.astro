@@ -89,12 +89,9 @@ const Component = href ? 'a' : 'button';
                     layerX = button.clientWidth
                 } 
 
-                gsap.set(buttonBackground, {
-                    left: layerX - buttonWidth,
-                    top: layerY - buttonWidth
-                });
-                
                 gsap.to(buttonBackground, {
+                    left: layerX - buttonWidth,
+                    top: layerY - buttonWidth,
                     scale: 0,
                     ...animationSettings
                 });
