@@ -149,7 +149,7 @@
     }
 
     .navbar-menu-link {
-        @apply h2 py-10 lg:py-0 block lg:text-sm lg:font-body font-extrabold relative hover:opacity-85 transition-opacity;
+        @apply h2 py-10 lg:py-0 block lg:text-sm lg:font-body font-extrabold relative;
     }
 
     .navbar-menu-link__active::before {

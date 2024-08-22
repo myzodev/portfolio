@@ -3,7 +3,7 @@ type Props = {
     class?: string;
     href?: string;
     style?: 'light' | 'light-ghost' | 'primary';
-    size: 'xs' | 'sm' | 'base';
+    size?: 'xs' | 'sm' | 'base';
     [key: string]: any;
 }
 
@@ -15,8 +15,10 @@ const buttonTypeClasses = (): string => {
             return 'text-neutral-800 bg-white';
         case 'light-ghost':
             return 'text-white border border-neutral-100';
-        default:
+        case 'primary':
             return 'text-white bg-primary-300';
+        default:
+            return '';
     }
 }
 
@@ -26,8 +28,10 @@ const buttonSizeClasses = (): string => {
             return 'px-10 py-[20px] text-xs';
         case 'sm':
             return 'px-[28px] py-[12px] text-sm';
-        default:
+        case 'base':
             return 'px-32 py-[14px]';
+        default:
+            return '';
     }
 }
 
@@ -59,6 +63,11 @@ const Component = href ? 'a' : 'button';
                 height: buttonWidth * 2
             });
 
+            const animationSettings = {
+                duration: 0.6,
+                ease: 'power2.inOut'
+            }
+
             button.addEventListener('mouseenter', (event) => {
                 const { layerX, layerY } = event as MouseEvent;
 
@@ -69,12 +78,16 @@ const Component = href ? 'a' : 'button';
                 
                 gsap.to(buttonBackground, {
                     scale: 1,
-                    duration: 0.4
+                    ...animationSettings
                 });
             });
 
             button.addEventListener('mouseleave', (event) => {
-                const { layerX, layerY } = event as MouseEvent;
+                let { layerX, layerY } = event as MouseEvent;
+
+                if (layerX > button.clientWidth) {
+                    layerX = button.clientWidth
+                } 
 
                 gsap.set(buttonBackground, {
                     left: layerX - buttonWidth,
@@ -83,7 +96,7 @@ const Component = href ? 'a' : 'button';
                 
                 gsap.to(buttonBackground, {
                     scale: 0,
-                    duration: 0.4
+                    ...animationSettings
                 });
             });
         });

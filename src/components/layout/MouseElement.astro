@@ -1,4 +1,4 @@
-<div class="size-112 fixed top-0 left-0 hidden lg:flex justify-center items-center scale-[0.15] z-100 rounded-full font-extrabold text-sm pointer-events-none bg-primary-300 duration-300 transition-transform" data-hover-element>
+<div class="size-112 fixed -top-full -left-full hidden lg:flex justify-center items-center scale-[0.15] z-100 rounded-full font-extrabold text-sm pointer-events-none bg-primary-300 duration-300 transition-transform" data-hover-element>
     <span class="opacity-0 transition-opacity" data-hover-element-text>
         Zobraziť
     </span>
@@ -7,7 +7,7 @@
 <script>
     import gsap from 'gsap';
 
-    document.addEventListener('astro:page-load', (event: any) => {
+    document.addEventListener('astro:page-load', () => {
         if (window.innerWidth <= 1024) return;
 
         const hoverElement = document.querySelector('[data-hover-element]') as HTMLDivElement;

@@ -4,12 +4,12 @@ import Button from '../components/ui/Button.astro';
 ---
 
 <Layout 
-    title="Myžo | Kontakt" 
+    title="Kontakt | Myžo" 
     description="Ak máte otázku, spätnú väzbu, alebo si len chcete pokecať, som samé ucho! Či už je to rýchly pozdrav alebo dlhšia správa, napíšte mi a ja sa vám ozvem čo najskôr."
 >
     <section class="section-offset container">
         <header class="mb-96 lg:mb-112 lg:gap-48 grid grid-cols-12 items-end">
-            <h2 class="lg:h1 col-span-12 lg:col-span-7 mb-32 lg:mb-0 max-w-[600px]">Povedzte mi o vašom projekte</h2>
+            <h2 class="lg:h1 col-span-12 lg:col-span-7 mb-32 lg:mb-0 max-w-[600px]">Povedzte mi o vašom nápade</h2>
             <p class="mb-0 lg:mb-8 col-span-12 lg:col-span-5 text-neutral-40">
                 Ak máte otázku, spätnú väzbu alebo si chcete len pokecať, som samé ucho! Či už je to rýchly pozdrav alebo dlhšia správa, napíšte mi a ja sa vám ozvem čo najskôr.
             </p>
@@ -24,14 +24,14 @@ import Button from '../components/ui/Button.astro';
                         <textarea name="text" placeholder="Správa" required></textarea>
                     </div>
 
-                    <Button class="mt-40" type="submit" size="sm" data-contact-form-submit>Odoslať správu</Button>
+                    <Button class="mt-40" type="submit" size="sm" style="primary" data-contact-form-submit>Odoslať správu</Button>
                 </form>
             </div>
 
             <aside class="col-span-12 md:col-span-5 space-y-32">
                 <div>
                     <small class="mb-4 font-extrabold">Email</small>
-                    <a class="text-neutral-80" href="mailto:hello@myzo.sk">hello@myzo.sk</a>
+                    <a class="text-neutral-80 underline underline-offset-4 decoration-2 decoration-primary-300" href="mailto:hello@myzo.sk">hello@myzo.sk</a>
                 </div>
 
                 <div>

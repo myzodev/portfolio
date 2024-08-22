@@ -45,8 +45,14 @@
     
         navbarMenuLinks.forEach((link) => {
             link.classList.remove('navbar-menu-link__active');
-    
-            const currentPath = window.location.pathname.slice(1);
+
+            let pathname: string = window.location.pathname;
+
+            if (pathname.endsWith('/')) {
+                pathname = pathname.slice(0, -1);
+            }
+
+            const currentPath = pathname.slice(1);
             const hrefArray = link.href.split('/');
             const thisPath = hrefArray[hrefArray.length - 1];
     
