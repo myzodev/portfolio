@@ -27,6 +27,11 @@ const { title, description } = Astro.props;
         <meta name="og:title" content={ title } />
         <meta name="og:description" content={description} />
 
+        <link rel="preload" as="font" type="font/woff2" href="/fonts/ClashDisplay-Semibold.woff2" crossorigin="anonymous" />
+        <link rel="preload" as="font" type="font/woff2" href="/fonts/ClashDisplay-Regular.woff2" crossorigin="anonymous" />
+        <link rel="preload" as="font" type="font/woff2" href="/fonts/Nunito-ExtraBold.woff2" crossorigin="anonymous" />
+        <link rel="preload" as="font" type="font/woff2" href="/fonts/Nunito-Regular.woff2" crossorigin="anonymous" />
+
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
 		<title>{ title }</title>
