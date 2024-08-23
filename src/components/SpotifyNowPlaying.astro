@@ -30,6 +30,18 @@ import { Icon } from 'astro-icon/components';
 <script>
     import type { Song } from "../../types";
 
+    const songLink = document.querySelector('[data-song-link]') as HTMLAnchorElement;
+    const songLinkDefaultHref = songLink.href;
+
+    const songName = document.querySelector('[data-song-name]') as HTMLParagraphElement;
+    const songNameDefaultText = songName.textContent;
+
+    const songArtist = document.querySelector('[data-song-artist]') as HTMLParagraphElement;
+    const songArtistDefaultText = songArtist.textContent;
+
+    const songLogo = document.querySelector('[data-song-logo]') as HTMLImageElement;
+    const songIcon = document.querySelector('[data-song-icon]') as HTMLSpanElement;
+
     const fetchSpotyifyData = async (): Promise<Song> => {
         const response = await fetch('https://spotify.myzo.sk/');
         const data = await response.json();
@@ -38,18 +50,6 @@ import { Icon } from 'astro-icon/components';
 
     const updateSongInfo = async () => {
         const { isPlaying, name, artistName, songURL } = await fetchSpotyifyData();
-
-        const songLink = document.querySelector('[data-song-link]') as HTMLAnchorElement;
-        const songLinkDefaultHref = songLink.href;
-
-        const songName = document.querySelector('[data-song-name]') as HTMLParagraphElement;
-        const songNameDefaultText = songName.textContent;
-
-        const songArtist = document.querySelector('[data-song-artist]') as HTMLParagraphElement;
-        const songArtistDefaultText = songArtist.textContent;
-
-        const songLogo = document.querySelector('[data-song-logo]') as HTMLImageElement;
-        const songIcon = document.querySelector('[data-song-icon]') as HTMLSpanElement;
 
         if (isPlaying) {
             songLink.href = songURL;
