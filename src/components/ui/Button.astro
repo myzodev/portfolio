@@ -40,7 +40,7 @@ const buttonClasses: string = `button-item relative align-middle font-bold text-
 const Component = href ? 'a' : 'button';
 ---
 
-<Component class={buttonClasses} href={href} { ...props }>
+<Component class={buttonClasses} href={href} {...props}>
     <span class="relative z-10">
         <slot />
     </span>
