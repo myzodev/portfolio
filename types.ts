@@ -1,11 +1,3 @@
-export type Project = {
-    name: string;
-    slug: string;
-    role: string;
-    url: string;
-    backgroundColor: string;
-};
-
 export type Experience = {
     title: string;
     icon: string;

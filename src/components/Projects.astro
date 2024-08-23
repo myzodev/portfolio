@@ -1,28 +1,28 @@
 ---
-import type { Project } from "../../types";
+import type { CollectionEntry } from 'astro:content';
 
 type Props = {
-    projects: Project[];
+    projects: CollectionEntry<'work'>[];
 }
 
 const { projects } = Astro.props;
 ---
 
 <ul class="gap-x-24 lg:gap-x-48 gap-y-72 lg:gap-y-96 grid grid-cols-1 md:grid-cols-2" data-projects-grid>
-    {projects.map(project => (
+    {projects.map((project) => (
         <li>
-            <a class="projects-item w-full group" href={ project.url } target="_blank">
-                <div class="aspect-w-1 aspect-h-1 rounded-24 bg-neutral-800" style={ `background-color: ${project.backgroundColor}` }>
+            <a class="projects-item w-full group" href={ project.data.url } target="_blank">
+                <div class="aspect-w-1 aspect-h-1 rounded-24 bg-neutral-800" style={ `background-color: ${project.data.backgroundColor}` }>
                     <figure class="p-24 md:p-32 flex justify-center items-center">
                         <picture>
-                            <source srcset={ `/images/projects/${project.slug}.webp` } type="image/webp" />
+                            <source srcset={ `/images/projects/${project.data.slug}.webp` } type="image/webp" />
 
                             <img 
                                 class="h-auto rounded-8 transition-transform duration-300 group-hover:scale-[1.025]" 
-                                src={ `/images/projects/${project.slug}.jpg` } 
-                                alt={ project.name }
-                                width={500}
-                                height={293}
+                                src={ `/images/projects/${project.data.slug}.jpg` } 
+                                alt={ project.data.name }
+                                width={ 500 }
+                                height={ 293 }
                                 loading="lazy"
                             />
                         </picture>
@@ -30,8 +30,8 @@ const { projects } = Astro.props;
                 </div>
             
                 <div class="py-16 lg:py-24 flex justify-between items-center border-b border-neutral-600 transition-opacity duration-300 group-hover:opacity-70">
-                    <h4>{ project.name }</h4>
-                    <small class="text-xs md:text-sm text-neutral-80">{ project.role }</small>
+                    <h4>{ project.data.name }</h4>
+                    <small class="text-xs md:text-sm text-neutral-80">{ project.data.role }</small>
                 </div>
             </a>
         </li>

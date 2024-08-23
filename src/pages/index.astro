@@ -1,10 +1,12 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Projects from '../components/Projects.astro';
 import Experience from '../components/Experience.astro';
 import Button from '../components/ui/Button.astro';
 import { Icon } from 'astro-icon/components';
-import projects from '../../projects';
+
+const projects = await getCollection('work');
 ---
 
 <Layout 
@@ -21,7 +23,7 @@ import projects from '../../projects';
             </picture>
         </figure>
 
-        <div class="section-offset container relative">
+        <div class="section-offset-first container relative">
             <article class="max-w-[926px]">
                 <h1 class="display mb-96 lg:mb-112 font-semibold">Zdokonalte vašu online identitu</h1>
     

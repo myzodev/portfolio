@@ -128,6 +128,10 @@
         @apply py-96 lg:py-136;
     }
 
+    .section-offset-first {
+        @apply pt-32 pb-136 lg:py-136;
+    }
+
     .section-offset-bottom {
         @apply pb-96 lg:pb-136;
     }

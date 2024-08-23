@@ -1,12 +1,14 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Projects from '../components/Projects.astro';
 import { Icon } from 'astro-icon/components';
-import projects from '../../projects';
+
+const projects = await getCollection('work');
 ---
 
 <Layout title="Projekty | Myžo" description="Od dizajnu vo Figme k hotovému produktu">
-    <section class="section-offset container">
+    <section class="section-offset-first container">
         <header class="mb-96 lg:mb-112 flex justify-between items-end">
             <h2 class="lg:h1 max-w-[700px]">Od dizajnu vo Figme k hotovému produktu</h2>
 

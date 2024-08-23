@@ -15,7 +15,7 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="sk">
+<html lang="sk" transition:animate="fade">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -45,7 +45,7 @@ const { title, description } = Astro.props;
             <AppNavbar />
         </header>
 
-        <main transition:animate="fade">
+        <main>
             <slot />
         </main>
 
