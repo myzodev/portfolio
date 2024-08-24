@@ -1,5 +1,5 @@
 ---
-import ViewTransitions from 'astro/components/ViewTransitions.astro';
+import { ViewTransitions, fade } from 'astro:transitions';
 import AppNavbar from '../components/layout/AppNavbar.astro';
 import AppFooter from '../components/layout/AppFooter.astro';
 import MouseElement from '../components/layout/MouseElement.astro';
@@ -15,7 +15,7 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="sk" transition:animate="fade">
+<html lang="sk" transition:animate={fade({ duration: '350ms' })}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />

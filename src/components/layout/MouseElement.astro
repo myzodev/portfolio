@@ -1,5 +1,5 @@
-<div class="size-112 fixed -top-full -left-full hidden lg:flex justify-center items-center scale-[0.15] z-100 rounded-full font-extrabold text-sm pointer-events-none bg-primary-300 duration-300 transition-transform" data-hover-element>
-    <span class="opacity-0 transition-opacity" data-hover-element-text>
+<div class="size-112 fixed -top-full -left-full hidden lg:flex justify-center items-center scale-[0.15] z-100 rounded-full font-extrabold text-sm pointer-events-none bg-primary-200" data-hover-element>
+    <span class="opacity-0" data-hover-element-text>
         Zobraziť
     </span>
 </div>
@@ -10,6 +10,7 @@
     document.addEventListener('astro:page-load', () => {
         if (window.innerWidth <= 1024) return;
 
+        // Elements mouse tracking
         const hoverElement = document.querySelector('[data-hover-element]') as HTMLDivElement;
         const hoverElementText = document.querySelector('[data-hover-element-text]') as HTMLSpanElement;
 
@@ -25,27 +26,54 @@
             });
         }
 
-        window.onmousemove = (event) => {
+        window.addEventListener('mousemove', (event) => {
             requestAnimationFrame(() => updateCoords(event));
-        }
+        });
 
+        // Elements behaviour on hover
         const elements = document.querySelectorAll('a, button') as NodeListOf<HTMLAnchorElement | HTMLButtonElement>;
 
         elements.forEach((element) => {
-            element.onmouseenter = (event: MouseEvent) => {
-                const hoveredOver = event.target as HTMLDivElement;
+            element.addEventListener('mouseenter', () => handleMouseEnter());
+            element.addEventListener('mouseleave', () => handleMouseLeave());
 
-                if (hoveredOver.classList.contains('projects-item')) {
-                    hoverElement.classList.add('!scale-100');
-                    hoverElementText.classList.remove('opacity-0', 'bg-primary-200');
-                } else { 
-                    hoverElement.classList.add('!scale-0');
-                }
+            const handleMouseEnter = () => {
+                if (element.classList.contains('projects-item')) {
+                    return animateMouseElement('in');
+                } 
+
+                animateMouseElement('scaleOut');
             }
 
-            element.onmouseleave = () => {
-                hoverElement.classList.remove('!scale-100', '!scale-0', 'bg-primary-200');
-                hoverElementText.classList.add('opacity-0');
+            const handleMouseLeave = () => {
+                animateMouseElement('out');
+            }
+
+            const animateMouseElement = (mode: 'in' | 'out' | 'scaleOut') => {
+                const animationSettings = {
+                    duration: 0.5,
+                    ease: 'expo.inOut'
+                }
+
+                if (mode == 'scaleOut') {
+                    return gsap.to(hoverElement, {
+                        ...animationSettings,
+                        scale: 0,
+                    });
+                }
+
+                let scale: number = mode === 'out' ? 0.15 : 1;
+                let opacity: number = mode === 'out' ? 0 : 1;
+
+                gsap.to(hoverElement, {
+                    ...animationSettings,
+                    scale: scale,
+                });
+
+                gsap.to(hoverElementText, {
+                    ...animationSettings,
+                    opacity: opacity,
+                });
             }
         });
     });

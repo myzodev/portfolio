@@ -64,12 +64,19 @@ const Component = href ? 'a' : 'button';
             });
 
             const animationSettings = {
-                duration: 0.6,
-                ease: 'power2.inOut'
+                duration: 0.9,
+                ease: 'expo.inOut'
             }
 
-            button.addEventListener('mouseenter', (event) => {
-                const { layerX, layerY } = event as MouseEvent;
+            button.addEventListener('mouseenter',  (event) => animateButtonBackground(event, 1));
+            button.addEventListener('mouseleave', (event) => animateButtonBackground(event, 0));
+
+            const animateButtonBackground = (event: MouseEvent, scaleTo: number) => {
+                let { layerX, layerY } = event;
+
+                if (layerX > button.clientWidth) {
+                    layerX = button.clientWidth;
+                }
 
                 gsap.set(buttonBackground, {
                     left: layerX - buttonWidth,
@@ -77,25 +84,10 @@ const Component = href ? 'a' : 'button';
                 });
                 
                 gsap.to(buttonBackground, {
-                    scale: 1,
-                    ...animationSettings
+                    ...animationSettings,
+                    scale: scaleTo
                 });
-            });
-
-            button.addEventListener('mouseleave', (event) => {
-                let { layerX, layerY } = event as MouseEvent;
-
-                if (layerX > button.clientWidth) {
-                    layerX = button.clientWidth
-                } 
-
-                gsap.to(buttonBackground, {
-                    left: layerX - buttonWidth,
-                    top: layerY - buttonWidth,
-                    scale: 0,
-                    ...animationSettings
-                });
-            });
+            }
         });
     });
 </script>
