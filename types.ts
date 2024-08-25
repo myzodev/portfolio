@@ -11,9 +11,3 @@ export type Song = {
     artistName: string;
     songURL: string;
 };
-
-export type Social = {
-    name: string;
-    url: string;
-    iconName: string;
-};

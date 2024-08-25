@@ -1,20 +1,10 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/ui/Button.astro';
-import type { Social } from '../../types';
+import type { CollectionEntry } from 'astro:content';
 
-const socials: Social[] = [
-	{
-		name: 'Instagram',
-		url: 'https://instagram.com',
-		iconName: 'instagram',
-	},
-    {
-		name: 'LinkedIn',
-		url: 'https://linedin.com',
-		iconName: 'linkedin',
-	},
-];
+const links: CollectionEntry<'links'>[] = await getCollection('links');
 ---
 
 <Layout
@@ -61,10 +51,10 @@ const socials: Social[] = [
 
 					<ul>
 						{
-							socials.map((social) => (
+							links.map((link) => (
 								<li>
-									<a class="contact-link underline" href={social.url}>
-										{social.name}
+									<a class="contact-link underline" href={link.data.url}>
+										{link.data.name}
 									</a>
 								</li>
 							))

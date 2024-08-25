@@ -1,21 +1,11 @@
 ---
+import { getCollection } from 'astro:content';
 import Button from '../ui/Button.astro';
 import SpotifyNowPlaying from '../SpotifyNowPlaying.astro';
 import { Icon } from 'astro-icon/components';
-import type { Social } from '../../../types';
+import type { CollectionEntry } from 'astro:content';
 
-const socials: Social[] = [
-	{
-		name: 'Instagram',
-		url: 'https://instagram.com',
-		iconName: 'instagram',
-	},
-    {
-		name: 'LinkedIn',
-		url: 'https://linedin.com',
-		iconName: 'linkedin',
-	},
-];
+const links: CollectionEntry<'links'>[] = await getCollection('links');
 ---
 
 <div class="p-16 md:p-32 pt-0">
@@ -52,20 +42,20 @@ const socials: Social[] = [
 
 				<ul class="gap-8 flex items-center">
 					{
-						socials.map((social) => (
+						links.map((link) => (
 							<li>
 								<a
 									class="px-7 py-5 flex items-center rounded-8 bg-neutral-700 transition-colors hover:bg-neutral-600"
-									href={social.url}
+									href={link.data.url}
 									target="_blank"
 								>
 									<figure class="size-24">
-										<Icon name={social.iconName} class="text-white" />
+										<Icon name={link.data.iconName} class="text-white" />
 									</figure>
 
 									<span class="mx-8 w-2 h-16 bg-neutral-100" />
 
-									<span class="pb-1 text-xs font-extrabold">{social.name}</span>
+									<span class="pb-1 text-xs font-extrabold">{link.data.name}</span>
 								</a>
 							</li>
 						))
