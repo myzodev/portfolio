@@ -179,4 +179,12 @@
     .navbar-menu-button__open .line-02 {
         transform: translate(0, -3px) rotate(-45deg);
     }
+
+    .contact-link {
+        @apply py-2 font-extrabold underline-offset-4 decoration-2 decoration-primary-300;
+    }
+
+    .arrow-bottom-right {
+        @apply mb-4 absolute right-0 bottom-0;
+    }
 }

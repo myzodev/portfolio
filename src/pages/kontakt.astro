@@ -1,6 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/ui/Button.astro';
+import type { Social } from '../../types';
+
+const socials: Social[] = [
+	{
+		name: 'Instagram',
+		url: 'https://instagram.com',
+		iconName: 'instagram',
+	},
+    {
+		name: 'LinkedIn',
+		url: 'https://linedin.com',
+		iconName: 'linkedin',
+	},
+];
 ---
 
 <Layout
@@ -33,16 +47,29 @@ import Button from '../components/ui/Button.astro';
 
 			<aside class="col-span-12 md:col-span-5 space-y-32">
 				<div>
-					<small class="mb-4 font-extrabold">Email</small>
-					<a
-						class="text-neutral-80 underline underline-offset-4 decoration-2 decoration-primary-300"
-						href="mailto:hello@myzo.sk">hello@myzo.sk</a
-					>
+					<small class="text-neutral-80">Email</small>
+					<a class="contact-link underline" href="mailto:hello@myzo.sk">hello@myzo.sk</a>
 				</div>
 
 				<div>
-					<small class="mb-4 font-extrabold">Kde ma nájdete?</small>
-					<p class="text-neutral-80">Žilina, Slovensko</p>
+					<small class="text-neutral-80">Kde ma nájdete?</small>
+					<p class="contact-link">Žilina, Slovensko</p>
+				</div>
+
+				<div>
+					<small class="text-neutral-80">Odkazy</small>
+
+					<ul>
+						{
+							socials.map((social) => (
+								<li>
+									<a class="contact-link underline" href={social.url}>
+										{social.name}
+									</a>
+								</li>
+							))
+						}
+					</ul>
 				</div>
 			</aside>
 		</div>
