@@ -9,64 +9,67 @@ import { Icon } from 'astro-icon/components';
 const projects = await getCollection('work');
 ---
 
-<Layout 
-    title="Myžo | Web Developer"
-    description="Pretváram vaše nápady do digitálnej formy spojením kreativity a technológie. Posuňte svoju online prítomnosť na novú úroveň."
+<Layout
+	title="Myžo | Web Developer"
+	description="Pretváram vaše nápady do digitálnej formy spojením kreativity a technológie. Posuňte svoju online prítomnosť na novú úroveň."
 >
-    <header class="relative">
-        <figure class="w-full md:h-full lg:h-auto absolute -top-80 lg:-top-120 left-0 -z-10">
-            <picture>
-                <source media="(max-width: 768px)" srcset="/images/hero-gradient-mobile.webp" type="image/webp" />
-                <source media="(max-width: 768px)" srcset="/images/hero-gradient-mobile.png" type="image/png" />
-                <source srcset="/images/hero-gradient.webp" type="image/webp" />
-                <img src="/images/hero-gradient.png" alt="Gradient mesh">
-            </picture>
-        </figure>
+	<header class="relative">
+		<figure class="w-full md:h-full lg:h-auto absolute -top-80 lg:-top-120 left-0 -z-10">
+			<picture>
+				<source media="(max-width: 768px)" srcset="/images/hero-gradient-mobile.webp" type="image/webp" />
+				<source media="(max-width: 768px)" srcset="/images/hero-gradient-mobile.png" type="image/png" />
+				<source srcset="/images/hero-gradient.webp" type="image/webp" />
+				<img src="/images/hero-gradient.png" alt="Gradient mesh" />
+			</picture>
+		</figure>
 
-        <div class="section-offset-first container relative">
-            <article class="max-w-[926px]">
-                <h1 class="display mb-96 lg:mb-112 font-semibold">Zdokonalte vašu online identitu</h1>
-    
-                <p class="pl-16 md:pl-24 py-10 md:py-16 max-w-[507px] md:text-subheading border-l border-neutral-500 text-neutral-40">
-                    Pretváram vaše nápady do digitálnej formy spojením kreativity a technológie. Posuňte svoju online prítomnosť na novú úroveň.
-                </p>
-            </article>
-    
-            <aside class="hidden md:block absolute top-1/2 -translate-y-1/2 right-24 writing-vertical">
-                <p class="flex items-center font-extrabold orientation-sideways">
-                    Dizajn 
-                    <span class="text-primary-300">&nbsp;&&nbsp;</span> 
-                    Development
-    
-                    <span class="mt-24">
-                        <img src="/images/hero-arrow.svg" alt="Arrow down icon">
-                    </span>
-                </p>
-            </aside>
-        </div>
-    </header>
+		<div class="section-offset-first container relative">
+			<article class="max-w-[926px]">
+				<h1 class="display mb-96 lg:mb-112 font-semibold">Zdokonalte vašu online identitu</h1>
 
-    <section class="section-offset-bottom container">
-        <header class="mb-16 flex justify-between items-center text-neutral-80">
-            <p class="uppercase text-xs font-extrabold">Najnovšie práce</p>
+				<p
+					class="pl-16 md:pl-24 py-10 md:py-16 max-w-[507px] md:text-subheading border-l border-neutral-500 text-neutral-40"
+				>
+					Pretváram vaše nápady do digitálnej formy spojením kreativity a technológie. Posuňte svoju online
+					prítomnosť na novú úroveň.
+				</p>
+			</article>
 
-            <figure class="size-24">
-                <Icon name="down-left-arrow" />
-            </figure>
-        </header>
+			<aside class="hidden md:block absolute top-1/2 -translate-y-1/2 right-24 writing-vertical">
+				<p class="flex items-center font-extrabold orientation-sideways">
+					Dizajn
+					<span class="text-primary-300">&nbsp;&&nbsp;</span>
+					Development
 
-        <Projects projects={projects.slice(0, 4)} />
+					<span class="mt-24">
+						<img src="/images/hero-arrow.svg" alt="Arrow down icon" />
+					</span>
+				</p>
+			</aside>
+		</div>
+	</header>
 
-        <div class="mt-72 md:mt-96 flex justify-center">
-            <Button href="/projekty" style="light" size="sm">Zobraziť všetky práce</Button>
-        </div>
-    </section>
+	<section class="section-offset-bottom container">
+		<header class="mb-16 flex justify-between items-center text-neutral-80">
+			<p class="uppercase text-xs font-extrabold">Najnovšie práce</p>
 
-    <section class="section-offset-bottom container grid grid-cols-12 gap-16">
-        <div class="col-span-12 lg:col-span-4">
-            <h2 class="mb-24">Pracovné skúsenosti</h2>
-        </div>
+			<figure class="size-24">
+				<Icon name="down-left-arrow" />
+			</figure>
+		</header>
 
-        <Experience />
-    </section>
+		<Projects projects={projects.slice(0, 4)} />
+
+		<div class="mt-72 md:mt-96 flex justify-center">
+			<Button href="/projekty" style="light" size="sm">Zobraziť všetky práce</Button>
+		</div>
+	</section>
+
+	<section class="section-offset-bottom container grid grid-cols-12 gap-16">
+		<div class="col-span-12 lg:col-span-4">
+			<h2 class="mb-24">Pracovné skúsenosti</h2>
+		</div>
+
+		<Experience />
+	</section>
 </Layout>

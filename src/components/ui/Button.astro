@@ -1,39 +1,39 @@
 ---
 type Props = {
-    class?: string;
-    href?: string;
-    style?: 'light' | 'light-ghost' | 'primary';
-    size?: 'xs' | 'sm' | 'base';
-    [key: string]: any;
-}
+	class?: string;
+	href?: string;
+	style?: 'light' | 'light-ghost' | 'primary';
+	size?: 'xs' | 'sm' | 'base';
+	[key: string]: any;
+};
 
 const { class: classes, href, style, size, ...props } = Astro.props;
 
 const buttonTypeClasses = (): string => {
-    switch (style) {
-        case 'light':
-            return 'text-neutral-800 bg-white';
-        case 'light-ghost':
-            return 'text-white border border-neutral-100';
-        case 'primary':
-            return 'text-white bg-primary-300';
-        default:
-            return '';
-    }
-}
+	switch (style) {
+		case 'light':
+			return 'text-neutral-800 bg-white';
+		case 'light-ghost':
+			return 'text-white border border-neutral-100';
+		case 'primary':
+			return 'text-white bg-primary-300';
+		default:
+			return '';
+	}
+};
 
 const buttonSizeClasses = (): string => {
-    switch (size) {
-        case 'xs':
-            return 'px-10 py-[20px] text-xs';
-        case 'sm':
-            return 'px-[28px] py-[12px] text-sm';
-        case 'base':
-            return 'px-32 py-[14px]';
-        default:
-            return '';
-    }
-}
+	switch (size) {
+		case 'xs':
+			return 'px-10 py-[20px] text-xs';
+		case 'sm':
+			return 'px-[28px] py-[12px] text-sm';
+		case 'base':
+			return 'px-32 py-[14px]';
+		default:
+			return '';
+	}
+};
 
 const buttonClasses: string = `button-item relative align-middle font-bold text-center rounded-full overflow-hidden group transition-colors ease-in-out ${classes} ${buttonTypeClasses()} ${buttonSizeClasses()}`;
 
@@ -41,53 +41,55 @@ const Component = href ? 'a' : 'button';
 ---
 
 <Component class={buttonClasses} href={href} {...props}>
-    <span class="relative z-10">
-        <slot />
-    </span>
+	<span class="relative z-10">
+		<slot />
+	</span>
 
-    <span class="absolute scale-0 rounded-full z-0 bg-primary-200" data-button-background></span>
+	<span class="absolute scale-0 rounded-full z-0 bg-primary-200" data-button-background></span>
 </Component>
 
 <script>
-    import gsap from 'gsap';
+	import gsap from 'gsap';
 
-    document.addEventListener('astro:page-load', () => {
-        const buttons = document.querySelectorAll('.button-item') as NodeListOf<HTMLAnchorElement>;
+	document.addEventListener('astro:page-load', () => {
+		const buttons = document.querySelectorAll('.button-item') as NodeListOf<HTMLAnchorElement>;
 
-        buttons.forEach(button => {
-            const buttonBackground = button.querySelector('[data-button-background]') as HTMLSpanElement;
-            const buttonWidth = button.clientWidth;
+		if (buttons) {
+			buttons.forEach((button) => {
+				const buttonBackground = button.querySelector('[data-button-background]') as HTMLSpanElement;
+				const buttonWidth = button.clientWidth;
 
-            gsap.set(buttonBackground, {
-                width: buttonWidth * 2,
-                height: buttonWidth * 2
-            });
+				gsap.set(buttonBackground, {
+					width: buttonWidth * 2,
+					height: buttonWidth * 2,
+				});
 
-            const animationSettings = {
-                duration: 0.9,
-                ease: 'expo.inOut'
-            }
+				const animationSettings = {
+					duration: 0.9,
+					ease: 'expo.inOut',
+				};
 
-            button.addEventListener('mouseenter',  (event) => animateButtonBackground(event, 1));
-            button.addEventListener('mouseleave', (event) => animateButtonBackground(event, 0));
+				button.addEventListener('mouseenter', (event) => animateButtonBackground(event, 1));
+				button.addEventListener('mouseleave', (event) => animateButtonBackground(event, 0));
 
-            const animateButtonBackground = (event: MouseEvent, scaleTo: number) => {
-                let { layerX, layerY } = event;
+				const animateButtonBackground = (event: MouseEvent, scaleTo: number) => {
+					let { layerX, layerY } = event;
 
-                if (layerX > button.clientWidth) {
-                    layerX = button.clientWidth;
-                }
+					if (layerX > button.clientWidth) {
+						layerX = button.clientWidth;
+					}
 
-                gsap.set(buttonBackground, {
-                    left: layerX - buttonWidth,
-                    top: layerY - buttonWidth
-                });
-                
-                gsap.to(buttonBackground, {
-                    ...animationSettings,
-                    scale: scaleTo
-                });
-            }
-        });
-    });
+					gsap.set(buttonBackground, {
+						left: layerX - buttonWidth,
+						top: layerY - buttonWidth,
+					});
+
+					gsap.to(buttonBackground, {
+						...animationSettings,
+						scale: scaleTo,
+					});
+				};
+			});
+		}
+	});
 </script>

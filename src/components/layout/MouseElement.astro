@@ -1,80 +1,85 @@
-<div class="size-112 fixed -top-full -left-full hidden lg:flex justify-center items-center scale-[0.15] z-100 rounded-full font-extrabold text-sm pointer-events-none bg-primary-200" data-hover-element>
-    <span class="opacity-0" data-hover-element-text>
-        Zobraziť
-    </span>
+<div
+	class="size-112 fixed -top-full -left-full hidden lg:flex justify-center items-center scale-[0.15] z-100 rounded-full font-extrabold text-sm pointer-events-none bg-primary-200"
+	data-hover-element
+>
+	<span class="opacity-0" data-hover-element-text> Zobraziť </span>
 </div>
 
 <script>
-    import gsap from 'gsap';
+	import gsap from 'gsap';
 
-    document.addEventListener('astro:page-load', () => {
-        if (window.innerWidth <= 1024) return;
+	document.addEventListener('astro:page-load', () => {
+		if (window.innerWidth <= 1024) return;
 
-        // Elements mouse tracking
-        const hoverElement = document.querySelector('[data-hover-element]') as HTMLDivElement;
-        const hoverElementText = document.querySelector('[data-hover-element-text]') as HTMLSpanElement;
+		/**
+		 * Mouse element tracking
+		 */
+		const hoverElement = document.querySelector('[data-hover-element]') as HTMLDivElement;
+		const hoverElementText = document.querySelector('[data-hover-element-text]') as HTMLSpanElement;
 
-        const updateCoords = (event: MouseEvent) => {
-            const { clientX, clientY } = event;
-            const newX = clientX - 56;
-            const newY = clientY - 61;
+		const updateCoords = (event: MouseEvent) => {
+			const { clientX, clientY } = event;
+			const newX = clientX - 56;
+			const newY = clientY - 61;
 
-            gsap.to(hoverElement, {
-                left: newX,
-                top: newY,
-                duration: 0.3,
-            });
-        }
+			gsap.to(hoverElement, {
+				left: newX,
+				top: newY,
+				duration: 0.3,
+			});
+		};
 
-        window.addEventListener('mousemove', (event) => {
-            requestAnimationFrame(() => updateCoords(event));
-        });
+		window.addEventListener('mousemove', (event) => {
+			requestAnimationFrame(() => updateCoords(event));
+		});
 
-        // Elements behaviour on hover
-        const elements = document.querySelectorAll('a, button') as NodeListOf<HTMLAnchorElement | HTMLButtonElement>;
+		/**
+		 * Mouse element hover behaviour
+		 */
+		const elements = document.querySelectorAll('a, button') as NodeListOf<HTMLAnchorElement | HTMLButtonElement>;
 
-        elements.forEach((element) => {
-            element.addEventListener('mouseenter', () => handleMouseEnter());
-            element.addEventListener('mouseleave', () => handleMouseLeave());
+		elements.forEach((element) => {
+			element.addEventListener('mouseenter', () => handleMouseEnter());
+			element.addEventListener('mouseleave', () => handleMouseLeave());
 
-            const handleMouseEnter = () => {
-                if (element.classList.contains('projects-item')) {
-                    return animateMouseElement('in');
-                } 
+			const handleMouseEnter = () => {
+				if (element.classList.contains('projects-item')) {
+					return animateMouseElement('in');
+				}
 
-                animateMouseElement('scaleOut');
-            }
+				animateMouseElement('scaleOut');
+			};
 
-            const handleMouseLeave = () => {
-                animateMouseElement('out');
-            }
+			const handleMouseLeave = () => {
+				animateMouseElement('out');
+			};
 
-            const animateMouseElement = (mode: 'in' | 'out' | 'scaleOut') => {
-                const animationSettings = {
-                    duration: 0.5,
-                    ease: 'expo.inOut'
-                }
+			const animateMouseElement = (mode: 'in' | 'out' | 'scaleOut') => {
+				const animationSettings = {
+					duration: 0.5,
+					ease: 'expo.inOut',
+				};
 
-                if (mode == 'scaleOut') {
-                    return gsap.to(hoverElement, {
-                        ...animationSettings,
-                        scale: 0,
-                    });
-                }
+				if (mode === 'scaleOut') {
+					return gsap.to(hoverElement, {
+						...animationSettings,
+						scale: 0,
+					});
+				}
 
-                let scale: number = mode === 'out' ? 0.15 : 1;
-                let opacity: number = mode === 'out' ? 0 : 1;
+				let scale: number = mode === 'out' ? 0.15 : 1;
+				let opacity: number = mode === 'out' ? 0 : 1;
 
-                gsap.to(hoverElement, {
-                    ...animationSettings,
-                    scale: scale,
-                });
+				gsap.to(hoverElement, {
+					...animationSettings,
+					scale: scale,
+				});
 
-                gsap.to(hoverElementText, {
-                    ...animationSettings,
-                    opacity: opacity,
-                });
-            }
-        });
-    });
+				gsap.to(hoverElementText, {
+					...animationSettings,
+					opacity: opacity,
+				});
+			};
+		});
+	});
 </script>

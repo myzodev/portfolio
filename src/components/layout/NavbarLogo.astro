@@ -1,39 +1,37 @@
 <a class="navbar-logo -space-x-3 overflow-hidden" href="/">
-    <span class="inline-block logo-item">m</span>
-    <span class="inline-block logo-item">y</span>
-    <span class="inline-block logo-item">ž</span>
-    <span class="inline-block logo-item">o</span>
+	<span class="inline-block logo-item">m</span>
+	<span class="inline-block logo-item">y</span>
+	<span class="inline-block logo-item">ž</span>
+	<span class="inline-block logo-item">o</span>
 </a>
 
 <script>
-    import gsap from 'gsap';
+	import gsap from 'gsap';
 
-    document.addEventListener('astro:page-load', () => {
-        const navbarLogo = document.querySelector('.navbar-logo') as HTMLAnchorElement;
-        const logoItems = document.querySelectorAll('.logo-item') as NodeListOf<HTMLSpanElement>;
-    
-        const tl = gsap.timeline({ defaults: { stagger: 0.05, duration: 0.15 }, paused: true });
+	document.addEventListener('astro:page-load', () => {
+		const navbarLogo = document.querySelector('.navbar-logo') as HTMLAnchorElement;
+		const logoItems = document.querySelectorAll('.logo-item') as NodeListOf<HTMLSpanElement>;
 
-        tl.to(logoItems, {
-            y: '100%',
-            duration: 0.35,
-            ease: 'expo.in'
-        });
+		const tl = gsap.timeline({ defaults: { stagger: 0.05, duration: 0.25 }, paused: true });
 
-        tl.set(logoItems, {
-            y: '-100%'
-        });
+		tl.to(logoItems, {
+			y: '100%',
+			ease: 'expo.in',
+		});
 
-        tl.to(logoItems, {
-            y: '0%',
-            duration: 0.35,
-            ease: 'expo.out'
-        });
+		tl.set(logoItems, {
+			y: '-100%',
+		});
 
-        navbarLogo.addEventListener('mouseenter', () => {
-            if (!tl.isActive()) {
-                tl.restart();
-            }
-        });
-    });
+		tl.to(logoItems, {
+			y: '0%',
+			ease: 'expo.out',
+		});
+
+		navbarLogo.addEventListener('mouseenter', () => {
+			if (!tl.isActive()) {
+				tl.restart();
+			}
+		});
+	});
 </script>

@@ -8,8 +8,8 @@ import '../assets/css/app.css';
 
 type Props = {
 	title: string;
-    description: string;
-}
+	description: string;
+};
 
 const { title, description } = Astro.props;
 ---
@@ -18,39 +18,50 @@ const { title, description } = Astro.props;
 <html lang="sk" transition:animate={fade({ duration: '350ms' })}>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 
-        <meta name="title" content={title} />
-        <meta name="description" content={description} />
-        <meta name="og:title" content={title} />
-        <meta name="og:description" content={description} />
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<meta name="og:title" content={title} />
+		<meta name="og:description" content={description} />
 
-        <link rel="preload" as="font" type="font/woff2" href="/fonts/ClashDisplay-Semibold.woff2" crossorigin="anonymous" />
-        <link rel="preload" as="font" type="font/woff2" href="/fonts/ClashDisplay-Regular.woff2" crossorigin="anonymous" />
-        <link rel="preload" as="font" type="font/woff2" href="/fonts/Nunito-ExtraBold.woff2" crossorigin="anonymous" />
-        <link rel="preload" as="font" type="font/woff2" href="/fonts/Nunito-Regular.woff2" crossorigin="anonymous" />
+		<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href="/fonts/ClashDisplay-Semibold.woff2"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href="/fonts/ClashDisplay-Regular.woff2"
+			crossorigin="anonymous"
+		/>
+		<link rel="preload" as="font" type="font/woff2" href="/fonts/Nunito-ExtraBold.woff2" crossorigin="anonymous" />
+		<link rel="preload" as="font" type="font/woff2" href="/fonts/Nunito-Regular.woff2" crossorigin="anonymous" />
 
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
 		<title>{title}</title>
 
-        <ViewTransitions />
+		<ViewTransitions />
 	</head>
 	<body>
-        <MouseElement />
-        
-        <header>
-            <AppNavbar />
-        </header>
+		<MouseElement />
 
-        <main>
-            <slot />
-        </main>
+		<header>
+			<AppNavbar />
+		</header>
 
-        <footer transition:persist>
-            <AppFooter />
-        </footer>
+		<main>
+			<slot />
+		</main>
+
+		<footer transition:persist>
+			<AppFooter />
+		</footer>
 	</body>
 </html>

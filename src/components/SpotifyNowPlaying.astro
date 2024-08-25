@@ -2,79 +2,85 @@
 import { Icon } from 'astro-icon/components';
 ---
 
-<a 
-    class="my-48 md:my-0 flex shrink-0 items-center group" 
-    href="https://open.spotify.com/playlist/1p2lZTlEB2PY6um9c7nLGP?si=7129cf72cd4140fb" 
-    target="_blank"
-    data-song-link
+<a
+	class="my-48 md:my-0 flex shrink-0 items-center group"
+	href="https://open.spotify.com/playlist/1p2lZTlEB2PY6um9c7nLGP?si=7129cf72cd4140fb"
+	target="_blank"
+	data-song-link
 >
-    <div class="mr-16 text-right">
-        <small class="font-extrabold" data-song-name>Momentálne</small>
-        <small class="-mt-2 text-neutral-80" data-song-artist>nič nepočúvam</small>
-    </div>
+	<div class="mr-16 text-right">
+		<small class="font-extrabold" data-song-name>Momentálne</small>
+		<small class="-mt-2 text-neutral-80" data-song-artist>nič nepočúvam</small>
+	</div>
 
-    <figure class="size-[44px] relative rounded-8 overflow-hidden bg-neutral-700 transition-colors duration-200 group-hover:bg-neutral-600">
-        <Icon name="spotify" class="p-10 w-full h-full absolute top-0 left-0 text-white transition-transform duration-300" data-song-logo />
+	<figure
+		class="size-[44px] relative rounded-8 overflow-hidden bg-neutral-700 transition-colors duration-200 group-hover:bg-neutral-600"
+	>
+		<Icon
+			name="spotify"
+			class="p-10 w-full h-full absolute top-0 left-0 text-white transition-transform duration-300"
+			data-song-logo
+		/>
 
-        <span
-            class="p-10 space-x-5 w-full flex justify-center absolute top-0 left-0 -translate-y-full transition-transform duration-300"
-            data-song-icon
-        >
-            <span class="w-2 h-24 origin-bottom bg-primary-300 animate-spotify-playing"></span>
-            <span class="w-2 h-24 origin-bottom animation-delay-125 bg-primary-300 animate-spotify-playing"></span>
-            <span class="w-2 h-24 origin-bottom animation-delay-100 bg-primary-300 animate-spotify-playing"></span>
-        </span>
-    </figure>
+		<span
+			class="p-10 space-x-5 w-full flex justify-center absolute top-0 left-0 -translate-y-full transition-transform duration-300"
+			data-song-icon
+		>
+			<span class="w-2 h-24 origin-bottom bg-primary-300 animate-spotify-playing"></span>
+			<span class="w-2 h-24 origin-bottom animation-delay-125 bg-primary-300 animate-spotify-playing"></span>
+			<span class="w-2 h-24 origin-bottom animation-delay-100 bg-primary-300 animate-spotify-playing"></span>
+		</span>
+	</figure>
 </a>
 
 <script>
-    import type { Song } from "../../types";
+	import type { Song } from '../../types';
 
-    const songLink = document.querySelector('[data-song-link]') as HTMLAnchorElement;
-    const songLinkDefaultHref = songLink.href;
+	const songLink = document.querySelector('[data-song-link]') as HTMLAnchorElement;
+	const songLinkDefaultHref = songLink.href;
 
-    const songName = document.querySelector('[data-song-name]') as HTMLParagraphElement;
-    const songNameDefaultText = songName.textContent;
+	const songName = document.querySelector('[data-song-name]') as HTMLParagraphElement;
+	const songNameDefaultText = songName.textContent;
 
-    const songArtist = document.querySelector('[data-song-artist]') as HTMLParagraphElement;
-    const songArtistDefaultText = songArtist.textContent;
+	const songArtist = document.querySelector('[data-song-artist]') as HTMLParagraphElement;
+	const songArtistDefaultText = songArtist.textContent;
 
-    const songLogo = document.querySelector('[data-song-logo]') as HTMLImageElement;
-    const songIcon = document.querySelector('[data-song-icon]') as HTMLSpanElement;
+	const songLogo = document.querySelector('[data-song-logo]') as HTMLImageElement;
+	const songIcon = document.querySelector('[data-song-icon]') as HTMLSpanElement;
 
-    const fetchSpotyifyData = async (): Promise<Song> => {
-        const response = await fetch('https://spotify.myzo.sk/');
-        const data = await response.json();
-        return data;
-    }
+	const fetchSpotyifyData = async (): Promise<Song> => {
+		const response = await fetch('https://spotify.myzo.sk/');
+		const data = await response.json();
+		return data;
+	};
 
-    const updateSongInfo = async () => {
-        const { isPlaying, name, artistName, songURL } = await fetchSpotyifyData();
+	const updateSongInfo = async () => {
+		const { isPlaying, name, artistName, songURL } = await fetchSpotyifyData();
 
-        if (isPlaying) {
-            songLink.href = songURL;
-            songName.textContent = name;
-            songArtist.textContent = artistName;
+		if (isPlaying) {
+			songLink.href = songURL;
+			songName.textContent = name;
+			songArtist.textContent = artistName;
 
-            songLogo.classList.add('translate-y-full', 'group-hover:translate-y-0');
+			songLogo.classList.add('translate-y-full', 'group-hover:translate-y-0');
 
-            songIcon.classList.remove('-translate-y-full');
-            songIcon.classList.add('group-hover:-translate-y-full');
-        } else {
-            songLink.href = songLinkDefaultHref;
-            songName.textContent = songNameDefaultText;
-            songArtist.textContent = songArtistDefaultText;
+			songIcon.classList.remove('-translate-y-full');
+			songIcon.classList.add('group-hover:-translate-y-full');
+		} else {
+			songLink.href = songLinkDefaultHref;
+			songName.textContent = songNameDefaultText;
+			songArtist.textContent = songArtistDefaultText;
 
-            songLogo.classList.remove('translate-y-full', 'group-hover:translate-y-0');
+			songLogo.classList.remove('translate-y-full', 'group-hover:translate-y-0');
 
-            songIcon.classList.remove('group-hover:-translate-y-full');
-            songIcon.classList.add('-translate-y-full');
-        }
-    }
+			songIcon.classList.remove('group-hover:-translate-y-full');
+			songIcon.classList.add('-translate-y-full');
+		}
+	};
 
-    updateSongInfo();
+	updateSongInfo();
 
-    setInterval(() => {
-        updateSongInfo();
-    }, 60000); // 60 seconds
+	setInterval(() => {
+		updateSongInfo();
+	}, 60000); // 60 seconds
 </script>

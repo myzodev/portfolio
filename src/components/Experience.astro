@@ -1,45 +1,45 @@
 ---
 import { Icon } from 'astro-icon/components';
-import type { Experience } from "../../types";
+import type { Experience } from '../../types';
 
 const experience: Experience[] = [
-    {
-        title: 'Prvý riadok kódu',
-        icon: 'school',
-        year: '2019'
-    },
-    {
-        title: 'Webikon s.r.o.',
-        icon: 'webikon',
-        role: 'Frontend Developer • Brigáda',
-        year: '2020 - 2021'
-    },
-    {
-        title: 'VOLITA GROUP a.s.',
-        icon: 'volita',
-        role: 'Fullstack Developer & Dizajnér',
-        year: '2022 - 2023'
-    }
-]
+	{
+		title: 'Prvý riadok kódu',
+		icon: 'school',
+		year: '2019',
+	},
+	{
+		title: 'Webikon s.r.o.',
+		icon: 'webikon',
+		role: 'Frontend Developer • Brigáda',
+		year: '2020 - 2021',
+	},
+	{
+		title: 'VOLITA GROUP a.s.',
+		icon: 'volita',
+		role: 'Fullstack Developer & Dizajnér',
+		year: '2022 - 2023',
+	},
+];
 ---
 
 <ul class="col-span-12 lg:col-span-8">
-    {experience.map(item => (
-        <li class="py-24 first:pt-0 flex justify-between items-center border-b border-neutral-600">
-            <div class="flex items-center">
-                <div class="p-10 mr-16 rounded-8 bg-primary-300">
-                    <figure class="size-24">
-                        <Icon name={`experience/${item.icon}`} />
-                    </figure>
-                </div>
+	{
+		experience.map((item) => (
+			<li class="py-24 first:pt-0 flex justify-between items-center border-b border-neutral-600">
+				<div class="flex items-center">
+					<figure class="p-10 mr-16 rounded-8 bg-primary-300">
+						<Icon name={`experience/${item.icon}`} class="size-24" />
+					</figure>
 
-                <article>
-                    <p class="text-sm md:text-base font-semibold">{item.title}</p>
-                    <p class="-mt-2 text-sm md:text-base text-neutral-80">{item.role}</p>
-                </article>
-            </div>
+					<article>
+						<p class="text-sm md:text-base font-semibold">{item.title}</p>
+						<p class="-mt-2 text-sm md:text-base text-neutral-80">{item.role}</p>
+					</article>
+				</div>
 
-            <small class="text-xs md:text-sm font-extrabold text-neutral-80">{item.year}</small>
-        </li>
-    ))}
+				<small class="text-xs md:text-sm font-extrabold text-neutral-80">{item.year}</small>
+			</li>
+		))
+	}
 </ul>

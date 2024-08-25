@@ -5,65 +5,73 @@ import { Icon } from 'astro-icon/components';
 import type { Social } from '../../../types';
 
 const socials: Social[] = [
-    {
-        name: 'Instagram',
-        url: 'https://instagram.com',
-        iconName: 'instagram'
-    },
-    {
-        name: 'Discord',
-        url: 'https://discord.com',
-        iconName: 'discord'
-    }
-]
+	{
+		name: 'Instagram',
+		url: 'https://instagram.com',
+		iconName: 'instagram',
+	},
+	{
+		name: 'Discord',
+		url: 'https://discord.com',
+		iconName: 'discord',
+	},
+];
 ---
 
 <div class="p-16 md:p-32 pt-0">
-    <div class="p-24 md:p-32 lg:p-72 !pb-24 rounded-24 bg-neutral-800">
-        <header class="md:mb-96 flex flex-col md:flex-row justify-between items-end md:items-start">
-            <div class="w-full">
-                <div class="mb-32 flex justify-between md:justify-normal items-end">
-                    <h2 class="md:mr-64">Začnime našu <br /> spoluprácu</h2>
-    
-                    <figure class="mb-6 size-24">
-                        <Icon name="down-left-arrow" class="text-white" />
-                    </figure>
-                </div>
-    
-                <div class="gap-8 md:gap-16 flex flex-col md:flex-row items-center">
-                    <Button class="w-full md:w-auto" href="/kontakt" size="sm" style="primary">Kontakt</Button>
-                    <Button class="w-full md:w-auto" href="mailto:hello@myzo.sk" size="sm" style="light-ghost">hello@myzo.sk</Button>
-                </div>
-            </div>
+	<div class="p-24 md:p-32 lg:p-72 !pb-24 rounded-24 bg-neutral-800">
+		<header class="md:mb-96 flex flex-col md:flex-row justify-between items-end md:items-start">
+			<div class="w-full">
+				<div class="mb-32 flex justify-between md:justify-normal items-end">
+					<h2 class="md:mr-64">Začnime našu <br /> spoluprácu</h2>
 
-            <SpotifyNowPlaying />
-        </header>
+					<figure class="mb-6 size-24">
+						<Icon name="down-left-arrow" class="text-white" />
+					</figure>
+				</div>
 
-        <aside class="pt-24 flex justify-between border-t border-neutral-600">
-            <div>
-                <small class="text-xs md:text-sm font-extrabold">Made in</small>
-                <small class="-mt-2 text-xs md:text-sm text-neutral-80">2024</small>
-            </div>
+				<div class="gap-8 md:gap-16 flex flex-col md:flex-row items-center">
+					<Button class="w-full md:w-auto" href="/kontakt" size="sm" style="primary">Kontakt</Button>
+					<Button class="w-full md:w-auto" href="mailto:hello@myzo.sk" size="sm" style="light-ghost"
+						>hello@myzo.sk</Button
+					>
+				</div>
+			</div>
 
-            <div class="shrink-0">
-                <small class="mb-4 text-xs md:text-sm font-extrabold">Odkazy</small>
+			<SpotifyNowPlaying />
+		</header>
 
-                <ul class="gap-8 flex items-center">
-                    {socials.map(social => (
-                        <li>
-                            <a class="px-7 py-5 flex items-center rounded-8 bg-neutral-700 transition-colors hover:bg-neutral-600" href={social.url} target="_blank">
-                                <figure class="size-24">
-                                    <Icon name={social.iconName} class="text-white" />
-                                </figure>
-    
-                                <span class="mx-8 w-2 h-16 bg-neutral-100"></span>
-    
-                                <span class="pb-1 text-xs font-extrabold">{social.name}</span>
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        </aside>
-    </div>
+		<aside class="pt-24 flex justify-between border-t border-neutral-600">
+			<div>
+				<small class="text-xs md:text-sm font-extrabold">Made in</small>
+				<small class="-mt-2 text-xs md:text-sm text-neutral-80">2024</small>
+			</div>
+
+			<div class="shrink-0">
+				<small class="mb-4 text-xs md:text-sm font-extrabold">Odkazy</small>
+
+				<ul class="gap-8 flex items-center">
+					{
+						socials.map((social) => (
+							<li>
+								<a
+									class="px-7 py-5 flex items-center rounded-8 bg-neutral-700 transition-colors hover:bg-neutral-600"
+									href={social.url}
+									target="_blank"
+								>
+									<figure class="size-24">
+										<Icon name={social.iconName} class="text-white" />
+									</figure>
+
+									<span class="mx-8 w-2 h-16 bg-neutral-100" />
+
+									<span class="pb-1 text-xs font-extrabold">{social.name}</span>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</aside>
+	</div>
 </div>

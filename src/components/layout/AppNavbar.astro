@@ -3,64 +3,70 @@ import NavbarLogo from './NavbarLogo.astro';
 ---
 
 <nav class="navbar">
-    <div class="navbar-container">
-        <NavbarLogo />
+	<div class="navbar-container">
+		<NavbarLogo />
 
-        <button class="navbar-menu-button" type="button" aria-label="Open menu" data-navbar-menu-button>
-            <div class="line line-01"></div>
-            <div class="line line-02"></div>
-        </button>
+		<button class="navbar-menu-button" type="button" aria-label="Open menu">
+			<div class="line line-01"></div>
+			<div class="line line-02"></div>
+		</button>
 
-        <ul class="navbar-menu lg:space-x-48 translate-x-full lg:translate-x-0" data-navbar-menu>
-            <li>
-                <a class="navbar-menu-link" href="/projekty">Projekty</a>
-            </li>
+		<ul class="navbar-menu lg:space-x-48 translate-x-full lg:translate-x-0">
+			<li>
+				<a class="navbar-menu-link" href="/projekty">Projekty</a>
+			</li>
 
-            <li>
-                <a class="navbar-menu-link" href="/kontakt">Kontakt</a>
-            </li>
+			<li>
+				<a class="navbar-menu-link" href="/kontakt">Kontakt</a>
+			</li>
 
-            <li>
-                <a class="navbar-menu-link" href="https://github.com/michalvalo" target="_blank">Github</a>
-            </li>
-        </ul>
-    </div>
+			<li>
+				<a class="navbar-menu-link" href="https://github.com/michalvalo" target="_blank">Github</a>
+			</li>
+		</ul>
+	</div>
 </nav>
 
 <script>
-    document.addEventListener('astro:page-load', () => {
-        const body = document.body as HTMLBodyElement;
-        const navbarMenu = document.querySelector('[data-navbar-menu]') as HTMLUListElement;
-        const navbarMenuButton = document.querySelector('[data-navbar-menu-button]') as HTMLButtonElement;
+	document.addEventListener('astro:page-load', () => {
+		/**
+		 * Mobile menu button
+		 */
+		const body = document.body as HTMLBodyElement;
+		const navbarMenu = document.querySelector('.navbar-menu') as HTMLUListElement;
+		const navbarMenuButton = document.querySelector('.navbar-menu-button') as HTMLButtonElement;
 
-        const toggleMenuOpen = () => {
-            body.classList.toggle('overflow-hidden');
-            navbarMenuButton.classList.toggle('navbar-menu-button__open');
-            navbarMenu.classList.toggle('translate-x-full');
-        }
+		const toggleMenuOpen = () => {
+			body.classList.toggle('overflow-hidden');
+			navbarMenuButton.classList.toggle('navbar-menu-button__open');
+			navbarMenu.classList.toggle('translate-x-full');
+		};
 
-        if (navbarMenuButton) {
-            navbarMenuButton.onclick = () => toggleMenuOpen();
-        }
-    
-        const navbarMenuLinks = document.querySelectorAll('.navbar-menu-link') as NodeListOf<HTMLAnchorElement>;
+		if (navbarMenuButton) {
+			navbarMenuButton.addEventListener('click', () => toggleMenuOpen());
+		}
 
-        navbarMenuLinks.forEach((link) => {
-            link.classList.remove('navbar-menu-link__active');
-    
-            let pathname: string = window.location.pathname;
-    
-            if (pathname.endsWith('/')) {
-                pathname = pathname.slice(0, -1);
-            }
-    
-            const currentPath = pathname.slice(1);
-            const hrefArray = link.href.split('/');
-            const thisPath = hrefArray[hrefArray.length - 1];
-    
-            if (currentPath === thisPath) {
-                link.classList.add('navbar-menu-link__active');
-            }
-        });
-    });
+		/**
+		 * Active page link
+		 */
+		const navbarMenuLinks = document.querySelectorAll('.navbar-menu-link') as NodeListOf<HTMLAnchorElement>;
+
+		navbarMenuLinks.forEach((link) => {
+			link.classList.remove('navbar-menu-link__active');
+
+			let pathname: string = window.location.pathname;
+
+			if (pathname.endsWith('/')) {
+				pathname = pathname.slice(0, -1);
+			}
+
+			const currentPath = pathname.slice(1);
+			const hrefArray = link.href.split('/');
+			const thisPath = hrefArray[hrefArray.length - 1];
+
+			if (currentPath === thisPath) {
+				link.classList.add('navbar-menu-link__active');
+			}
+		});
+	});
 </script>
