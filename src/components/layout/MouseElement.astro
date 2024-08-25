@@ -1,5 +1,5 @@
 <div
-	class="size-112 fixed -top-full -left-full hidden lg:flex justify-center items-center scale-[0.15] z-100 rounded-full font-extrabold text-sm pointer-events-none bg-primary-200"
+	class="size-112 fixed top-0 left-0 hidden lg:flex justify-center items-center scale-[0.15] z-100 rounded-full font-extrabold text-sm pointer-events-none bg-primary-200"
 	data-hover-element
 >
 	<span class="opacity-0" data-hover-element-text> Zobraziť </span>
@@ -23,8 +23,8 @@
 			const newY = clientY - 61;
 
 			gsap.to(hoverElement, {
-				left: newX,
-				top: newY,
+				x: newX,
+				y: newY,
 				duration: 0.3,
 			});
 		};
