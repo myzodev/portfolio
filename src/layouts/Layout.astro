@@ -15,7 +15,7 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="sk" transition:animate={fade({ duration: '350ms' })}>
+<html lang="sk" transition:animate="none">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -50,13 +50,13 @@ const { title, description } = Astro.props;
 		<ViewTransitions />
 	</head>
 	<body>
-		<MouseElement />
+		<MouseElement transition:persist />
 
-		<header>
+		<header transition:persist>
 			<AppNavbar />
 		</header>
 
-		<main>
+		<main transition:animate={fade({ duration: '300ms' })}>
 			<slot />
 		</main>
 

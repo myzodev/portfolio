@@ -156,6 +156,10 @@
         @apply h2 py-10 lg:py-0 block lg:text-sm lg:font-body font-extrabold relative;
     }
 
+    .navbar-menu-link::before {
+        @apply transition-all;
+    }
+
     .navbar-menu-link__active::before {
         @apply content-[""] w-112 lg:w-3/4 h-16 lg:h-10 absolute -left-2 bottom-8 lg:bottom-4 -translate-y-1/2 lg:translate-y-0 -z-10 bg-primary-300;
     }

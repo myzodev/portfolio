@@ -28,29 +28,36 @@ import NavbarLogo from './NavbarLogo.astro';
 </nav>
 
 <script>
+	/**
+	 * Mobile menu button
+	 */
+	const body = document.body as HTMLBodyElement;
+	const navbarMenu = document.querySelector('.navbar-menu') as HTMLUListElement;
+	const navbarMenuButton = document.querySelector('.navbar-menu-button') as HTMLButtonElement;
+
+	const toggleMenuOpen = () => {
+		body.classList.toggle('overflow-hidden');
+		navbarMenuButton.classList.toggle('navbar-menu-button__open');
+		navbarMenu.classList.toggle('translate-x-full');
+	};
+
+	if (navbarMenuButton) {
+		navbarMenuButton.addEventListener('click', () => toggleMenuOpen());
+	}
+
+	/**
+	 * Close mobile menu on click
+	 */
+	const navbarMenuLinks = document.querySelectorAll('.navbar-menu-link') as NodeListOf<HTMLAnchorElement>;
+
+	navbarMenuLinks.forEach((link) => {
+		link.addEventListener('click', () => toggleMenuOpen());
+	});
+
+	/**
+	 * Active page link
+	 */
 	document.addEventListener('astro:page-load', () => {
-		/**
-		 * Mobile menu button
-		 */
-		const body = document.body as HTMLBodyElement;
-		const navbarMenu = document.querySelector('.navbar-menu') as HTMLUListElement;
-		const navbarMenuButton = document.querySelector('.navbar-menu-button') as HTMLButtonElement;
-
-		const toggleMenuOpen = () => {
-			body.classList.toggle('overflow-hidden');
-			navbarMenuButton.classList.toggle('navbar-menu-button__open');
-			navbarMenu.classList.toggle('translate-x-full');
-		};
-
-		if (navbarMenuButton) {
-			navbarMenuButton.addEventListener('click', () => toggleMenuOpen());
-		}
-
-		/**
-		 * Active page link
-		 */
-		const navbarMenuLinks = document.querySelectorAll('.navbar-menu-link') as NodeListOf<HTMLAnchorElement>;
-
 		navbarMenuLinks.forEach((link) => {
 			link.classList.remove('navbar-menu-link__active');
 
