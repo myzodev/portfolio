@@ -36,6 +36,8 @@ import NavbarLogo from './NavbarLogo.astro';
 	const navbarMenuButton = document.querySelector('.navbar-menu-button') as HTMLButtonElement;
 
 	const toggleMenuOpen = () => {
+        if (window.innerWidth > 1024) return;
+        
 		body.classList.toggle('overflow-hidden');
 		navbarMenuButton.classList.toggle('navbar-menu-button__open');
 		navbarMenu.classList.toggle('translate-x-full');

@@ -156,8 +156,8 @@
         @apply h2 py-10 lg:py-0 block lg:text-sm lg:font-body font-extrabold relative;
     }
 
-    .navbar-menu-link::before {
-        @apply transition-all;
+    .navbar-menu-link:not(.navbar-menu-link__active) {
+        @apply transition-colors duration-300 hover:text-primary-200;
     }
 
     .navbar-menu-link__active::before {

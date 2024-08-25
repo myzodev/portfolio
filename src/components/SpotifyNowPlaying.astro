@@ -3,18 +3,18 @@ import { Icon } from 'astro-icon/components';
 ---
 
 <a
-	class="my-48 md:my-0 flex shrink-0 items-center group"
+	class="my-48 md:my-0 flex items-center group"
 	href="https://open.spotify.com/playlist/1p2lZTlEB2PY6um9c7nLGP?si=7129cf72cd4140fb"
 	target="_blank"
 	data-song-link
 >
-	<div class="mr-16 text-right">
-		<small class="font-extrabold" data-song-name>Momentálne</small>
-		<small class="-mt-2 text-neutral-80" data-song-artist>nič nepočúvam</small>
+	<div class="mr-16 flex-1 text-right">
+		<small class="w-full font-extrabold" data-song-name>Momentálne</small>
+		<small class="-mt-2 w-full text-neutral-80" data-song-artist>nič nepočúvam</small>
 	</div>
 
 	<figure
-		class="size-[44px] relative rounded-8 overflow-hidden bg-neutral-700 transition-colors duration-200 group-hover:bg-neutral-600"
+		class="size-[44px] shrink-0 relative rounded-8 overflow-hidden bg-neutral-700 transition-colors duration-200 group-hover:bg-neutral-600"
 	>
 		<Icon
 			name="spotify"

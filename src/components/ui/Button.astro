@@ -69,7 +69,7 @@ const Component = href ? 'a' : 'button';
 					ease: 'expo.inOut',
 				};
 
-				button.addEventListener('mouseenter', (event: MouseEvent) => {
+				button.addEventListener('mouseenter', () => {
 					gsap.to(buttonBackground, {
 						...animationSettings,
 						scale: 1,
