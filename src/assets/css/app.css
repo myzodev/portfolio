@@ -125,15 +125,15 @@
 
 @layer components {
     .section-offset {
-        @apply py-96 lg:py-136;
+        @apply py-120 lg:py-160;
     }
 
     .section-offset-first {
-        @apply pt-32 pb-136 lg:py-136;
+        @apply pt-32 lg:pt-120 pb-120 lg:pb-160;
     }
 
     .section-offset-bottom {
-        @apply pb-96 lg:pb-136;
+        @apply pb-120 lg:pb-160;
     }
 
     .navbar {

@@ -1,0 +1,37 @@
+---
+import { Icon } from 'astro-icon/components';
+
+type Skill = {
+	heading: string;
+	text: string;
+};
+
+const skills: Skill[] = [
+	{
+		heading: 'Development',
+		text: 'Špecializujem sa na vytváranie responzívnych a moderných riešení pre webové stránky a aplikácie, ktoré sú rýchle a spoľahlivé.',
+	},
+	{
+		heading: 'UI Dizajn',
+		text: 'Zameriavam sa na tvorbu moderných a responzívnych dizajnov, ktoré zaisťujú plynulú interakciu a príjemný používateľský zážitok.',
+	},
+	{
+		heading: 'UX Dizajn',
+		text: 'Moje služby zahŕňajú analýzu potrieb používateľov, tvorbu používateľských ciest a testovanie pre zabezpečenie inituitivnosti a efektivity.',
+	},
+];
+---
+
+<ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-48 gap-y-72">
+	{
+		skills.map((skill, index) => (
+			<li>
+                <Icon name="down-right-arrow" class="-ml-6 size-24 text-neutral-80" />
+
+                <h3 class="py-24 mb-24 border-b border-neutral-600">{skill.heading}</h3>
+
+				<p class="text-neutral-40">{skill.text}</p>
+			</li>
+		))
+	}
+</ul>
