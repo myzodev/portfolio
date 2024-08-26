@@ -129,7 +129,7 @@
     }
 
     .section-offset-first {
-        @apply pt-32 lg:pt-120 pb-120 lg:pb-160;
+        @apply pt-32 lg:pt-104 pb-120 lg:pb-160;
     }
 
     .section-offset-bottom {

@@ -35,7 +35,7 @@ const buttonSizeClasses = (): string => {
 	}
 };
 
-const buttonClasses: string = `button-item relative align-middle font-bold text-center rounded-full overflow-hidden group transition-colors ease-in-out ${classes} ${buttonTypeClasses()} ${buttonSizeClasses()}`;
+const buttonClasses: string = `button-item relative align-middle font-bold text-center rounded-full overflow-hidden ${classes} ${buttonTypeClasses()} ${buttonSizeClasses()}`;
 
 const Component = href ? 'a' : 'button';
 ---
@@ -54,56 +54,37 @@ const Component = href ? 'a' : 'button';
 	document.addEventListener('astro:page-load', () => {
 		const buttons = document.querySelectorAll('.button-item') as NodeListOf<HTMLAnchorElement>;
 
-		if (buttons) {
-			buttons.forEach((button) => {
-				const buttonBackground = button.querySelector('[data-button-background]') as HTMLSpanElement;
-				const buttonWidth = button.clientWidth;
+		if (!buttons) return;
 
-				gsap.set(buttonBackground, {
-					width: buttonWidth * 2,
-					height: buttonWidth * 2,
-				});
+        buttons.forEach((button) => {
+            const buttonBackground = button.querySelector('[data-button-background]') as HTMLSpanElement;
+            const buttonWidth: number = button.clientWidth;
 
-				const animationSettings = {
-					duration: 0.85,
-					ease: 'expo.inOut',
-				};
+            gsap.set(buttonBackground, {
+                width: buttonWidth * 2,
+                height: buttonWidth * 2,
+            });
 
-				button.addEventListener('mouseenter', () => {
-					gsap.to(buttonBackground, {
-						...animationSettings,
-						scale: 1,
-					});
-				});
+            button.addEventListener('mouseenter', () => animateBackground(1));
+            button.addEventListener('mouseleave', () => animateBackground(0));
+            button.addEventListener('mousemove', (event: MouseEvent) => {
+                const { layerX, layerY } = event;
 
-				button.addEventListener('mousemove', (event: MouseEvent) => {
-					let { layerX, layerY } = event;
+                gsap.to(buttonBackground, {
+                    ease: 'none',
+                    duration: 0.1,
+                    x: layerX - buttonWidth,
+                    y: layerY - buttonWidth,
+                });
+            });
 
-					if (layerX > button.clientWidth) {
-						layerX = button.clientWidth;
-					}
-
-					gsap.to(buttonBackground, {
-						ease: 'none',
-						duration: 0.1,
-						x: layerX - buttonWidth,
-						y: layerY - buttonWidth,
-					});
-				});
-
-				button.addEventListener('mouseleave', (event) => {
-					let { layerX } = event;
-
-					if (layerX > button.clientWidth) {
-						layerX = button.clientWidth;
-					}
-
-					gsap.to(buttonBackground, {
-						...animationSettings,
-						scale: 0,
-					});
-				});
-			});
-		}
+            const animateBackground = (scaleTo: number) => {
+                gsap.to(buttonBackground, {
+                    duration: 0.8,
+                    ease: 'expo.inOut',
+                    scale: scaleTo,
+                });
+            };
+        });
 	});
 </script>

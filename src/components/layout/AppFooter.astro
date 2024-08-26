@@ -29,37 +29,33 @@ const links: CollectionEntry<'links'>[] = await getCollection('links');
 			<SpotifyNowPlaying />
 		</header>
 
-		<aside class="pt-24 flex justify-between border-t border-neutral-600">
+		<aside class="pt-24 flex justify-between items-center border-t border-neutral-600">
 			<div>
 				<small class="text-xs md:text-sm font-extrabold">Made in</small>
 				<small class="-mt-2 text-xs md:text-sm text-neutral-80">2024</small>
 			</div>
 
-			<div class="shrink-0">
-				<small class="mb-4 text-xs md:text-sm font-extrabold">Odkazy</small>
+            <ul class="gap-8 flex items-center shrink-0">
+                {
+                    links.map((link) => (
+                        <li>
+                            <a
+                                class="px-7 py-5 flex items-center rounded-8 bg-neutral-700 transition-colors hover:bg-neutral-600"
+                                href={link.data.url}
+                                target="_blank"
+                            >
+                                <figure class="size-24">
+                                    <Icon name={link.data.iconName} class="text-white" />
+                                </figure>
 
-				<ul class="gap-8 flex items-center">
-					{
-						links.map((link) => (
-							<li>
-								<a
-									class="px-7 py-5 flex items-center rounded-8 bg-neutral-700 transition-colors hover:bg-neutral-600"
-									href={link.data.url}
-									target="_blank"
-								>
-									<figure class="size-24">
-										<Icon name={link.data.iconName} class="text-white" />
-									</figure>
+                                <span class="mx-8 w-2 h-16 bg-neutral-100" />
 
-									<span class="mx-8 w-2 h-16 bg-neutral-100" />
-
-									<span class="pb-1 text-xs font-extrabold">{link.data.name}</span>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</div>
+                                <span class="pb-1 text-xs font-extrabold">{link.data.name}</span>
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
 		</aside>
 	</div>
 </div>

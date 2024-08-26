@@ -22,13 +22,13 @@ const skills: Skill[] = [
 ];
 ---
 
-<ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-48 gap-y-72">
+<ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-48 gap-y-56">
 	{
-		skills.map((skill, index) => (
+		skills.map((skill) => (
 			<li>
-                <Icon name="down-right-arrow" class="-ml-6 size-24 text-neutral-80" />
+				<Icon name="down-right-arrow" class="-ml-6 size-24 text-neutral-80" />
 
-                <h3 class="py-24 mb-24 border-b border-neutral-600">{skill.heading}</h3>
+				<h3 class="py-[21px] mb-24 border-b border-neutral-600">{skill.heading}</h3>
 
 				<p class="text-neutral-40">{skill.text}</p>
 			</li>
