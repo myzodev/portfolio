@@ -181,7 +181,7 @@
     }
 
     .contact-link {
-        @apply py-2 font-extrabold underline-offset-4 decoration-2 decoration-primary-300;
+        @apply py-2 font-extrabold underline-offset-2 decoration-white transition-colors duration-300 hover:decoration-primary-300;
     }
 
     .arrow-bottom-right {

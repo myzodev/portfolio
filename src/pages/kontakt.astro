@@ -14,15 +14,14 @@ const links: CollectionEntry<'links'>[] = await getCollection('links');
 >
 	<section class="section-offset-first container">
 		<header class="mb-96 lg:mb-112 lg:gap-48 grid grid-cols-12 items-end">
-            <div class="col-span-12 lg:col-span-7 mb-32 lg:mb-0 relative">
-                <h2 class="max-w-[400px] font-semibold">Máte otázku? Napíšme si
-                </h2>
+			<div class="col-span-12 lg:col-span-7 mb-32 lg:mb-0 relative">
+				<h2 class="max-w-[400px] font-semibold">Máte otázku? Napíšme si</h2>
 
-                <figure class="arrow-bottom-right">
-                    <Icon name="down-right-arrow" class="size-24 hidden lg:block text-white" />
-                    <Icon name="down-left-arrow" class="size-24 lg:hidden text-white" />
-                </figure>
-            </div>
+				<figure class="arrow-bottom-right">
+					<Icon name="down-right-arrow" class="size-24 hidden lg:block text-white" />
+					<Icon name="down-left-arrow" class="size-24 lg:hidden text-white" />
+				</figure>
+			</div>
 
 			<p class="mb-0 lg:mb-8 col-span-12 lg:col-span-5 text-neutral-40">
 				Ak máte otázku, spätnú väzbu alebo si chcete len pokecať, som samé ucho! Či už je to rýchly pozdrav
@@ -39,9 +38,9 @@ const links: CollectionEntry<'links'>[] = await getCollection('links');
 						<textarea name="text" placeholder="Správa" required></textarea>
 					</div>
 
-                    <div class="flex justify-end">
-                        <Button class="mt-40" type="submit" size="sm" style="primary" data-contact-form-submit>Odoslať správu</Button>
-                    </div>
+					<div class="flex justify-end">
+						<Button class="mt-40" type="submit" size="sm" style="primary" data-contact-form-submit>Odoslať správu</Button>
+					</div>
 				</form>
 			</div>
 
@@ -89,35 +88,31 @@ const links: CollectionEntry<'links'>[] = await getCollection('links');
 
 	const getFromData = async (form: HTMLFormElement) => {
 		const formData = new FormData(form);
-
 		const formValues = Array.from(formData.values()) as string[];
 		const trimmedFormValues = formValues.map((value) => value.trim()) as string[];
 
-		if (trimmedFormValues.includes('')) {
-			return;
-		}
-
 		let isLoading = false;
 
-		if (!isLoading) {
-			isLoading = true;
-			contactFormSubmit.disabled = true;
+		if (trimmedFormValues.includes('')) return;
+		if (isLoading) return;
 
-			const response = await fetch('https://contact.myzo.sk', {
-				method: 'POST',
-				body: formData,
-			});
+		isLoading = true;
+		contactFormSubmit.disabled = true;
 
-			const data: any = await response.json();
+		const response = await fetch('https://contact.myzo.sk', {
+			method: 'POST',
+			body: formData,
+		});
 
-			if (data) {
-				isLoading = false;
-				contactFormSubmit.disabled = false;
-			}
+		const data: { message: string; type: string } = await response.json();
 
-			if (data.type === 'success') {
-				form.reset();
-			}
+		if (data) {
+			isLoading = false;
+			contactFormSubmit.disabled = false;
+		}
+
+		if (data.type === 'success') {
+			form.reset();
 		}
 	};
 </script>
