@@ -1,0 +1,48 @@
+---
+const tech: string[] = ['HTML', 'CSS', 'TailwindCSS', 'JavaScript', 'Next.js', 'Nuxt.js', 'OctoberCMS', 'Figma', 'Photoshop', 'Illustrator'];
+---
+
+<div class="mt-80 lg:mt-96 overflow-hidden">
+	<header class="mb-16 flex justify-between items-center text-neutral-80">
+		<p class="uppercase text-xs font-extrabold">Pracujem s...</p>
+	</header>
+
+	<ul class="tech-carousel flex items-center">
+		{
+			tech.map((item) => (
+				<li class="flex items-center shrink-0">
+					<figure class="p-8 rounded-8 bg-neutral-800">
+						<img
+							class="size-24"
+							src={`/images/tech/${item.toLowerCase().replace('.', '')}.svg`}
+							alt={item}
+						/>
+					</figure>
+
+					<p class="pl-16 pr-64 md:pr-80 text-subheading font-extrabold">{item}</p>
+				</li>
+			))
+		}
+	</ul>
+</div>
+
+<script>
+	import gsap from 'gsap';
+
+	document.addEventListener('astro:page-load', () => {
+		const carousel = document.querySelector('.tech-carousel') as HTMLUListElement;
+		const carouselItems: HTMLLIElement[] = Array.from(document.querySelectorAll('.tech-carousel li'));
+		const totalWidth: number = carouselItems.reduce((total, item) => total + item.offsetWidth, 0);
+
+		// Duplicate the carousel content to create an infinite effect
+		gsap.set(carousel, { width: totalWidth * 2 });
+		carousel.innerHTML += carousel.innerHTML;
+
+		gsap.to(carousel, {
+			x: -totalWidth,
+			duration: 25,
+			ease: 'linear',
+			repeat: -1,
+		});
+	});
+</script>

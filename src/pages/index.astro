@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Projects from '../components/Projects.astro';
 import Skills from '../components/Skills.astro';
+import Tech from '../components/Tech.astro';
 import Experience from '../components/Experience.astro';
 import Button from '../components/ui/Button.astro';
 import { Icon } from 'astro-icon/components';
@@ -69,6 +70,7 @@ const projects = await getCollection('work');
     <section class="section-offset-bottom container">
         <h2 class="mb-32 md:mb-64 max-w-[500px] font-semibold">Čo vám dokážem ponuknúť?</h2>
         <Skills />
+        <Tech />
 	</section>
 
 	<section class="section-offset-bottom container grid grid-cols-12 gap-16">
