@@ -185,6 +185,6 @@
     }
 
     .arrow-bottom-right {
-        @apply mb-4 absolute right-0 bottom-0;
+        @apply mb-5 absolute right-0 bottom-0;
     }
 }
