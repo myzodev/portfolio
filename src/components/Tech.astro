@@ -1,18 +1,27 @@
 ---
-const tech: string[] = [
-	'HTML',
-	'CSS',
-	'SASS',
-	'TailwindCSS',
-	'JavaScript',
-	'Next.js',
-	'Nuxt.js',
-    'Astro.js',
-	'Alpine.js',
-	'OctoberCMS',
-	'Figma',
-	'Photoshop',
-	'Illustrator',
+import type { Tech } from "../../types";
+
+const tech: Tech[] = [
+	{ name: 'HTML', icon: 'html' },
+	{ name: 'CSS', icon: 'css' },
+	{ name: 'SASS', icon: 'sass' },
+	{ name: 'TailwindCSS', icon: 'tailwindcss' },
+	{ name: 'Bootstrap', icon: 'bootstrap' },
+	{ name: 'JavaScript/TypeScript', icon: 'javascript' },
+	{ name: 'React.js/Next.js', icon: 'reactjs' },
+	{ name: 'Vue.js/Nuxt.js', icon: 'vuejs' },
+	{ name: 'Astro.js', icon: 'astrojs' },
+	{ name: 'Alpine.js', icon: 'alpinejs' },
+	{ name: 'PHP', icon: 'php' },
+	{ name: 'Laravel', icon: 'laravel' },
+	{ name: 'OctoberCMS', icon: 'octobercms' },
+	{ name: 'GitHub/GitLab', icon: 'git' },
+	{ name: 'NPM', icon: 'npm' },
+	{ name: 'Webpack', icon: 'webpack' },
+	{ name: 'Vite.js', icon: 'vitejs' },
+	{ name: 'Figma', icon: 'figma' },
+	{ name: 'Photoshop', icon: 'photoshop' },
+	{ name: 'Illustrator', icon: 'illustrator' },
 ];
 ---
 
@@ -28,12 +37,12 @@ const tech: string[] = [
 					<figure class="p-8 rounded-8 bg-neutral-800">
 						<img
 							class="size-24"
-							src={`/images/tech/${item.toLowerCase().replace('.', '')}.svg`}
-							alt={item}
+							src={`/images/tech/${item.icon}.svg`}
+							alt={item.name}
 						/>
 					</figure>
 
-					<p class="pl-16 pr-64 md:pr-80 text-subheading font-extrabold">{item}</p>
+					<p class="pl-16 pr-64 md:pr-80 text-subheading font-extrabold">{item.name}</p>
 				</li>
 			))
 		}
@@ -55,7 +64,7 @@ const tech: string[] = [
 
 			gsap.to(carousel, {
 				x: -totalWidth,
-				duration: 25,
+				duration: 35,
 				ease: 'linear',
 				repeat: -1,
 			});

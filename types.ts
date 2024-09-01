@@ -11,3 +11,8 @@ export type Song = {
     artistName: string;
     songURL: string;
 };
+
+export type Tech = {
+    name: string;
+    icon: string;
+};
