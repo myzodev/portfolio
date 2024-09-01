@@ -48,15 +48,17 @@ const tech: string[] = [
 		const carouselItems: HTMLLIElement[] = Array.from(document.querySelectorAll('.tech-carousel li'));
 		const totalWidth: number = carouselItems.reduce((total, item) => total + item.offsetWidth, 0);
 
-		// Duplicate the carousel content to create an infinite effect
-		gsap.set(carousel, { width: totalWidth * 2 });
-		carousel.innerHTML += carousel.innerHTML;
+		if (carousel) {
+			// Duplicate the carousel content to create an infinite effect
+			gsap.set(carousel, { width: totalWidth * 2 });
+			carousel.innerHTML += carousel.innerHTML;
 
-		gsap.to(carousel, {
-			x: -totalWidth,
-			duration: 25,
-			ease: 'linear',
-			repeat: -1,
-		});
+			gsap.to(carousel, {
+				x: -totalWidth,
+				duration: 25,
+				ease: 'linear',
+				repeat: -1,
+			});
+		}
 	});
 </script>
