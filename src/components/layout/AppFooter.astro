@@ -30,12 +30,12 @@ const links: CollectionEntry<'links'>[] = await getCollection('links');
 		</header>
 
 		<aside class="pt-24 flex justify-between items-center border-t border-neutral-600">
-			<div>
+			<div class="shrink-0">
 				<small class="text-xs md:text-sm font-extrabold">Made in</small>
 				<small class="-mt-2 text-xs md:text-sm text-neutral-80">2024</small>
 			</div>
 
-            <ul class="gap-8 flex items-center shrink-0">
+            <ul class="gap-8 flex flex-wrap justify-end items-center">
                 {
                     links.map((link) => (
                         <li>
@@ -50,7 +50,7 @@ const links: CollectionEntry<'links'>[] = await getCollection('links');
 
                                 <span class="mx-8 w-2 h-16 bg-neutral-100" />
 
-                                <span class="pb-1 text-xs font-extrabold">{link.data.name}</span>
+                                <span class="pt-1 text-xs font-extrabold">{link.data.name}</span>
                             </a>
                         </li>
                     ))

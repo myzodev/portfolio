@@ -1,5 +1,8 @@
 ---
+import { getEntry } from 'astro:content';
 import NavbarLogo from './NavbarLogo.astro';
+
+const github = await getEntry('links', 'github');
 ---
 
 <nav class="navbar">
@@ -21,7 +24,7 @@ import NavbarLogo from './NavbarLogo.astro';
 			</li>
 
 			<li>
-				<a class="navbar-menu-link" href="https://github.com/michalvalo" target="_blank">Github</a>
+				<a class="navbar-menu-link" href={github.data.url} target="_blank">{github.data.name}</a>
 			</li>
 		</ul>
 	</div>
