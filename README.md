@@ -2,6 +2,12 @@
 
 Nothing special, just a showcase of some of my work and the tech I've worked with.
 
+## Tech
+
+- **Astro.js**
+- **TailwindCSS**
+- **GSAP**
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
