@@ -1,5 +1,5 @@
 ---
 name: 'GitHub'
-url: 'https://github.com/myzo1'
+url: 'https://github.com/myzo-dev'
 iconName: 'github'
 ---
