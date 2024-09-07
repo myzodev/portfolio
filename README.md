@@ -1,4 +1,4 @@
-# 🌎 [Personal website](https://myzo.sk)
+# [Personal website](https://myzo.sk)
 
 Nothing special, just a showcase of some of my work and the tech I've worked with.
 
@@ -8,7 +8,7 @@ Nothing special, just a showcase of some of my work and the tech I've worked wit
 - **TailwindCSS**
 - **GSAP**
 
-## 🧞 Commands
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 
