@@ -1,4 +1,4 @@
-# [Personal website](https://myzo.sk)
+# Personal website
 
 Nothing special, just a showcase of some of my work and the tech I've worked with.
 
