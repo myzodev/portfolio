@@ -43,7 +43,7 @@
 			element.addEventListener('mouseleave', () => handleMouseLeave());
 
 			const handleMouseEnter = () => {
-				if (element.classList.contains('projects-item')) {
+				if (element.classList.contains('projects-item') || element.classList.contains('link-overlay')) {
 					return animateMouseElement('in');
 				}
 

@@ -187,4 +187,16 @@
     .arrow-bottom-right {
         @apply mb-5 absolute right-0 bottom-0;
     }
+
+    .link-overlay:before {
+        @apply content-[''] absolute inset-0 z-0;
+    }
+
+    .link-overlay-box {
+        @apply relative;
+    }
+
+    .link-overlay-box a:not(.link-overlay) {
+        @apply relative z-10;
+    }
 }

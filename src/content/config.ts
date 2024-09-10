@@ -7,6 +7,7 @@ const work = defineCollection({
         imageName: z.string(),
         role: z.string(),
         url: z.string(),
+        wip: z.boolean(),
         backgroundColor: z.string(),
     }),
 });
