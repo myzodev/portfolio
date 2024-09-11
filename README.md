@@ -1,6 +1,6 @@
 # Personal website
 
-Nothing special, just a showcase of some of my work and the tech I've worked with.
+Fully responsive website to showcase some of my work and the tech I've worked with.
 
 ## Tech
 
