@@ -25,7 +25,7 @@ const projects = await getCollection('work');
 			</picture>
 		</figure>
 
-		<div class="section-offset-first container relative">
+		<section class="section-offset-first container relative">
 			<article class="max-w-[926px]">
 				<h1 class="display mb-96 lg:mb-112 font-semibold">Vylepšite svoju online identitu</h1>
 
@@ -48,11 +48,11 @@ const projects = await getCollection('work');
 					</span>
 				</p>
 			</aside>
-		</div>
+		</section>
 	</header>
 
 	<section class="section-offset-bottom container">
-		<header class="mb-16 flex justify-between items-center text-neutral-80">
+		<header class="mb-24 flex justify-between items-center text-neutral-80">
 			<p class="uppercase text-xs font-extrabold">Najnovšie práce</p>
 
 			<figure class="size-24">
@@ -62,9 +62,9 @@ const projects = await getCollection('work');
 
 		<Projects projects={projects.slice(0, 4)} />
 
-		<div class="mt-72 md:mt-96 flex justify-center">
+		<footer class="mt-72 md:mt-96 flex justify-center">
 			<Button href="/projekty" style="light" size="sm">Zobraziť všetky práce</Button>
-		</div>
+		</footer>
 	</section>
 
 	<section class="section-offset-bottom container">
@@ -74,9 +74,9 @@ const projects = await getCollection('work');
 	</section>
 
 	<section class="section-offset-bottom container grid grid-cols-12 gap-16">
-		<div class="col-span-12 lg:col-span-4">
+		<header class="col-span-12 lg:col-span-4">
 			<h2 class="mb-32 font-semibold">Pracovné skúsenosti</h2>
-		</div>
+		</header>
 
 		<Experience />
 	</section>

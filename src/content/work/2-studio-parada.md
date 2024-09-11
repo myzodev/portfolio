@@ -1,6 +1,6 @@
 ---
 name: 'STUDIO PARADA'
-imageName: 'studio-parada'
+slugify: 'studio-parada'
 role: 'Development'
 url: 'https://studioparada.com'
 wip: false

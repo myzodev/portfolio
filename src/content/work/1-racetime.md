@@ -1,6 +1,6 @@
 ---
 name: 'RaceTime'
-imageName: 'racetime'
+slugify: 'racetime'
 role: 'Development & Dizajn'
 url: 'https://racetime.sk'
 wip: true

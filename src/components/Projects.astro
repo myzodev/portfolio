@@ -13,7 +13,7 @@ const { projects } = Astro.props;
 		projects.map((project) => (
 			<li class="projects-item link-overlay-box w-full group">
                 {project.data.wip && (
-                    <small class="px-10 py-1 absolute left-1/2 -top-[12px] -translate-x-1/2 font-semibold rounded-full z-10 bg-primary-300">
+                    <small class="px-10 py-1 absolute left-1/2 -top-10 -translate-x-1/2 text-xs font-semibold rounded-full z-10 bg-primary-300">
                         Work in progress
                     </small>
                 )}
@@ -24,11 +24,11 @@ const { projects } = Astro.props;
                 >
                     <figure class="p-24 md:p-32 flex justify-center items-center">
                         <picture>
-                            <source srcset={`/images/projects/${project.data.imageName}.webp`} type="image/webp" />
+                            <source srcset={`/images/projects/${project.data.slugify}.webp`} type="image/webp" />
 
                             <img
                                 class="h-auto rounded-8 transition-transform duration-500 group-hover:scale-[1.025]"
-                                src={`/images/projects/${project.data.imageName}.jpg`}
+                                src={`/images/projects/${project.data.slugify}.jpg`}
                                 alt={project.data.name}
                                 width={500}
                                 height={293}
@@ -39,7 +39,7 @@ const { projects } = Astro.props;
                 </div>
 
                 <article class="py-16 lg:py-24 flex justify-between items-center border-b border-neutral-600 transition-opacity duration-500 group-hover:opacity-70">
-                    <a class="link-overlay" href={project.data.url}>
+                    <a class="link-overlay" href={`/projekty/${project.data.slugify}`}>
                         <h4>{project.data.name}</h4>
                     </a>
 

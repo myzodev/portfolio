@@ -1,6 +1,6 @@
 ---
 name: 'ŠARMDENT'
-imageName: 'sarmdent'
+slugify: 'sarmdent'
 role: 'Development'
 url: 'https://sarmdent.sk'
 wip: false

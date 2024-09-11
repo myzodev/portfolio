@@ -1,6 +1,6 @@
 ---
 name: 'Volita'
-imageName: 'volita'
+slugify: 'volita'
 role: 'Development & Dizajn'
 url: 'https://volitaservis.sk'
 wip: false

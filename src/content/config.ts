@@ -4,7 +4,7 @@ const work = defineCollection({
     type: 'content',
     schema: z.object({
         name: z.string(),
-        imageName: z.string(),
+        slugify: z.string(),
         role: z.string(),
         url: z.string(),
         wip: z.boolean(),

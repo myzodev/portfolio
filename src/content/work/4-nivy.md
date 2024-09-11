@@ -1,6 +1,6 @@
 ---
 name: 'Nivy'
-imageName: 'nivy'
+slugify: 'nivy'
 role: 'Development'
 url: 'https://nivy.com'
 wip: false

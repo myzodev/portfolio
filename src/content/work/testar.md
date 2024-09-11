@@ -1,6 +1,6 @@
 ---
 name: 'TESTAR'
-imageName: 'testar'
+slugify: 'testar'
 role: 'Development & Dizajn'
 url: 'https://testar.sk'
 wip: false

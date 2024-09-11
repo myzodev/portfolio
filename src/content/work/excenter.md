@@ -1,6 +1,6 @@
 ---
 name: 'Excenter'
-imageName: 'excenter'
+slugify: 'excenter'
 role: 'Development'
 url: 'https://excenter.sk'
 wip: false
