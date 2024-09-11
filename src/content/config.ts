@@ -7,6 +7,7 @@ const work = defineCollection({
         slugify: z.string(),
         role: z.string(),
         url: z.string(),
+        year: z.number(),
         wip: z.boolean(),
         backgroundColor: z.string(),
     }),
