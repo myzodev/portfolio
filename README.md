@@ -5,6 +5,7 @@ Fully responsive website to showcase some of my work and the tech I've worked wi
 ## Tech
 
 - **Astro.js**
+- **TypeScript**
 - **TailwindCSS**
 - **GSAP**
 
