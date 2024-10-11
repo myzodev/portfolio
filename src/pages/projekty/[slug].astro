@@ -4,39 +4,39 @@ import Layout from '../../layouts/Layout.astro';
 import { Icon } from 'astro-icon/components';
 
 export async function getStaticPaths() {
-    const blogEntries = await getCollection('work');
+	const blogEntries = await getCollection('work');
 
-    return blogEntries.map(entry => ({
-        params: { slug: entry.data.slugify }, props: { project: entry.data },
-    }));
+	return blogEntries.map(entry => ({
+		params: { slug: entry.data.slugify }, props: { project: entry.data }
+	}));
 }
 
 const { project } = Astro.props;
 ---
 <Layout title={`${project.name} | Myžo`} description="Od dizajnu k hotovému produktu">
-    <header class="p-16 md:p-32 !pt-0">
-        <div 
-            class="p-24 md:p-32 lg:p-72 h-[40vh] flex items-end rounded-24 overflow-hidden" 
-            style={`background-color: ${project.backgroundColor}`}
-        >
-            <h2 class="h1 font-semibold">{project.name}</h2>
-        </div>
+	<header class="p-16 md:p-32 !pt-0">
+		<div
+			class="p-24 md:p-32 lg:p-72 h-[40vh] flex items-end rounded-24 overflow-hidden"
+			style={`background-color: ${project.backgroundColor}`}
+		>
+			<h2 class="h1 font-semibold">{project.name}</h2>
+		</div>
 
-        <aside class="mt-16 md:mt-24 gap-16 md:gap-24 flex flex-col lg:flex-row">
-            <p class="p-24 md:p-32 w-full rounded-16 text-subheading font-extrabold text-center bg-neutral-800">{project.role}</p>
-            <p class="p-24 md:p-32 w-full rounded-16 text-subheading font-extrabold text-center bg-neutral-800">{project.year}</p>
-            <a 
-                class="p-24 md:p-32 w-full flex justify-center items-center rounded-16 text-subheading font-extrabold bg-neutral-800 hover:bg-neutral-700 transition-colors duration-500" 
-                href={project.url} 
-                target="_blank"
-            >
-                Navštíviť web
-                <Icon name="link-external" class="ml-8 size-16 text-neutral-50" />
-            </a>
-        </aside>
-    </header>
+		<aside class="mt-16 md:mt-24 gap-16 md:gap-24 flex flex-col lg:flex-row">
+			<p class="p-24 md:p-32 w-full rounded-16 text-subheading font-extrabold text-center bg-neutral-800">{project.role}</p>
+			<p class="p-24 md:p-32 w-full rounded-16 text-subheading font-extrabold text-center bg-neutral-800">{project.year}</p>
+			<a
+				class="p-24 md:p-32 w-full flex justify-center items-center rounded-16 text-subheading font-extrabold bg-neutral-800 hover:bg-neutral-700 transition-colors duration-500"
+				href={project.url}
+				target="_blank"
+			>
+				Navštíviť web
+				<Icon name="link-external" class="ml-8 size-16 text-neutral-50" />
+			</a>
+		</aside>
+	</header>
 
-    <section class="section-offset">
-        <h2 class="font-semibold text-center">Work in progress</h2>
-    </section>
+	<section class="section-offset">
+		<h2 class="font-semibold text-center">Work in progress</h2>
+	</section>
 </Layout>

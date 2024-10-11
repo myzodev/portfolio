@@ -1,11 +1,12 @@
 ---
-type Props = {
+interface Props {
 	class?: string;
 	href?: string;
 	style?: 'light' | 'light-ghost' | 'primary';
 	size?: 'xs' | 'sm' | 'base';
+
 	[key: string]: any;
-};
+}
 
 const { class: classes, href, style, size, ...props } = Astro.props;
 
@@ -56,35 +57,35 @@ const Component = href ? 'a' : 'button';
 
 		if (!buttons) return;
 
-        buttons.forEach((button) => {
-            const buttonBackground = button.querySelector('[data-button-background]') as HTMLSpanElement;
-            const buttonWidth: number = button.clientWidth;
+		buttons.forEach((button) => {
+			const buttonBackground = button.querySelector('[data-button-background]') as HTMLSpanElement;
+			const buttonWidth: number = button.clientWidth;
 
-            gsap.set(buttonBackground, {
-                width: buttonWidth * 2,
-                height: buttonWidth * 2,
-            });
+			gsap.set(buttonBackground, {
+				width: buttonWidth * 2,
+				height: buttonWidth * 2
+			});
 
-            button.addEventListener('mouseenter', () => animateBackground(1));
-            button.addEventListener('mouseleave', () => animateBackground(0));
-            button.addEventListener('mousemove', (event: MouseEvent) => {
-                const { layerX, layerY } = event;
+			button.addEventListener('mouseenter', () => animateBackground(1));
+			button.addEventListener('mouseleave', () => animateBackground(0));
+			button.addEventListener('mousemove', (event: MouseEvent) => {
+				const { layerX, layerY } = event;
 
-                gsap.to(buttonBackground, {
-                    ease: 'none',
-                    duration: 0.1,
-                    x: layerX - buttonWidth,
-                    y: layerY - buttonWidth,
-                });
-            });
+				gsap.to(buttonBackground, {
+					ease: 'none',
+					duration: 0.1,
+					x: layerX - buttonWidth,
+					y: layerY - buttonWidth
+				});
+			});
 
-            const animateBackground = (scaleTo: number) => {
-                gsap.to(buttonBackground, {
-                    duration: 0.8,
-                    ease: 'expo.inOut',
-                    scale: scaleTo,
-                });
-            };
-        });
+			const animateBackground = (scaleTo: number) => {
+				gsap.to(buttonBackground, {
+					duration: 0.8,
+					ease: 'expo.inOut',
+					scale: scaleTo
+				});
+			};
+		});
 	});
 </script>

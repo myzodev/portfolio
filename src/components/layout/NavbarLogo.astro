@@ -8,28 +8,28 @@
 <script>
 	import gsap from 'gsap';
 
-    const navbarLogo = document.querySelector('.navbar-logo') as HTMLAnchorElement;
-    const logoItems = document.querySelectorAll('.logo-item') as NodeListOf<HTMLSpanElement>;
+	const navbarLogo = document.querySelector('.navbar-logo') as HTMLAnchorElement;
+	const logoItems = document.querySelectorAll('.logo-item') as NodeListOf<HTMLSpanElement>;
 
-    const tl = gsap.timeline({ defaults: { stagger: 0.05, duration: 0.25 }, paused: true });
+	const tl = gsap.timeline({ defaults: { stagger: 0.05, duration: 0.25 }, paused: true });
 
-    tl.to(logoItems, {
-        y: '100%',
-        ease: 'expo.in',
-    });
+	tl.to(logoItems, {
+		y: '100%',
+		ease: 'expo.in'
+	});
 
-    tl.set(logoItems, {
-        y: '-100%',
-    });
+	tl.set(logoItems, {
+		y: '-100%'
+	});
 
-    tl.to(logoItems, {
-        y: '0%',
-        ease: 'expo.out',
-    });
+	tl.to(logoItems, {
+		y: '0%',
+		ease: 'expo.out'
+	});
 
-    navbarLogo.addEventListener('mouseenter', () => {
-        if (!tl.isActive()) {
-            tl.restart();
-        }
-    });
+	navbarLogo.addEventListener('mouseenter', () => {
+		if (!tl.isActive()) {
+			tl.restart();
+		}
+	});
 </script>

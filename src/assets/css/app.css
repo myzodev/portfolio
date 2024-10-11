@@ -3,200 +3,200 @@
 @tailwind utilities;
 
 @layer base {
-    @font-face {
-        font-family: 'ClashDisplay';
-        src: url('/fonts/ClashDisplay-Semibold.woff2') format('woff2');
-        font-weight: 600;
-        font-style: normal;
-        font-display: swap;
-    }
+	@font-face {
+		font-family: 'ClashDisplay';
+		src: url('/fonts/ClashDisplay-Semibold.woff2') format('woff2');
+		font-weight: 600;
+		font-style: normal;
+		font-display: swap;
+	}
 
-    @font-face {
-        font-family: 'ClashDisplay';
-        src: url('/fonts/ClashDisplay-Regular.woff2') format('woff2');
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-    }
+	@font-face {
+		font-family: 'ClashDisplay';
+		src: url('/fonts/ClashDisplay-Regular.woff2') format('woff2');
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
 
-    @font-face {
-        font-family: 'Nunito';
-        src: url('/fonts/Nunito-ExtraBold.woff2') format('woff2');
-        font-weight: 700;
-        font-style: normal;
-        font-display: swap;
-    }
+	@font-face {
+		font-family: 'Nunito';
+		src: url('/fonts/Nunito-ExtraBold.woff2') format('woff2');
+		font-weight: 700;
+		font-style: normal;
+		font-display: swap;
+	}
 
-    @font-face {
-        font-family: 'Nunito';
-        src: url('/fonts/Nunito-Regular.woff2') format('woff2');
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-    }
+	@font-face {
+		font-family: 'Nunito';
+		src: url('/fonts/Nunito-Regular.woff2') format('woff2');
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
 
-    body {
-        @apply relative antialiased text-base font-body text-white bg-neutral-900;
-    }
+	body {
+		@apply relative antialiased text-base font-body text-white bg-neutral-900;
+	}
 
-    a,
-    label {
-        @apply inline-block;
-    }
+	a,
+	label {
+		@apply inline-block;
+	}
 
-    h1 {
-        @apply h1;
-    }
+	h1 {
+		@apply h1;
+	}
 
-    h2 {
-        @apply h2;
-    }
+	h2 {
+		@apply h2;
+	}
 
-    h3 {
-        @apply h3;
-    }
+	h3 {
+		@apply h3;
+	}
 
-    h4 {
-        @apply h4;
-    }
+	h4 {
+		@apply h4;
+	}
 
-    h5 {
-        @apply h5;
-    }
+	h5 {
+		@apply h5;
+	}
 
-    h6 {
-        @apply h6;
-    }
+	h6 {
+		@apply h6;
+	}
 
-    small {
-        @apply text-sm;
-    }
+	small {
+		@apply text-sm;
+	}
 
-    p,
-    small {
-        @apply block;
-    }
+	p,
+	small {
+		@apply block;
+	}
 
-    strong {
-        @apply font-semibold;
-    }
+	strong {
+		@apply font-semibold;
+	}
 
-    img,
-    svg {
-        @apply w-full h-full;
-    }
+	img,
+	svg {
+		@apply w-full h-full;
+	}
 
-    input,
-    textarea {
-        @apply py-8 lg:py-[12px] border-b border-neutral-600 outline-none bg-neutral-900;
-    }
+	input,
+	textarea {
+		@apply py-8 lg:py-[12px] border-b border-neutral-600 outline-none bg-neutral-900;
+	}
 
-    textarea {
-        @apply h-200 max-h-240 min-h-96;
-    }
+	textarea {
+		@apply h-200 max-h-240 min-h-96;
+	}
 
-    input:focus,
-    textarea:focus {
-        @apply border-b-primary-300;
-    }
+	input:focus,
+	textarea:focus {
+		@apply border-b-primary-300;
+	}
 
-    button:disabled {
-        @apply opacity-50;
-    }
+	button:disabled {
+		@apply opacity-50;
+	}
 }
 
 @layer utilities {
-    .writing-vertical {
-        writing-mode: vertical-lr;
-    }
+	.writing-vertical {
+		writing-mode: vertical-lr;
+	}
 
-    .orientation-sideways {
-        text-orientation: sideways;
-    }
+	.orientation-sideways {
+		text-orientation: sideways;
+	}
 
-    .animation-delay-100 {
-        animation-delay: 100ms;
-    }
+	.animation-delay-100 {
+		animation-delay: 100ms;
+	}
 
-    .animation-delay-125 {
-        animation-delay: 200ms;
-    }
+	.animation-delay-125 {
+		animation-delay: 200ms;
+	}
 }
 
 @layer components {
-    .section-offset {
-        @apply py-144 lg:py-176;
-    }
+	.section-offset {
+		@apply py-144 lg:py-176;
+	}
 
-    .section-offset-first {
-        @apply pt-32 lg:pt-104 pb-144 lg:pb-176;
-    }
+	.section-offset-first {
+		@apply pt-32 lg:pt-104 pb-144 lg:pb-176;
+	}
 
-    .section-offset-bottom {
-        @apply pb-144 lg:pb-176;
-    }
+	.section-offset-bottom {
+		@apply pb-144 lg:pb-176;
+	}
 
-    .navbar {
-        @apply container relative z-100;
-    }
+	.navbar {
+		@apply container relative z-100;
+	}
 
-    .navbar-container {
-        @apply lg:py-32 flex justify-between items-center;
-    }
+	.navbar-container {
+		@apply lg:py-32 flex justify-between items-center;
+	}
 
-    .navbar-logo {
-        @apply h6 font-semibold z-90;
-    }
+	.navbar-logo {
+		@apply h6 font-semibold z-90;
+	}
 
-    .navbar-menu {
-        @apply pt-80 px-24 lg:p-0 w-full lg:w-auto h-[100dvh] lg:h-auto lg:flex items-center fixed lg:static top-0 left-0 bg-neutral-800 lg:bg-transparent transition-transform duration-300;
-    }
+	.navbar-menu {
+		@apply pt-80 px-24 lg:p-0 w-full lg:w-auto h-[100dvh] lg:h-auto lg:flex items-center fixed lg:static top-0 left-0 bg-neutral-800 lg:bg-transparent transition-transform duration-300;
+	}
 
-    .navbar-menu-link {
-        @apply h2 py-10 lg:py-0 block lg:text-sm lg:font-body font-extrabold relative;
-    }
+	.navbar-menu-link {
+		@apply h2 py-10 lg:py-0 block lg:text-sm lg:font-body font-extrabold relative;
+	}
 
-    .navbar-menu-link:not(.navbar-menu-link__active) {
-        @apply transition-colors duration-300 hover:text-primary-200;
-    }
+	.navbar-menu-link:not(.navbar-menu-link__active) {
+		@apply transition-colors duration-300 hover:text-primary-200;
+	}
 
-    .navbar-menu-link__active::before {
-        @apply content-[""] w-112 lg:w-3/4 h-16 lg:h-10 absolute -left-2 bottom-8 lg:bottom-4 -translate-y-1/2 lg:translate-y-0 -z-10 bg-primary-300;
-    }
+	.navbar-menu-link__active::before {
+		@apply content-[""] w-112 lg:w-3/4 h-16 lg:h-10 absolute -left-2 bottom-8 lg:bottom-4 -translate-y-1/2 lg:translate-y-0 -z-10 bg-primary-300;
+	}
 
-    .navbar-menu-button {
-        @apply p-32 -mr-32 block lg:hidden z-10;
-    }
+	.navbar-menu-button {
+		@apply p-32 -mr-32 block lg:hidden z-10;
+	}
 
-    .navbar-menu-button .line {
-        @apply my-4 w-[20px] h-2 bg-white transition-transform;
-    }
+	.navbar-menu-button .line {
+		@apply my-4 w-[20px] h-2 bg-white transition-transform;
+	}
 
-    .navbar-menu-button__open .line-01 {
-        transform: translate(0, 3px) rotate(45deg);
-    }
+	.navbar-menu-button__open .line-01 {
+		transform: translate(0, 3px) rotate(45deg);
+	}
 
-    .navbar-menu-button__open .line-02 {
-        transform: translate(0, -3px) rotate(-45deg);
-    }
+	.navbar-menu-button__open .line-02 {
+		transform: translate(0, -3px) rotate(-45deg);
+	}
 
-    .contact-link {
-        @apply py-2 font-extrabold underline-offset-2 decoration-white transition-colors duration-300 hover:decoration-primary-300;
-    }
+	.contact-link {
+		@apply py-2 font-extrabold underline-offset-2 decoration-white transition-colors duration-300 hover:decoration-primary-300;
+	}
 
-    .arrow-bottom-right {
-        @apply mb-5 absolute right-0 bottom-0;
-    }
+	.arrow-bottom-right {
+		@apply mb-5 absolute right-0 bottom-0;
+	}
 
-    .link-overlay:before {
-        @apply content-[''] absolute inset-0 z-0;
-    }
+	.link-overlay:before {
+		@apply content-[''] absolute inset-0 z-0;
+	}
 
-    .link-overlay-box {
-        @apply relative;
-    }
+	.link-overlay-box {
+		@apply relative;
+	}
 
-    .link-overlay-box a:not(.link-overlay) {
-        @apply relative z-10;
-    }
+	.link-overlay-box a:not(.link-overlay) {
+		@apply relative z-10;
+	}
 }

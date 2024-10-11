@@ -25,7 +25,7 @@
 			gsap.to(hoverElement, {
 				x: newX,
 				y: newY,
-				duration: 0.3,
+				duration: 0.3
 			});
 		};
 
@@ -57,13 +57,13 @@
 			const animateMouseElement = (mode: 'in' | 'out' | 'scaleOut') => {
 				const animationSettings = {
 					duration: 0.5,
-					ease: 'expo.inOut',
+					ease: 'expo.inOut'
 				};
 
 				if (mode === 'scaleOut') {
 					return gsap.to(hoverElement, {
 						...animationSettings,
-						scale: 0,
+						scale: 0
 					});
 				}
 
@@ -72,12 +72,12 @@
 
 				gsap.to(hoverElement, {
 					...animationSettings,
-					scale: scale,
+					scale: scale
 				});
 
 				gsap.to(hoverElementText, {
 					...animationSettings,
-					opacity: opacity,
+					opacity: opacity
 				});
 			};
 		});

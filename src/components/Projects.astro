@@ -1,9 +1,9 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 
-type Props = {
+interface Props {
 	projects: CollectionEntry<'work'>[];
-};
+}
 
 const { projects } = Astro.props;
 ---
@@ -12,39 +12,41 @@ const { projects } = Astro.props;
 	{
 		projects.map((project) => (
 			<li class="projects-item link-overlay-box w-full group">
-                {project.data.wip && (
-                    <small class="px-10 py-1 absolute left-1/2 -top-10 -translate-x-1/2 text-xs font-semibold rounded-full z-10 bg-primary-300">
-                        Work in progress
-                    </small>
-                )}
+				{project.data.wip && (
+					<small
+						class="px-10 py-1 absolute left-1/2 -top-10 -translate-x-1/2 text-xs font-semibold rounded-full z-10 bg-primary-300">
+						Work in progress
+					</small>
+				)}
 
-                <div
-                    class="aspect-w-1 aspect-h-1 rounded-24 bg-neutral-800"
-                    style={`background-color: ${project.data.backgroundColor}`}
-                >
-                    <figure class="p-24 md:p-32 flex justify-center items-center">
-                        <picture>
-                            <source srcset={`/images/projects/${project.data.slugify}.webp`} type="image/webp" />
+				<div
+					class="aspect-w-1 aspect-h-1 rounded-24 bg-neutral-800"
+					style={`background-color: ${project.data.backgroundColor}`}
+				>
+					<figure class="p-24 md:p-32 flex justify-center items-center">
+						<picture>
+							<source srcset={`/images/projects/${project.data.slugify}.webp`} type="image/webp" />
 
-                            <img
-                                class="h-auto rounded-8 transition-transform duration-500 group-hover:scale-[1.025]"
-                                src={`/images/projects/${project.data.slugify}.jpg`}
-                                alt={project.data.name}
-                                width={500}
-                                height={293}
-                                loading="lazy"
-                            />
-                        </picture>
-                    </figure>
-                </div>
+							<img
+								class="h-auto rounded-8 transition-transform duration-500 group-hover:scale-[1.025]"
+								src={`/images/projects/${project.data.slugify}.jpg`}
+								alt={project.data.name}
+								width={500}
+								height={293}
+								loading="lazy"
+							/>
+						</picture>
+					</figure>
+				</div>
 
-                <article class="py-16 lg:py-24 flex justify-between items-center border-b border-neutral-600 transition-opacity duration-500 group-hover:opacity-70">
-                    <a class="link-overlay" href={`/projekty/${project.data.slugify}`}>
-                        <h4>{project.data.name}</h4>
-                    </a>
+				<article
+					class="py-16 lg:py-24 flex justify-between items-center border-b border-neutral-600 transition-opacity duration-500 group-hover:opacity-70">
+					<a class="link-overlay" href={`/projekty/${project.data.slugify}`}>
+						<h4>{project.data.name}</h4>
+					</a>
 
-                    <small class="text-xs md:text-sm text-neutral-80">{project.data.role}</small>
-                </article>
+					<small class="text-xs md:text-sm text-neutral-80">{project.data.role}</small>
+				</article>
 			</li>
 		))
 	}
