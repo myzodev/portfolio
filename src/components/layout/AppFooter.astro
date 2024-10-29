@@ -6,7 +6,6 @@ import SpotifyNowPlaying from './SpotifyNowPlaying.astro';
 import { getLangFromUrl, useTranslations, useTranslatedPath } from '@/i18n/utils';
 import type { CollectionEntry } from 'astro:content';
 
-
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);

@@ -48,6 +48,8 @@ export const ui = {
         'footer.heading': 'Let’s work togehter',
         'footer.heading.second': 'Collaboration',
         'footer.button': 'Get in touch',
+        'footer.spotify.currently': 'Currently',
+        'footer.spotify.not-listening': 'not listening',
     },
     sk: {
         wop: 'Aktuálne sa pracuje',
@@ -90,5 +92,7 @@ export const ui = {
         'footer.heading': 'Začnime našu',
         'footer.heading.second': 'spoluprácu',
         'footer.button': 'Kontakt',
+        'footer.spotify.currently': 'Momentálne',
+        'footer.spotify.not-listening': 'nič nepočúvam',
     },
 } as const;
