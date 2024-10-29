@@ -149,7 +149,7 @@
     }
 
     .navbar-logo {
-        @apply h6 font-semibold z-90;
+        @apply h5 font-semibold z-90;
     }
 
     .navbar-menu {
