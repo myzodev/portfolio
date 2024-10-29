@@ -13,7 +13,7 @@ const projects = await getCollection('work', ({ id }) => {
 });
 ---
 
-<Layout title="Projekty • Myžo" description="Od dizajnu k hotovému produktu">
+<Layout title={`${t('nav.projects')} • Myžo`} description={t('work.heading')}>
 	<section class="section-offset-first container">
 		<header class="mb-96 lg:mb-112 relative">
 			<h2 class="max-w-[500px] font-semibold">{t('work.heading')}</h2>
