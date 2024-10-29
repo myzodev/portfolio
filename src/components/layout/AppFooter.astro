@@ -3,7 +3,13 @@ import { getCollection } from 'astro:content';
 import { Icon } from 'astro-icon/components';
 import Button from '@/components/ui/Button.astro';
 import SpotifyNowPlaying from './SpotifyNowPlaying.astro';
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '@/i18n/utils';
 import type { CollectionEntry } from 'astro:content';
+
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 
 const links: CollectionEntry<'links'>[] = await getCollection('links');
 ---
@@ -13,7 +19,7 @@ const links: CollectionEntry<'links'>[] = await getCollection('links');
 		<header class="md:mb-96 flex flex-col md:flex-row justify-between items-end md:items-start">
 			<div class="w-full max-w-[350px] lg:max-w-[400px]">
 				<div class="mb-32 relative">
-					<h2 class="font-semibold">Začnime našu <br /> spoluprácu</h2>
+					<h2 class="font-semibold">{t('footer.heading')}</h2>
 
 					<figure class="arrow-bottom-right">
 						<Icon name="down-left-arrow" class="size-24 text-white" />
@@ -21,7 +27,7 @@ const links: CollectionEntry<'links'>[] = await getCollection('links');
 				</div>
 
 				<div class="gap-8 md:gap-16 flex flex-col md:flex-row items-center">
-					<Button class="w-full md:w-auto" href="/contact" size="sm" style="primary">Kontakt</Button>
+					<Button class="w-full md:w-auto" href={translatePath('contact')} size="sm" style="primary">{t('footer.button')}</Button>
 					<Button class="w-full md:w-auto" href="mailto:michal.valo6@gmail.com" size="sm" style="light-ghost">
 						michal.valo6@gmail.com
 					</Button>

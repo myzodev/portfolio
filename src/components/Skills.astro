@@ -1,25 +1,12 @@
 ---
 import { Icon } from 'astro-icon/components';
+import type { CollectionEntry } from 'astro:content';
 
-type Skill = {
-	heading: string;
-	text: string;
-};
+interface Props {
+	skills: CollectionEntry<'skills'>[];
+}
 
-const skills: Skill[] = [
-	{
-		heading: 'Development',
-		text: 'Špecializujem sa na vytváranie responzívnych a moderných riešení pre webové stránky a aplikácie, ktoré sú rýchle a spoľahlivé.'
-	},
-	{
-		heading: 'UI Dizajn',
-		text: 'Zameriavam sa na tvorbu moderných a responzívnych dizajnov, ktoré zaisťujú plynulú interakciu a príjemný používateľský zážitok.'
-	},
-	{
-		heading: 'UX Dizajn',
-		text: 'Analyzujem potreby používateľov, navrhujem používateľské cesty a testujem pre intuitívnosť a efektivitu.'
-	}
-];
+const { skills } = Astro.props;
 ---
 
 <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-48 gap-y-56">
@@ -28,9 +15,9 @@ const skills: Skill[] = [
 			<li>
 				<Icon name="down-right-arrow" class="-ml-6 size-24 text-neutral-80" />
 
-				<h3 class="py-[21px] mb-24 border-b border-neutral-600">{skill.heading}</h3>
+				<h3 class="py-[21px] mb-24 border-b border-neutral-600">{skill.data.heading}</h3>
 
-				<p class="text-neutral-40">{skill.text}</p>
+				<p class="text-neutral-40">{skill.data.text}</p>
 			</li>
 		))
 	}

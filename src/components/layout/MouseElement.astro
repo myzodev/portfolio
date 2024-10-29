@@ -1,8 +1,14 @@
+---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
 <div
 	class="size-112 fixed -top-112 -left-112 hidden lg:flex justify-center items-center scale-[0.15] z-100 rounded-full font-extrabold text-sm pointer-events-none bg-primary-200"
 	data-hover-element
 >
-	<span class="opacity-0" data-hover-element-text> Zobraziť </span>
+	<span class="opacity-0" data-hover-element-text>{t('show')}</span>
 </div>
 
 <script>

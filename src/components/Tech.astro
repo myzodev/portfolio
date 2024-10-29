@@ -1,5 +1,9 @@
 ---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
 import type { Tech } from '@/utils/types';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const tech: Tech[] = [
 	{ name: 'HTML', icon: 'html' },
@@ -24,7 +28,7 @@ const tech: Tech[] = [
 
 <footer class="mt-96 lg:mt-112 overflow-hidden">
 	<header class="mb-16 flex justify-between items-center text-neutral-80">
-		<p class="uppercase text-xs font-extrabold">Pracoval som s...</p>
+		<p class="uppercase text-xs font-extrabold">{t('tech.heading')}</p>
 	</header>
 
 	<ul class="tech-carousel flex items-center">

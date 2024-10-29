@@ -1,6 +1,12 @@
 ---
 import { getEntry } from 'astro:content';
 import NavbarLogo from './NavbarLogo.astro';
+import LanguagePicker from '../ui/LanguagePicker.astro';
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '@/i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 
 const github = await getEntry('links', 'github');
 ---
@@ -16,16 +22,20 @@ const github = await getEntry('links', 'github');
 
 		<ul class="navbar-menu lg:space-x-48 translate-x-full lg:translate-x-0">
 			<li>
-				<a class="navbar-menu-link" href="/projects">Projekty</a>
+				<a class="navbar-menu-link" href={translatePath('/projects')}>{t('nav.projects')}</a>
 			</li>
 
 			<li>
-				<a class="navbar-menu-link" href="/contact">Kontakt</a>
+				<a class="navbar-menu-link" href={translatePath('/contact')}>{t('nav.contact')}</a>
 			</li>
 
 			<li>
 				<a class="navbar-menu-link" href={github.data.url} target="_blank">{github.data.name}</a>
 			</li>
+
+            <li>
+                <LanguagePicker />
+            </li>
 		</ul>
 	</div>
 </nav>

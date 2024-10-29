@@ -1,5 +1,10 @@
 ---
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '@/i18n/utils';
 import type { CollectionEntry } from 'astro:content';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 
 interface Props {
 	projects: CollectionEntry<'work'>[];
@@ -15,7 +20,7 @@ const { projects } = Astro.props;
 				{project.data.wip && (
 					<small
 						class="px-10 py-1 absolute left-1/2 -top-10 -translate-x-1/2 text-xs font-semibold rounded-full z-10 bg-primary-300">
-						Work in progress
+						{t('wop')}
 					</small>
 				)}
 
@@ -41,7 +46,7 @@ const { projects } = Astro.props;
 
 				<article
 					class="py-16 lg:py-24 flex justify-between items-center border-b border-neutral-600 transition-opacity duration-500 group-hover:opacity-70">
-					<a class="link-overlay" href={`/projects/${project.data.slugify}`}>
+					<a class="link-overlay" href={translatePath(`/projects/${project.data.slugify}`)}>
 						<h4>{project.data.name}</h4>
 					</a>
 

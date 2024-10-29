@@ -1,4 +1,11 @@
-<a class="navbar-logo -space-x-3 overflow-hidden" href="/">
+---
+import { getLangFromUrl, useTranslatedPath } from '@/i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+---
+
+<a class="navbar-logo -space-x-3 overflow-hidden" href={translatePath('/')}>
 	<span class="inline-block logo-item">m</span>
 	<span class="inline-block logo-item">y</span>
 	<span class="inline-block logo-item">ž</span>

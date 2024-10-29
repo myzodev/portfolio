@@ -22,7 +22,27 @@ const links = defineCollection({
     }),
 });
 
+const skills = defineCollection({
+    type: 'content',
+    schema: z.object({
+        heading: z.string(),
+        text: z.string(),
+    }),
+});
+
+const experience = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string(),
+        icon: z.string(),
+        role: z.string(),
+        year: z.string(),
+    }),
+});
+
 export const collections = {
     work,
     links,
+    skills,
+    experience,
 };
