@@ -34,7 +34,7 @@ import { Icon } from 'astro-icon/components';
 </a>
 
 <script>
-	import type { Song } from '../../../types';
+    import type { Song } from '@/utils/types';
 
 	const songLink = document.querySelector('[data-song-link]') as HTMLAnchorElement;
 	const songLinkDefaultHref = songLink.href;

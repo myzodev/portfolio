@@ -1,8 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
-import Layout from '../layouts/Layout.astro';
-import ContactForm from '../components/ContactForm.astro';
 import { Icon } from 'astro-icon/components';
+import Layout from '@/layouts/Layout.astro';
+import ContactForm from '@/components/ContactForm.astro';
 import type { CollectionEntry } from 'astro:content';
 
 const links: CollectionEntry<'links'>[] = await getCollection('links');
