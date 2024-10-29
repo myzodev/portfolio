@@ -26,8 +26,8 @@ import Button from './ui/Button.astro';
 			contactForm.onsubmit = (event: any) => {
 				event.preventDefault();
 				getFromData(contactForm);
-				};
-			}
+            };
+        }
 
 		const getFromData = async (form: HTMLFormElement) => {
 			const formData = new FormData(form);
@@ -41,7 +41,7 @@ import Button from './ui/Button.astro';
 			const response = await fetch('https://contact.myzo.sk', {
 				method: 'POST',
 				body: formData
-				});
+            });
 
 			const data: { message: string; type: 'success' | 'error' } = await response.json();
 
@@ -56,13 +56,13 @@ import Button from './ui/Button.astro';
 					timer: 2500,
 					customClass: {
 						popup: 'text-white bg-neutral-800'
-						}
-					});
-				}
+                    }
+                });
+            }
 
 			if (data.type === 'success') {
 				form.reset();
-				}
-			};
-		});
+            }
+        };
+    });
 </script>
