@@ -27,8 +27,8 @@ const experience = await getCollection('experience', ({ id }) => {
 ---
 
 <Layout
-	title={`${t('nav.projects')} • Myžo`}
-	description="Premieňam vaše nápady na rýchle, responzívne a moderné weby a aplikácie, ktoré poskytujú intuitívny a výnimočný používateľský zážitok"
+	title="Myžo • Web Developer"
+	description={t('hero.text')}
 >
 	<header class="relative">
 		<figure class="w-full md:h-full lg:h-auto absolute -top-80 lg:-top-120 left-0 -z-10 opacity-90">
@@ -75,7 +75,7 @@ const experience = await getCollection('experience', ({ id }) => {
 		<Projects projects={projects.slice(0, 4)} />
 
 		<footer class="mt-72 md:mt-96 flex justify-center">
-			<Button href={translatePath('projects')} style="light" size="sm">{t('new.work.button')}</Button>
+			<Button href={translatePath('/projects')} style="light" size="sm">{t('new.work.button')}</Button>
 		</footer>
 	</section>
 

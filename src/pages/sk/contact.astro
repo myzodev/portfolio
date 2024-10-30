@@ -13,8 +13,8 @@ const links: CollectionEntry<'links'>[] = await getCollection('links');
 ---
 
 <Layout
-	title="Kontakt • Myžo"
-	description="Ak máte otázku, spätnú väzbu alebo si chcete len pokecať, som samé ucho! Či už je to rýchly pozdrav alebo dlhšia správa, napíšte mi a ja sa vám ozvem čo najskôr."
+	title={`${t('nav.contact')} • Myžo`}
+	description={t('contact.text')}
 >
 	<section class="section-offset-first container">
 		<article class="mb-96 lg:mb-112 lg:gap-48 grid grid-cols-12 items-end">
