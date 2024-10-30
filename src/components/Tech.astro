@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { getLangFromUrl, useTranslations } from '@/i18n/utils';
 import type { Tech } from '@/utils/types';
 
@@ -36,11 +37,7 @@ const tech: Tech[] = [
 			tech.map((item) => (
 				<li class="flex items-center shrink-0">
 					<figure class="p-8 rounded-8 bg-neutral-800">
-						<img
-							class="size-24"
-							src={`/images/tech/${item.icon}.svg`}
-							alt={item.name}
-						/>
+                        <Image class="size-24" src={import(`@/assets/images/tech/${item.icon}.svg`)} alt={`${item.name} icon`} />
 					</figure>
 
 					<p class="pl-16 pr-64 md:pr-80 text-subheading font-extrabold">{item.name}</p>

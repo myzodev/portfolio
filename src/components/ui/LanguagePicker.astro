@@ -5,4 +5,4 @@ const lang = getLangFromUrl(Astro.url);
 const href = lang === 'en' ? '/sk' : '/'
 const label = lang === 'en' ? 'SK' : 'EN'
 ---
-<a class="navbar-menu-link" href={`${href}`} data-astro-reload>{label}</a>
+<a class="pt-2 size-40 flex justify-center items-center text-sm font-bold rounded-full bg-neutral-700 hover:bg-neutral-600 transition-colors" href={`${href}`} data-astro-reload>{label}</a>

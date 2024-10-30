@@ -1,4 +1,5 @@
 ---
+import { Picture } from 'astro:assets';
 import { getLangFromUrl, useTranslations, useTranslatedPath } from '@/i18n/utils';
 import type { CollectionEntry } from 'astro:content';
 
@@ -29,18 +30,7 @@ const { projects } = Astro.props;
 					style={`background-color: ${project.data.backgroundColor}`}
 				>
 					<figure class="p-24 md:p-32 flex justify-center items-center">
-						<picture>
-							<source srcset={`/images/projects/${project.data.slugify}.webp`} type="image/webp" />
-
-							<img
-								class="h-auto rounded-8 transition-transform duration-500 group-hover:scale-[1.025]"
-								src={`/images/projects/${project.data.slugify}.jpg`}
-								alt={project.data.name}
-								width={500}
-								height={293}
-								loading="lazy"
-							/>
-						</picture>
+                        <Picture src={import(`@/assets/images/projects/${project.data.slugify}.webp`)} formats={['webp', 'jpg']} alt={project.data.name} />
 					</figure>
 				</div>
 
