@@ -82,6 +82,10 @@ const github = await getEntry('links', 'github');
 				pathname = pathname.slice(0, -1);
 			}
 
+            if (pathname.startsWith('/sk')) {
+                pathname = pathname.replace('/sk', '');
+            }
+
 			const currentPath = pathname.slice(1);
 			const hrefArray = link.href.split('/');
 			const thisPath = hrefArray[hrefArray.length - 1];
