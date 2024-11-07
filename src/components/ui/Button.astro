@@ -42,7 +42,7 @@ const Component = href ? 'a' : 'button';
 ---
 
 <Component class={buttonClasses} href={href} {...props}>
-	<span class="relative z-10">
+	<span class="relative z-10 pointer-events-none">
 		<slot />
 	</span>
 
@@ -66,8 +66,8 @@ const Component = href ? 'a' : 'button';
 				height: buttonWidth * 2
 			});
 
-			button.addEventListener('mouseenter', () => animateBackground(1));
-			button.addEventListener('mouseleave', () => animateBackground(0));
+			button.addEventListener('mouseenter', () => scaleBackground(1));
+			button.addEventListener('mouseleave', () => scaleBackground(0));
 			button.addEventListener('mousemove', (event: MouseEvent) => {
 				const { layerX, layerY } = event;
 
@@ -79,7 +79,7 @@ const Component = href ? 'a' : 'button';
 				});
 			});
 
-			const animateBackground = (scaleTo: number) => {
+			const scaleBackground = (scaleTo: number) => {
 				gsap.to(buttonBackground, {
 					duration: 0.8,
 					ease: 'expo.inOut',
