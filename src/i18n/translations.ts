@@ -89,7 +89,7 @@ export const ui = {
         'form.message': 'Správa',
         'form.button': 'Odoslať správu',
 
-        'footer.heading': 'Začnime našu',
+        'footer.heading': 'Začnime našu spoluprácu',
         'footer.heading.second': 'spoluprácu',
         'footer.button': 'Kontakt',
         'footer.spotify.currently': 'Momentálne',
