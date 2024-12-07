@@ -5,5 +5,5 @@ role: 'Development'
 url: 'https://studioparada.com'
 year: 2024
 wip: false
-backgroundColor: '#272727'
+backgroundColor: 'rgba(39, 39, 39, 0.6)'
 ---

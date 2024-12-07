@@ -91,7 +91,7 @@ export const ui = {
 
         'footer.heading': 'Začnime našu spoluprácu',
         'footer.heading.second': 'spoluprácu',
-        'footer.button': 'Kontakt',
+        'footer.button': 'Napíšme si',
         'footer.spotify.currently': 'Momentálne',
         'footer.spotify.not-listening': 'nič nepočúvam',
     },

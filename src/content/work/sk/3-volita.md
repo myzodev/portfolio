@@ -5,5 +5,5 @@ role: 'Development & Dizajn'
 url: 'https://volitaservis.sk'
 year: 2023
 wip: false
-backgroundColor: '#363A3C'
+backgroundColor: 'rgba(54, 58, 60, 0.6)'
 ---
