@@ -27,66 +27,78 @@ const experience = await getCollection('experience', ({ id }) => {
 });
 ---
 
-<Layout
-	title="Myžo • Web Developer"
-	description={t('hero.text')}
->
-	<header class="relative">
-		<figure class="w-full md:h-full lg:h-auto absolute -top-80 lg:-top-120 left-0 -z-10 opacity-90">
-            <Picture class="hidden lg:block" src={import('@/assets/images/hero-gradient.webp')} formats={['webp', 'png']} alt="Gradient mesh" />
-            <Picture class="block lg:hidden" src={import('@/assets/images/hero-gradient-mobile.webp')} formats={['webp', 'png']} alt="Gradient mesh" />
-		</figure>
+<Layout title="Myžo • Web Developer" description={t('hero.text')}>
+    <header class="section-offset-first container relative">
+        <article class="relative">
+            <div class="max-w-[890px]">
+                <h1 class="display mb-96 lg:mb-112 font-semibold">{t('hero.heading')}</h1>
 
-		<section class="section-offset-first container relative">
-			<article class="max-w-[890px]">
-				<h1 class="display mb-96 lg:mb-112 font-semibold">{t('hero.heading')}</h1>
+                <p
+                    class="pl-16 md:pl-24 py-10 md:py-16 max-w-[507px] md:text-subheading border-l border-neutral-100 text-neutral-40"
+                >
+                    {t('hero.text')}
+                </p>
+            </div>
 
-				<p class="pl-16 md:pl-24 py-10 md:py-16 max-w-[507px] md:text-subheading border-l border-neutral-100 text-neutral-40">
-					{t('hero.text')}
-				</p>
-			</article>
+            <figure
+                class="w-full md:h-full lg:h-auto absolute top-0 lg:top-1/2 left-0 lg:-left-240 -translate-y-1/2 scale-150 -z-10 opacity-90"
+            >
+                <Picture
+                    class="hidden lg:block"
+                    src={import('@/assets/images/hero-gradient.webp')}
+                    formats={['webp', 'png']}
+                    alt="Gradient mesh"
+                />
 
-			<aside class="hidden md:block absolute top-1/2 -translate-y-1/2 right-24 writing-vertical">
-				<p class="flex items-center font-extrabold orientation-sideways">
-					{t('hero.dev')}
-					<span class="text-primary-300">&nbsp;&&nbsp;</span>
-					{t('hero.design')}
+                <Picture
+                    class="block lg:hidden"
+                    src={import('@/assets/images/hero-gradient-mobile.webp')}
+                    formats={['webp', 'png']}
+                    alt="Gradient mesh"
+                />
+            </figure>
+        </article>
 
-					<span class="mt-24">
-						<Image src={import('@/assets/images/hero-arrow.svg')} alt="Arrow down icon" />
-					</span>
-				</p>
-			</aside>
-		</section>
-	</header>
+        <aside class="hidden md:block absolute top-1/2 -translate-y-1/2 right-24 writing-vertical">
+            <p class="flex items-center font-extrabold orientation-sideways">
+                {t('hero.dev')}
+                <span class="text-primary-300">&nbsp;&&nbsp;</span>
+                {t('hero.design')}
 
-	<section class="section-offset-bottom container">
-		<header class="mb-24 flex justify-between items-center">
-			<p class="uppercase text-xs font-extrabold">{t('new.work.heading')}</p>
+                <span class="mt-24">
+                    <Image src={import('@/assets/images/hero-arrow.svg')} alt="Arrow down icon" />
+                </span>
+            </p>
+        </aside>
+    </header>
 
-			<figure class="size-24">
-				<Icon name="down-left-arrow" />
-			</figure>
-		</header>
+    <section class="section-offset-bottom container">
+        <header class="mb-24 flex justify-between items-center">
+            <p class="uppercase text-xs font-extrabold">{t('new.work.heading')}</p>
 
-		<Projects projects={projects.slice(0, 4)} />
+            <figure class="size-24">
+                <Icon name="down-left-arrow" />
+            </figure>
+        </header>
 
-		<footer class="mt-72 md:mt-96 flex justify-center">
-			<Button href={translatePath('/projects')} style="light" size="sm">{t('new.work.button')}</Button>
-		</footer>
-	</section>
+        <Projects projects={projects.slice(0, 4)} />
 
-	<section class="section-offset-bottom container">
-		<h2 class="mb-32 md:mb-64 max-w-[550px] font-semibold">{t('skills.heading')}</h2>
-		<Skills skills={skills} />
-		<Tech />
-	</section>
+        <footer class="mt-72 md:mt-96 flex justify-center">
+            <Button href={translatePath('/projects')} style="light" size="sm">{t('new.work.button')}</Button>
+        </footer>
+    </section>
 
-	<section class="section-offset-bottom container grid grid-cols-12 gap-16">
-		<header class="col-span-12 lg:col-span-4">
-			<h2 class="mb-32 font-semibold">{t('experience.heading')}</h2>
-		</header>
+    <section class="section-offset-bottom container">
+        <h2 class="mb-32 md:mb-64 max-w-[550px] font-semibold">{t('skills.heading')}</h2>
+        <Skills skills={skills} />
+        <Tech />
+    </section>
 
-		<Experience experience={experience} />
-	</section>
+    <section class="section-offset-bottom container grid grid-cols-12 gap-16">
+        <header class="col-span-12 lg:col-span-4">
+            <h2 class="mb-32 font-semibold">{t('experience.heading')}</h2>
+        </header>
+
+        <Experience experience={experience} />
+    </section>
 </Layout>
