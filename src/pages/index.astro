@@ -18,6 +18,8 @@ const projects = await getCollection('work', ({ id }) => {
     return id.startsWith(lang);
 });
 
+projects.unshift(projects.pop());
+
 const skills = await getCollection('skills', ({ id }) => {
     return id.startsWith(lang);
 });
@@ -29,7 +31,7 @@ const experience = await getCollection('experience', ({ id }) => {
 
 <Layout title="Myžo • Web Developer" description={t('hero.text')}>
     <header class="section-offset-first container relative">
-        <article class="relative">
+        <article class="lg:relative">
             <div class="max-w-[890px]">
                 <h1 class="display mb-96 lg:mb-112 font-semibold">{t('hero.heading')}</h1>
 
@@ -41,7 +43,7 @@ const experience = await getCollection('experience', ({ id }) => {
             </div>
 
             <figure
-                class="w-full md:h-full lg:h-auto absolute top-0 lg:top-1/2 left-0 lg:-left-240 -translate-y-1/2 scale-150 -z-10 opacity-90"
+                class="w-full md:h-full lg:h-auto absolute top-0 lg:top-1/2 left-0 lg:-left-240 -translate-y-1/2 lg:scale-150 -z-10 opacity-90"
             >
                 <Picture
                     class="hidden lg:block"
@@ -59,7 +61,7 @@ const experience = await getCollection('experience', ({ id }) => {
             </figure>
         </article>
 
-        <aside class="hidden md:block absolute top-1/2 -translate-y-1/2 right-24 writing-vertical">
+        <aside class="hidden md:block absolute top-1/2 -translate-y-1/2 right-32 writing-vertical">
             <p class="flex items-center font-extrabold orientation-sideways">
                 {t('hero.dev')}
                 <span class="text-primary-300">&nbsp;&&nbsp;</span>
