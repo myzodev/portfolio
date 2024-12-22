@@ -37,6 +37,7 @@ const experience = defineCollection({
         icon: z.string(),
         role: z.string(),
         year: z.string(),
+        priority: z.number(),
     }),
 });
 

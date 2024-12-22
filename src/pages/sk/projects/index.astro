@@ -11,18 +11,20 @@ const t = useTranslations(lang);
 const projects = await getCollection('work', ({ id }) => {
     return id.startsWith(lang);
 });
+
+projects.sort((a, b) => b.data.year - a.data.year);
 ---
 
 <Layout title={`${t('nav.projects')} • Myžo`} description={t('work.heading')}>
-	<section class="section-offset-first container">
-		<header class="mb-96 lg:mb-112 relative">
-			<h2 class="max-w-[500px] font-semibold">{t('work.heading')}</h2>
+    <section class="section-offset-first container">
+        <header class="mb-96 lg:mb-112 relative">
+            <h2 class="max-w-[500px] font-semibold">{t('work.heading')}</h2>
 
-			<figure class="arrow-bottom-right">
-				<Icon name="down-left-arrow" class="size-24 text-white" />
-			</figure>
-		</header>
+            <figure class="arrow-bottom-right">
+                <Icon name="down-left-arrow" class="size-24 text-white" />
+            </figure>
+        </header>
 
-		<Projects projects={projects} />
-	</section>
+        <Projects projects={projects} />
+    </section>
 </Layout>

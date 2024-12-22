@@ -18,7 +18,7 @@ const projects = await getCollection('work', ({ id }) => {
     return id.startsWith(lang);
 });
 
-projects.unshift(projects.pop());
+projects.sort((a, b) => b.data.year - a.data.year);
 
 const skills = await getCollection('skills', ({ id }) => {
     return id.startsWith(lang);
@@ -27,6 +27,8 @@ const skills = await getCollection('skills', ({ id }) => {
 const experience = await getCollection('experience', ({ id }) => {
     return id.startsWith(lang);
 });
+
+experience.sort((a, b) => a.data.priority - b.data.priority);
 ---
 
 <Layout title="Myžo • Web Developer" description={t('hero.text')}>
