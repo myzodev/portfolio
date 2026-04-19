@@ -1,0 +1,31 @@
+{
+  "semi": true,
+  "printWidth": 120,
+  "tabWidth": 2,
+  "useTabs": true,
+  "tailwindFunctions": ["clsx"],
+  "tailwindPreserveWhitespace": false,
+  "tailwindPreserveDuplicates": false,
+  "plugins": [
+    "@trivago/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss"
+  ],
+  "importOrder": [
+    "^react",
+    "^next",
+    "<THIRD_PARTY_MODULES>",
+    "^@/lib/(.*)$",
+    "^@/hooks/(.*)$",
+    "^@/providers/(.*)$",
+    "^@/utils/(.*)$",
+    "^@/ui/(.*)$",
+    "^@/components/(.*)$",
+    "^@/(?!assets/)(.*)$",
+    "^[./]",
+    "import type",
+    "^@/assets/styles/(.*)$",
+    "^.*\\.css$"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}
