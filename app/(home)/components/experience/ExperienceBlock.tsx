@@ -3,7 +3,6 @@
 import { MoveRightIcon } from "lucide-react";
 
 import SectionHeading from "@/components/SectionHeading";
-import { AnimatedList } from "@/components/ui/animated-list";
 
 import ExperienceItem from "./ExperienceItem";
 
@@ -46,11 +45,11 @@ export default function ExperienceBlock() {
 
 				<div className="col-span-12 md:col-span-8">
 					<div className="relative flex w-full flex-col overflow-hidden">
-						<AnimatedList>
+						<ul className="flex flex-col gap-4">
 							{jobs.map((item, idx) => (
 								<ExperienceItem {...item} key={idx} />
 							))}
-						</AnimatedList>
+						</ul>
 					</div>
 				</div>
 			</div>

@@ -65,7 +65,7 @@ export default function AppFooter() {
 
 function SocialLink({ href, label }: { href: string; label: string }) {
 	return (
-		<ButtonLink href={href} rel="noopener noreferrer">
+		<ButtonLink variant="outline" href={href}>
 			<ArrowDownLeft className="size-4" />
 			{label}
 		</ButtonLink>
