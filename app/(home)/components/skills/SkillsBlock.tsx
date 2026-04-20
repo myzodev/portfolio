@@ -1,32 +1,29 @@
 import { MoveDownLeftIcon } from "lucide-react";
-import { File, Search, Settings } from "lucide-react";
 
 import SectionHeading from "@/components/SectionHeading";
-import { OrbitingCircles } from "@/components/ui/orbiting-circles";
+import { ScrollVelocityContainer, ScrollVelocityRow } from "@/components/ui/scroll-based-velocity";
+
+import { SkillBeam } from "./SkillBeam";
 
 export default function SkillsBlock() {
 	return (
-		<section className="container">
-			<div className="border-border/50 border-t py-32">
+		<section className="overflow-hidden">
+			<ScrollVelocityContainer className="text-muted-foreground/15 -rotate-1 text-4xl font-bold md:text-7xl">
+				<ScrollVelocityRow className="py-2" baseVelocity={3} direction={1}>
+					UI/UX DESIGN BACKEND FRONTEND
+				</ScrollVelocityRow>
+				<ScrollVelocityRow className="py-2" baseVelocity={3} direction={-1}>
+					UI/UX DESIGN BACKEND FRONTEND
+				</ScrollVelocityRow>
+			</ScrollVelocityContainer>
+
+			<div className="container pt-10 pb-20 lg:pt-24 lg:pb-32">
 				<header className="mb-6 flex items-center justify-between">
 					<SectionHeading>What can I offer you?</SectionHeading>
 					<MoveDownLeftIcon className="size-4" />
 				</header>
 
-				<div className="relative h-[500px] w-full overflow-hidden">
-					<OrbitingCircles>
-						<File />
-						<Settings />
-						<File />
-					</OrbitingCircles>
-
-					<OrbitingCircles radius={100} reverse>
-						<File />
-						<Settings />
-						<File />
-						<Search />
-					</OrbitingCircles>
-				</div>
+				<SkillBeam />
 			</div>
 		</section>
 	);

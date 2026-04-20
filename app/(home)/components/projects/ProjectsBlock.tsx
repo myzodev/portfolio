@@ -8,7 +8,7 @@ import ProjectsItem from "./ProjectsItem";
 export default function RecentProjectsBlock() {
 	return (
 		<section className="container">
-			<div className="border-border/50 border-t py-32">
+			<div className="border-border/50 border-t py-20 pb-10 lg:py-32">
 				<header className="mb-6 flex items-center justify-between">
 					<SectionHeading>Recent Projects</SectionHeading>
 					<MoveDownLeftIcon className="size-4" />

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Inter } from "next/font/google";
 
 import { cn } from "@/utils/utils";
 
+import AppFooter from "@/components/layout/AppFooter";
 import AppNavbar from "@/components/layout/AppNavbar";
 
 import "@/assets/css/app.css";
@@ -36,6 +37,7 @@ export default function RootLayout({
 			<body>
 				<AppNavbar />
 				{children}
+				<AppFooter />
 			</body>
 		</html>
 	);

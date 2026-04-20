@@ -51,7 +51,7 @@ export default function AppNavbar() {
 					<h1 className="text-2xl font-bold">myžo.</h1>
 				</Link>
 
-				<div className="flex items-center gap-2 sm:gap-3">
+				<div className="flex items-center">
 					<AnimatedThemeToggler className="cursor-pointer" duration={500} />
 
 					<Drawer
@@ -62,12 +62,12 @@ export default function AppNavbar() {
 						}}
 					>
 						<DrawerTrigger asChild>
-							<Button aria-label="Open navigation menu" size="icon-sm" variant="outline">
+							<Button aria-label="Open navigation menu" size="icon-lg" variant="ghost">
 								<Menu className="size-5" />
 							</Button>
 						</DrawerTrigger>
 
-						<DrawerContent className="h-dvh max-h-dvh w-[min(100%,20rem)] gap-0 border-l bg-transparent p-0 data-[vaul-drawer-direction=right]:mt-0 data-[vaul-drawer-direction=right]:rounded-none data-[vaul-drawer-direction=right]:rounded-l-3xl data-[vaul-drawer-direction=right]:before:inset-0 data-[vaul-drawer-direction=right]:before:rounded-l-3xl sm:w-[min(100%,24rem)]">
+						<DrawerContent className="h-dvh gap-0 border-0! bg-transparent">
 							<motion.div
 								key={motionKey}
 								animate="show"
@@ -133,7 +133,7 @@ export default function AppNavbar() {
 										show: { opacity: 1, y: 0 },
 									}}
 								>
-									<p className="text-muted-foreground text-xs">myžo — portfolio</p>
+									<small className="text-muted-foreground text-xs">myžo</small>
 								</motion.div>
 							</motion.div>
 						</DrawerContent>
