@@ -20,7 +20,7 @@ export default function HeroBlock() {
 
 				<p className="text-muted-foreground mx-auto mb-8 max-w-md text-center text-base sm:mb-10 sm:max-w-lg sm:text-lg lg:max-w-xl">
 					I'll transform your ideas into fast, responsive, and modern{" "}
-					<Highlighter action="underline" color="#0070F3">
+					<Highlighter action="underline" color="#7371fc">
 						websites and applications
 					</Highlighter>{" "}
 					that provide an intuitive and exceptional user experience

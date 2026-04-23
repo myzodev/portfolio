@@ -65,9 +65,9 @@ export default function CurrentPlaying() {
 					className={`absolute inset-0 flex items-center justify-center transition-transform duration-300 ${isPlaying ? "translate-y-0 group-hover:-translate-y-full" : "-translate-y-full"}`}
 				>
 					<div className="absolute inset-0 flex items-center justify-center gap-0.5">
-						<span className="w-0.75 animate-[music_1s_ease-in-out_infinite] rounded-sm bg-sky-400" />
-						<span className="w-0.75 animate-[music_0.8s_ease-in-out_infinite_0.2s] rounded-sm bg-sky-400" />
-						<span className="w-0.75 animate-[music_1.2s_ease-in-out_infinite_0.4s] rounded-sm bg-sky-400" />
+						<span className="bg-brand-300 w-0.75 animate-[music_1s_ease-in-out_infinite] rounded-sm" />
+						<span className="bg-brand-300 w-0.75 animate-[music_0.8s_ease-in-out_infinite_0.2s] rounded-sm" />
+						<span className="bg-brand-300 w-0.75 animate-[music_1.2s_ease-in-out_infinite_0.4s] rounded-sm" />
 					</div>
 				</div>
 
