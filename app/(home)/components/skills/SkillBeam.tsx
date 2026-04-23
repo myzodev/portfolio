@@ -35,11 +35,11 @@ export function SkillBeam({ className }: { className?: string }) {
 	// Reusable text block based on your screenshot
 	const Description = ({ title, text, className }: { title: string; text: string; className?: string }) => (
 		<article className={cn("mt-2.5 flex w-full flex-col sm:mt-6", className)}>
-			<h2 className="text-foreground text-lg uppercase sm:text-2xl">{title}</h2>
+			<h2 className="text-foreground text-lg tracking-wider uppercase sm:text-2xl">{title}</h2>
 
 			<div className="bg-border my-4 h-px w-full" />
 
-			<p className="text-muted-foreground text-sm leading-relaxed">{text}</p>
+			<p className="text-muted-foreground">{text}</p>
 		</article>
 	);
 

@@ -1,11 +1,14 @@
-import { ArrowDownLeft } from "lucide-react";
 import { MoveDownRightIcon } from "lucide-react";
 
 import { CONTACT_ROUTE } from "@/utils/routes";
 
 import ButtonLink from "@/components/ButtonLink";
+import { GithubIcon } from "@/components/Icon";
 import SectionHeading from "@/components/SectionHeading";
 import { Separator } from "@/components/ui/separator";
+
+import CurrentPlaying from "./footer/CurrentPlaying";
+import SocialLink from "./footer/SocialLink";
 
 export default function AppFooter() {
 	return (
@@ -22,22 +25,13 @@ export default function AppFooter() {
 							<ButtonLink size="lg" href={CONTACT_ROUTE}>
 								Contact
 							</ButtonLink>
-							<ButtonLink size="lg" variant="outline" href="mailto:hello@myzo.sk">
-								hello@myzo.sk
+							<ButtonLink size="lg" variant="outline" href="mailto:me@michalvalo.dev">
+								me@michalvalo.dev
 							</ButtonLink>
 						</nav>
 					</header>
 
-					<article className="flex items-center gap-3">
-						<div className="text-right">
-							<p className="text-muted-foreground text-xs">Currently</p>
-							<p className="text-xs">not playing</p>
-						</div>
-
-						<div className="rounded-lg bg-zinc-800 p-2">
-							<ArrowDownLeft className="size-5 text-zinc-100" />
-						</div>
-					</article>
+					<CurrentPlaying />
 				</div>
 
 				<div className="flex flex-col gap-4">
@@ -52,7 +46,7 @@ export default function AppFooter() {
 						<nav aria-label="Social media" className="flex flex-col items-start gap-2 md:items-end">
 							<ul className="flex flex-wrap gap-2">
 								<li>
-									<SocialLink href="#" label="Github" />
+									<SocialLink href="https://github.com/myzodev" icon={<GithubIcon />} label="Github" target="_blank" />
 								</li>
 							</ul>
 						</nav>
@@ -60,14 +54,5 @@ export default function AppFooter() {
 				</div>
 			</section>
 		</footer>
-	);
-}
-
-function SocialLink({ href, label }: { href: string; label: string }) {
-	return (
-		<ButtonLink variant="outline" href={href}>
-			<ArrowDownLeft className="size-4" />
-			{label}
-		</ButtonLink>
 	);
 }

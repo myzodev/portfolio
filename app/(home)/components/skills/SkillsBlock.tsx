@@ -9,10 +9,10 @@ export default function SkillsBlock() {
 	return (
 		<section className="overflow-hidden">
 			<ScrollVelocityContainer className="text-muted-foreground/15 -rotate-1 text-4xl font-bold md:text-7xl">
-				<ScrollVelocityRow className="py-2" baseVelocity={3} direction={1}>
+				<ScrollVelocityRow className="font-heading py-2" baseVelocity={3} direction={1}>
 					UI/UX DESIGN BACKEND FRONTEND
 				</ScrollVelocityRow>
-				<ScrollVelocityRow className="py-2" baseVelocity={3} direction={-1}>
+				<ScrollVelocityRow className="font-heading py-2" baseVelocity={3} direction={-1}>
 					UI/UX DESIGN BACKEND FRONTEND
 				</ScrollVelocityRow>
 			</ScrollVelocityContainer>

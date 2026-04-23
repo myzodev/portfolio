@@ -6,5 +6,5 @@ type Props = {
 };
 
 export default function SectionHeading({ children, className }: Props) {
-	return <h3 className={cn("text-xs font-bold uppercase md:text-sm", className)}>{children}</h3>;
+	return <h3 className={cn("text-sm font-bold tracking-widest uppercase", className)}>{children}</h3>;
 }
