@@ -1,6 +1,7 @@
 import { Metadata } from "next";
-import { ResolvingMetadata } from "next/dist/lib/metadata/types/metadata-interface";
 import { notFound } from "next/navigation";
+
+import { createMetadata } from "@/utils/metadata";
 
 import AppWIP from "@/components/layout/AppWIP";
 
@@ -13,15 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 	const project = getProjectBySlug(slug);
 
-	return {
-		title: `Myžo • ${project?.title}`,
-		openGraph: {
-			title: `Myžo • ${project?.title}`,
-			description: `Myžo • Project ${project?.title}`,
-			siteName: "Myžo",
-			type: "website",
-		},
-	};
+	return createMetadata(`Myžo • ${project?.title}`, `Myžo • Project ${project?.title}`);
 }
 
 export function generateStaticParams() {
