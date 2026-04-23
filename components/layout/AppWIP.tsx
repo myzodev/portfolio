@@ -1,22 +1,32 @@
 import { HOME_ROUTE } from "@/utils/routes";
+import { cn } from "@/utils/utils";
 
 import ButtonLink from "../ButtonLink";
 import { AuroraText } from "../ui/aurora-text";
 
-export default function AppWIP() {
+type Props = {
+	size?: "screen" | "small";
+	showButton?: boolean;
+};
+
+export default function AppWIP({ size = "screen", showButton = true }: Props) {
+	const sectionSizeClasses = size === "screen" ? "h-[calc(100dvh-4rem)]" : "py-20 md:py-32";
+
 	return (
 		<section>
 			<div className="container">
-				<div className="flex h-[calc(100dvh-4rem)] flex-col items-center justify-center">
+				<div className={cn("flex flex-col items-center justify-center", sectionSizeClasses)}>
 					<h1 className="mb-6 text-center text-4xl font-bold sm:mb-8 sm:text-5xl lg:text-7xl">
 						Work in <AuroraText>Progress</AuroraText>
 					</h1>
 
-					<div>
-						<ButtonLink href={HOME_ROUTE} size="lg">
-							Go Home
-						</ButtonLink>
-					</div>
+					{showButton ? (
+						<footer>
+							<ButtonLink href={HOME_ROUTE} size="lg">
+								Go Home
+							</ButtonLink>
+						</footer>
+					) : null}
 				</div>
 			</div>
 		</section>

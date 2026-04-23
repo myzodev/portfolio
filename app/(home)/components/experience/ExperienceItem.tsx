@@ -8,7 +8,7 @@ export default function ExperienceItem({ company, description, duration, role }:
 			<article className="flex flex-col justify-between gap-4 md:flex-row md:items-start">
 				<div className="flex flex-col gap-1">
 					<header className="flex flex-wrap items-center gap-x-2">
-						<h3 className="text-foreground text-md font-sans font-bold md:text-lg">{company}</h3>
+						<h3 className="text-foreground font-sans text-sm font-bold md:text-base">{company}</h3>
 						<Badge variant="secondary">{role}</Badge>
 					</header>
 

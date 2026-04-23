@@ -15,22 +15,28 @@ export type Job = {
 
 const jobs: Job[] = [
 	{
-		company: "Tech Solutions Inc.",
-		role: "Senior Frontend Developer",
-		description: "Led the migration of legacy systems to modern React architectures.",
-		duration: "2022 - Present",
+		company: "Freelance",
+		role: "Fullstack Developer",
+		description: "Building scalable web applications and bridging complex backend logic with intuitive UX.",
+		duration: "2026 - Present",
 	},
 	{
-		company: "Digital Creative Agency",
-		role: "Web Developer",
-		description: "Developed high-performance landing pages and interactive web apps.",
-		duration: "2020 - 2022",
+		company: "Studio Parada s.r.o",
+		role: "Frontend Developer",
+		description: "Transforming creative design concepts into polished, pixel-perfect digital products.",
+		duration: "2023 - 2026",
 	},
 	{
-		company: "Startup Hub",
-		role: "Junior Developer",
-		description: "Collaborated on building scalable UI components and internal tools.",
-		duration: "2018 - 2020",
+		company: "VOLITA GROUP a.s.",
+		role: "Fullstack Developer & Designer",
+		description: "Managing the full lifecycle of SEO-optimized web projects from design to deployment.",
+		duration: "2022 - 2023",
+	},
+	{
+		company: "Webikon s.r.o.",
+		role: "Frontend Developer",
+		description: "Starting point - focused on absorbing new information and UI fundamentals.",
+		duration: "2020 - 2021",
 	},
 ];
 

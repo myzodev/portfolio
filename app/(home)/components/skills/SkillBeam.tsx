@@ -14,7 +14,7 @@ const Circle = forwardRef<HTMLDivElement, { className?: string; children?: React
 			<div
 				ref={ref}
 				className={cn(
-					"bg-background z-10 flex size-12 shrink-0 items-center justify-center rounded-full border-2 p-3 sm:size-16",
+					"bg-muted z-10 flex size-12 shrink-0 items-center justify-center rounded-full border p-3 sm:size-16",
 					className,
 				)}
 			>
@@ -86,8 +86,8 @@ export function SkillBeam({ className }: { className?: string }) {
 				</div>
 			</div>
 
-			<AnimatedBeam containerRef={containerRef} fromRef={designRef} toRef={frontendRef} duration={3} />
-			<AnimatedBeam containerRef={containerRef} fromRef={frontendRef} toRef={backendRef} duration={3} />
+			<AnimatedBeam containerRef={containerRef} fromRef={designRef} toRef={frontendRef} duration={5} pathWidth={1} />
+			<AnimatedBeam containerRef={containerRef} fromRef={frontendRef} toRef={backendRef} duration={5} pathWidth={1} />
 		</div>
 	);
 }

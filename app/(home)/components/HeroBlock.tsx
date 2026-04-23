@@ -12,7 +12,7 @@ export default function HeroBlock() {
 
 			<div className="from-background/0 to-background absolute inset-0 z-0 bg-radial to-70%" />
 
-			<article className="relative z-10 container py-20 lg:py-40">
+			<article className="relative z-10 container py-20 lg:py-32">
 				<h1 className="mb-4 text-center text-4xl font-bold sm:mb-6 sm:text-5xl lg:text-7xl">
 					Enhance Your <br />
 					<AuroraText>Online Experience</AuroraText>
@@ -23,16 +23,15 @@ export default function HeroBlock() {
 					<Highlighter action="underline" color="#0070F3">
 						websites and applications
 					</Highlighter>{" "}
-					{""}
 					that provide an intuitive and exceptional user experience
 				</p>
 
-				<footer className="flex items-center justify-center gap-4">
-					<ButtonLink href={CONTACT_ROUTE} variant="outline" size="lg">
-						Contact me
+				<footer className="flex items-center justify-center gap-2">
+					<ButtonLink href={CONTACT_ROUTE} size="lg">
+						Get in touch
 					</ButtonLink>
-					<ButtonLink href={PROJECTS_ROUTE} size="lg">
-						Project Showcase
+					<ButtonLink href={PROJECTS_ROUTE} variant="outline" size="lg">
+						Project showcase
 					</ButtonLink>
 				</footer>
 			</article>

@@ -1,0 +1,13 @@
+@layer components {
+	.link-overlay::before {
+		@apply absolute inset-0 z-20 content-[''];
+	}
+
+	.link-overlay-box {
+		@apply relative;
+	}
+
+	.link-overlay-box a:not(.link-overlay) {
+		@apply relative z-20;
+	}
+}

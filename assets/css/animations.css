@@ -1,0 +1,9 @@
+@keyframes music {
+	0%,
+	100% {
+		height: 4px;
+	}
+	50% {
+		height: 16px;
+	}
+}

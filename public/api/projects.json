@@ -1,0 +1,72 @@
+[
+	{
+		"title": "Marker",
+		"slug": "marker",
+		"role": "Development",
+		"url": "https://marker.sk",
+		"colorClasses": "bg-green-200"
+	},
+	{
+		"title": "Nivy",
+		"slug": "nivy",
+		"role": "Development",
+		"url": "https://nivy.com",
+		"colorClasses": "bg-orange-200"
+	},
+	{
+		"title": "Mafert",
+		"slug": "mafert",
+		"role": "Development",
+		"url": "https://mafert.sk",
+		"colorClasses": "bg-red-200"
+	},
+	{
+		"title": "STUDIO PARADA",
+		"slug": "studio-parada",
+		"role": "Development",
+		"url": "https://studioparada.com",
+		"colorClasses": "bg-gray-200"
+	},
+	{
+		"title": "Legro",
+		"slug": "legro",
+		"role": "Development",
+		"url": "https://legro.sk",
+		"colorClasses": "bg-red-200"
+	},
+	{
+		"title": "Volita",
+		"slug": "volita",
+		"role": "Development & Design",
+		"url": "https://volita.sk",
+		"colorClasses": "bg-sky-200"
+	},
+	{
+		"title": "Racetime",
+		"slug": "racetime",
+		"role": "Development & Design",
+		"url": "https://racetime.sk",
+		"colorClasses": "bg-red-200"
+	},
+	{
+		"title": "Audilun",
+		"slug": "audilun",
+		"role": "Development",
+		"url": "https://audilun.com",
+		"colorClasses": "bg-lime-200"
+	},
+	{
+		"title": "ŠARMDENT",
+		"slug": "sarmdent",
+		"role": "Development",
+		"url": "https://sarmdent.sk",
+		"colorClasses": "bg-purple-200"
+	},
+	{
+		"title": "TESTAR",
+		"slug": "testar",
+		"role": "Development & Design",
+		"url": "https://testar.sk",
+		"colorClasses": "bg-blue-200"
+	}
+]
