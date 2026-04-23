@@ -21,7 +21,7 @@ export default function CurrentPlaying() {
 
 	const fetchCurrentPlaying = async () => {
 		try {
-			const response = await fetch("http://localhost:8888/");
+			const response = await fetch("https://spotify.michalvalo.dev");
 			const data = await response.json();
 			setCurrentPlaying(data);
 		} catch (error) {
