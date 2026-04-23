@@ -1,5 +1,8 @@
+import { ThemeProvider } from "next-themes";
+
 import { cn } from "@/utils/utils";
 
+import CursorDot from "@/components/CursorDot";
 import AppFooter from "@/components/layout/AppFooter";
 import AppNavbar from "@/components/layout/AppNavbar";
 
@@ -17,11 +20,15 @@ export default function RootLayout({
 	return (
 		<html lang="en" className={fontClasses}>
 			<body>
-				<AppNavbar />
+				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+					<AppNavbar />
 
-				<main>{children}</main>
+					<CursorDot />
 
-				<AppFooter />
+					<main>{children}</main>
+
+					<AppFooter />
+				</ThemeProvider>
 			</body>
 		</html>
 	);

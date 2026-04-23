@@ -22,7 +22,9 @@ export default function ProjectHeader({ project }: { project: Project }) {
 			<Breadcrumb className="my-3">
 				<BreadcrumbList>
 					<BreadcrumbItem>
-						<BreadcrumbLink href={PROJECTS_ROUTE}>Projects</BreadcrumbLink>
+						<BreadcrumbLink asChild>
+							<Link href={PROJECTS_ROUTE}>Projects</Link>
+						</BreadcrumbLink>
 					</BreadcrumbItem>
 
 					<BreadcrumbSeparator>
