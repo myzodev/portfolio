@@ -12,7 +12,7 @@ export default function SocialLink({ icon, label = "", ...props }: AnchorHTMLAtt
 	if (!icon || !label) return null;
 
 	return (
-		<ButtonLink variant="outline" href={props.href} target={props.target}>
+		<ButtonLink className="gap-2" variant="outline" href={props.href} target={props.target}>
 			{icon}
 			<Separator className="my-2.5" orientation="vertical" />
 			{label}

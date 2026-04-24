@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default function AppWIP({ size = "screen", showButton = true }: Props) {
-	const sectionSizeClasses = size === "screen" ? "h-[calc(100dvh-4rem)]" : "py-20 md:py-32";
+	const sectionSizeClasses = size === "screen" ? "h-[calc(100vh-4rem)]" : "py-20 md:py-32";
 
 	return (
 		<section>
