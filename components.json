@@ -17,7 +17,7 @@
 	"aliases": {
 		"components": "@/components",
 		"utils": "@/utils/utils",
-		"ui": "@/components/ui",
+		"ui": "@/components/magicui",
 		"lib": "@/lib",
 		"hooks": "@/hooks"
 	},

@@ -3,8 +3,8 @@ import { MoveDownLeftIcon } from "lucide-react";
 import { PROJECTS_ROUTE } from "@/utils/routes";
 import { cn } from "@/utils/utils";
 
-import ButtonLink from "@/components/ButtonLink";
 import SectionHeading from "@/components/SectionHeading";
+import ButtonLink from "@/components/ui/ButtonLink";
 
 import type { Project } from "@/libs/projects";
 
@@ -15,6 +15,7 @@ type Props = {
 	projects: Project[];
 	border?: boolean;
 	showProjectsButton?: boolean;
+	offsetClasssName?: string;
 };
 
 export default function ProjectsBlock({
@@ -22,10 +23,13 @@ export default function ProjectsBlock({
 	projects = [],
 	border = true,
 	showProjectsButton = true,
+	offsetClasssName = "",
 }: Props) {
+	const offsetClasses = offsetClasssName ? offsetClasssName : "py-20 pb-10 lg:py-32";
+
 	return (
 		<section className="container">
-			<div className={cn("py-20 pb-10 lg:py-32", border && "border-border/50 border-t")}>
+			<div className={cn(offsetClasses, border && "border-border/50 border-t")}>
 				<header className="mb-6 flex items-center justify-between">
 					<SectionHeading>{heading}</SectionHeading>
 					<MoveDownLeftIcon className="size-4" />

@@ -1,7 +1,7 @@
 import { AnchorHTMLAttributes } from "react";
 
-import ButtonLink from "@/components/ButtonLink";
-import { Separator } from "@/components/ui/separator";
+import { Separator } from "@/components/magicui/separator";
+import ButtonLink from "@/components/ui/ButtonLink";
 
 type Props = {
 	icon: React.ReactNode;

@@ -12,7 +12,7 @@ import {
 	BreadcrumbList,
 	BreadcrumbPage,
 	BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
+} from "@/components/magicui/breadcrumb";
 
 import type Project from "@/types/project";
 

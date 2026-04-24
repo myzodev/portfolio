@@ -1,9 +1,9 @@
 import { CONTACT_ROUTE, PROJECTS_ROUTE } from "@/utils/routes";
 
-import ButtonLink from "@/components/ButtonLink";
-import { AuroraText } from "@/components/ui/aurora-text";
-import { Highlighter } from "@/components/ui/highlighter";
-import { Ripple } from "@/components/ui/ripple";
+import { AuroraText } from "@/components/magicui/aurora-text";
+import { Highlighter } from "@/components/magicui/highlighter";
+import { Ripple } from "@/components/magicui/ripple";
+import ButtonLink from "@/components/ui/ButtonLink";
 
 export default function HeroBlock() {
 	return (

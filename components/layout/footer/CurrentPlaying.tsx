@@ -6,7 +6,7 @@ import Link from "next/link";
 
 import { div } from "framer-motion/client";
 
-import { SpotifyIcon } from "@/components/Icon";
+import { SpotifyIcon } from "@/components/ui/Icon";
 
 type CurrentPlayingProps = {
 	isPlaying: boolean;

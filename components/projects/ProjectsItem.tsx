@@ -4,7 +4,7 @@ import { PROJECT_ROUTE } from "@/utils/routes";
 
 import type { Project } from "@/libs/projects";
 
-import { Badge } from "../ui/badge";
+import { Badge } from "../magicui/badge";
 
 export default function ProjectsItem(item: Project) {
 	return (
@@ -40,10 +40,10 @@ export default function ProjectsItem(item: Project) {
 
 			<footer className="flex items-center justify-between">
 				{item.wip ? (
-					<h2 className="text-lg uppercase md:text-xl">{item.title}</h2>
+					<h3 className="text-lg uppercase md:text-xl">{item.title}</h3>
 				) : (
 					<Link className="link-overlay" href={PROJECT_ROUTE(item.slug)}>
-						<h2 className="text-lg uppercase md:text-xl">{item.title}</h2>
+						<h3 className="text-lg uppercase md:text-xl">{item.title}</h3>
 					</Link>
 				)}
 

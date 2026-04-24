@@ -7,7 +7,6 @@ export const createMetadata = (title: string, description: string) => {
 			description,
 			siteName: "Myžo",
 			type: "website",
-			image: "/images/og-image.png",
 		},
 	};
 };

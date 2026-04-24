@@ -1,7 +1,7 @@
 import { MoveDownLeftIcon } from "lucide-react";
 
 import SectionHeading from "@/components/SectionHeading";
-import { ScrollVelocityContainer, ScrollVelocityRow } from "@/components/ui/scroll-based-velocity";
+import { ScrollVelocityContainer, ScrollVelocityRow } from "@/components/magicui/scroll-based-velocity";
 
 import { SkillBeam } from "./SkillBeam";
 

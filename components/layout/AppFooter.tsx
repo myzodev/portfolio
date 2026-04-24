@@ -2,10 +2,10 @@ import { MailIcon, MoveDownRightIcon } from "lucide-react";
 
 import { CONTACT_ROUTE } from "@/utils/routes";
 
-import ButtonLink from "@/components/ButtonLink";
-import { GithubIcon } from "@/components/Icon";
 import SectionHeading from "@/components/SectionHeading";
-import { Separator } from "@/components/ui/separator";
+import { Separator } from "@/components/magicui/separator";
+import ButtonLink from "@/components/ui/ButtonLink";
+import { GithubIcon } from "@/components/ui/Icon";
 
 import CurrentPlaying from "./footer/CurrentPlaying";
 import SocialLink from "./footer/SocialLink";

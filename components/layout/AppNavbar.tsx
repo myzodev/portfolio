@@ -10,9 +10,8 @@ import { motion } from "motion/react";
 
 import { CONTACT_ROUTE, HOME_ROUTE, PROJECTS_ROUTE } from "@/utils/routes";
 
-import ButtonLink from "@/components/ButtonLink";
-import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
-import { Button } from "@/components/ui/button";
+import { AnimatedThemeToggler } from "@/components/magicui/animated-theme-toggler";
+import { Button } from "@/components/magicui/button";
 import {
 	Drawer,
 	DrawerClose,
@@ -21,7 +20,8 @@ import {
 	DrawerHeader,
 	DrawerTitle,
 	DrawerTrigger,
-} from "@/components/ui/drawer";
+} from "@/components/magicui/drawer";
+import ButtonLink from "@/components/ui/ButtonLink";
 
 import NavbarLogo from "./navbar/NavbarLogo";
 

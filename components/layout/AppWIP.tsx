@@ -1,8 +1,8 @@
 import { HOME_ROUTE } from "@/utils/routes";
 import { cn } from "@/utils/utils";
 
-import ButtonLink from "../ButtonLink";
-import { AuroraText } from "../ui/aurora-text";
+import { AuroraText } from "../magicui/aurora-text";
+import ButtonLink from "../ui/ButtonLink";
 
 type Props = {
 	size?: "screen" | "small";

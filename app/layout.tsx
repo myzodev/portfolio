@@ -2,9 +2,9 @@ import { ThemeProvider } from "next-themes";
 
 import { cn } from "@/utils/utils";
 
-import CursorDot from "@/components/CursorDot";
 import AppFooter from "@/components/layout/AppFooter";
 import AppNavbar from "@/components/layout/AppNavbar";
+import CursorDot from "@/components/ui/CursorDot";
 
 import { ClashDisplay, Nunito } from "@/assets/styles/fonts";
 

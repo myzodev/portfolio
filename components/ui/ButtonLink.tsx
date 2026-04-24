@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import type { VariantProps } from "class-variance-authority";
 
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/magicui/button";
 
 type Props = {
 	href?: string;
