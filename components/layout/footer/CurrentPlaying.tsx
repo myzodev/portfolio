@@ -4,8 +4,6 @@ import { useEffect, useState } from "react";
 
 import Link from "next/link";
 
-import { div } from "framer-motion/client";
-
 import { SpotifyIcon } from "@/components/ui/Icon";
 
 type CurrentPlayingProps = {
@@ -21,7 +19,7 @@ export default function CurrentPlaying() {
 
 	const fetchCurrentPlaying = async () => {
 		try {
-			const response = await fetch("https://spotify.michalvalo.dev");
+			const response = await fetch("https://microservices.michalvalo.dev/spotify");
 			const data = await response.json();
 			setCurrentPlaying(data);
 		} catch (error) {

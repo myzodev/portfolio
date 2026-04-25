@@ -1,6 +1,6 @@
 "use client";
 
-import { useTransition } from "react";
+import { useState } from "react";
 
 import { toast } from "sonner";
 
@@ -11,46 +11,48 @@ import { Spinner } from "@/components/magicui/spinner";
 import { Textarea } from "@/components/magicui/textarea";
 
 export default function ContactForm() {
-	const [isPending, startTransition] = useTransition();
+	const [isSending, setIsSending] = useState(false);
 
 	const handleSubmit = (event: any) => {
 		event.preventDefault();
 
-		startTransition(async () => {
-			try {
-				const form = event.target as HTMLFormElement;
-				const formData = new FormData(event.target);
-				const messageData = Object.fromEntries(formData);
+		try {
+			const form = event.target as HTMLFormElement;
+			const formData = new FormData(event.target);
+			const messageData = Object.fromEntries(formData);
 
-				if (!messageData.name || !messageData.email || !messageData.subject || !messageData.message) {
-					toast.error("Please fill in all fields", { position: "top-center" });
-					return;
-				}
-
-				toast.promise(
-					() =>
-						fetch("https://send-email.michalvalo.dev", {
-							method: "POST",
-							body: JSON.stringify(messageData),
-						}),
-					{
-						loading: "Sending email...",
-						position: "top-center",
-						success: async (response) => {
-							const data = await response.json();
-							form.reset();
-							return data.message;
-						},
-						error: async (response) => {
-							const data = await response.json();
-							return data.message;
-						},
-					},
-				);
-			} catch (error) {
-				console.error(error);
+			if (!messageData.name || !messageData.email || !messageData.subject || !messageData.message) {
+				toast.error("Please fill in all fields", { position: "top-center" });
+				return;
 			}
-		});
+
+			toast.promise(
+				async () => {
+					setIsSending(true);
+					return fetch("https://microservices.michalvalo.dev/send-email", {
+						method: "POST",
+						body: JSON.stringify(messageData),
+					});
+				},
+				{
+					loading: "Sending email...",
+					position: "top-center",
+					success: async (response) => {
+						const data = await response.json();
+						setIsSending(false);
+						form.reset();
+						return data.message;
+					},
+					error: async (response) => {
+						const data = await response.json();
+						setIsSending(false);
+						return data.message;
+					},
+				},
+			);
+		} catch (error) {
+			console.error(error);
+		}
 	};
 
 	return (
@@ -87,8 +89,8 @@ export default function ContactForm() {
 				</Field>
 
 				<Field>
-					<Button type="submit" disabled={isPending}>
-						{isPending && <Spinner data-icon="inline-start" />}
+					<Button type="submit" disabled={isSending}>
+						{isSending && <Spinner data-icon="inline-start" />}
 						Submit
 					</Button>
 				</Field>
