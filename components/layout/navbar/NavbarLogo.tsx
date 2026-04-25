@@ -24,7 +24,7 @@ export default function NavbarLogo() {
 			{ y: ["0%", "100%"] },
 			{
 				duration: 0.3,
-				delay: stagger(0.02),
+				delay: stagger(0.04),
 				ease: "easeInOut",
 			},
 		)
@@ -37,7 +37,7 @@ export default function NavbarLogo() {
 					{ y: ["-100%", "0%"] },
 					{
 						duration: 0.3,
-						delay: stagger(0.02),
+						delay: stagger(0.04),
 						ease: "easeInOut",
 					},
 				);

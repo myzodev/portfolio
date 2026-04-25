@@ -1,8 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { createMetadata } from "@/utils/metadata";
-
 import AppWIP from "@/components/layout/AppWIP";
 
 import { getAllProjectSlugs, getProjectBySlug } from "@/libs/projects";
@@ -14,7 +12,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 	const project = getProjectBySlug(slug);
 
-	return createMetadata(`Myžo • ${project?.title}`, `Myžo • Project ${project?.title}`);
+	return {
+		title: `Myžo • ${project?.title}`,
+		description: `Myžo • Project ${project?.title}`,
+	};
 }
 
 export function generateStaticParams() {

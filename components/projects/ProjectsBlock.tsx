@@ -30,13 +30,13 @@ export default function ProjectsBlock({
 	return (
 		<section className="container">
 			<div className={cn(offsetClasses, border && "border-border/50 border-t")}>
-				<header className="mb-6 flex items-center justify-between">
+				<header className="mb-4 flex items-center justify-between md:mb-6">
 					<SectionHeading>{heading}</SectionHeading>
 					<MoveDownLeftIcon className="size-4" />
 				</header>
 
 				{projects.length > 0 ? (
-					<ul className="grid grid-cols-1 gap-x-8 gap-y-8 md:grid-cols-2 md:gap-y-12">
+					<ul className="grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 sm:gap-y-12">
 						{projects.map((project, index) => (
 							<ProjectsItem {...project} key={index} />
 						))}

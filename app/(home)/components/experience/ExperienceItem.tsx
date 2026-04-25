@@ -7,7 +7,7 @@ export default function ExperienceItem({ company, description, duration, role }:
 		<li className="border-border relative mx-auto min-h-fit w-full rounded-md border p-4 transition-all duration-200">
 			<article className="flex flex-col justify-between gap-4 md:flex-row md:items-start">
 				<div className="flex flex-col gap-1">
-					<header className="flex flex-wrap items-center gap-x-2">
+					<header className="flex flex-wrap items-center gap-x-2 gap-y-1">
 						<h3 className="text-foreground font-sans text-sm font-bold md:text-base">{company}</h3>
 						<Badge variant="secondary">{role}</Badge>
 					</header>

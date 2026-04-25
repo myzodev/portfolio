@@ -1,7 +1,6 @@
 import Link from "next/link";
 
-import { LinkIcon } from "lucide-react";
-import { DotIcon } from "lucide-react";
+import { DotIcon, GlobeIcon } from "lucide-react";
 
 import { PROJECTS_ROUTE } from "@/utils/routes";
 
@@ -48,19 +47,23 @@ export default function ProjectHeader({ project }: { project: Project }) {
 				</div>
 			</div>
 
-			<aside className="relative z-10 grid grid-cols-1 gap-3 md:grid-cols-2">
+			<aside className="relative z-10 grid grid-cols-1 gap-3 text-center md:grid-cols-3">
 				<Link
 					href={project.url}
 					target="_blank"
-					className="flex items-center gap-2 rounded-lg p-6"
+					className="flex items-center justify-center gap-2 rounded-lg p-4 md:p-6"
 					style={{ backgroundColor: `var(--color-project-${project.color})` }}
 				>
-					<LinkIcon className="size-4" />
-					<h6 className="text-lg font-bold">Website</h6>
+					<GlobeIcon className="size-3" />
+					<h6 className="text-sm font-bold md:text-base">Website</h6>
 				</Link>
 
-				<div className="rounded-lg p-6" style={{ backgroundColor: `var(--color-project-${project.color})` }}>
-					<h6 className="text-lg font-bold">{project.role}</h6>
+				<div className="rounded-lg p-4 md:p-6" style={{ backgroundColor: `var(--color-project-${project.color})` }}>
+					<h6 className="text-sm font-bold md:text-base">{project.year}</h6>
+				</div>
+
+				<div className="rounded-lg p-4 md:p-6" style={{ backgroundColor: `var(--color-project-${project.color})` }}>
+					<h6 className="text-sm font-bold md:text-base">{project.role}</h6>
 				</div>
 			</aside>
 		</header>

@@ -30,6 +30,7 @@
 :root {
 	--color-project-red: oklch(92% 0.007 20);
 	--color-project-orange: oklch(92% 0.007 50);
+	--color-project-yellow: oklch(92% 0.007 85);
 	--color-project-lime-green: oklch(92% 0.007 130);
 	--color-project-green: oklch(92% 0.007 160);
 	--color-project-blue: oklch(92% 0.007 250);
@@ -41,6 +42,7 @@
 .dark {
 	--color-project-red: oklch(28% 0.004 20);
 	--color-project-orange: oklch(28% 0.004 50);
+	--color-project-yellow: oklch(28% 0.004 85);
 	--color-project-lime-green: oklch(28% 0.004 130);
 	--color-project-green: oklch(28% 0.004 160);
 	--color-project-blue: oklch(28% 0.004 250);

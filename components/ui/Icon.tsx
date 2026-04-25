@@ -1,4 +1,5 @@
 import Github from "@/assets/images/icons/github.svg";
+import LinkedIn from "@/assets/images/icons/linkedin.svg";
 import Spotify from "@/assets/images/icons/spotify.svg";
 
 type IconProps = {
@@ -11,4 +12,8 @@ export function GithubIcon({ className }: IconProps) {
 
 export function SpotifyIcon({ className }: IconProps) {
 	return <Spotify className={className} />;
+}
+
+export function LinkedInIcon({ className }: IconProps) {
+	return <LinkedIn className={className} />;
 }

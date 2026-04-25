@@ -32,7 +32,6 @@ export function SkillBeam({ className }: { className?: string }) {
 	const frontendRef = useRef<HTMLDivElement>(null);
 	const backendRef = useRef<HTMLDivElement>(null);
 
-	// Reusable text block based on your screenshot
 	const Description = ({ title, text, className }: { title: string; text: string; className?: string }) => (
 		<article className={cn("mt-2.5 flex w-full flex-col sm:mt-6", className)}>
 			<h3 className="text-foreground text-lg tracking-wider uppercase sm:text-2xl">{title}</h3>
@@ -51,7 +50,7 @@ export function SkillBeam({ className }: { className?: string }) {
 			<ul className="flex size-full max-w-6xl flex-col items-start justify-between gap-10 sm:flex-row sm:gap-18">
 				<li className="flex flex-1 max-md:gap-4 sm:flex-col sm:items-start">
 					<Circle ref={designRef}>
-						<Paintbrush className="size-8 text-pink-500 sm:size-6" strokeWidth={2} />
+						<Paintbrush className="size-8 text-pink-400 sm:size-6" strokeWidth={2} />
 					</Circle>
 
 					<Description
@@ -63,7 +62,7 @@ export function SkillBeam({ className }: { className?: string }) {
 
 				<li className="flex flex-1 max-md:gap-4 sm:flex-col sm:items-center">
 					<Circle ref={frontendRef}>
-						<Monitor className="size-8 text-blue-500 sm:size-6" strokeWidth={2} />
+						<Monitor className="size-8 text-blue-400 sm:size-6" strokeWidth={2} />
 					</Circle>
 
 					<Description
@@ -75,7 +74,7 @@ export function SkillBeam({ className }: { className?: string }) {
 
 				<li className="flex flex-1 max-md:gap-4 sm:flex-col sm:items-end">
 					<Circle ref={backendRef}>
-						<Server className="size-8 text-emerald-500 sm:size-6" strokeWidth={2} />
+						<Server className="text-brand-300 size-8 sm:size-6" strokeWidth={2} />
 					</Circle>
 
 					<Description

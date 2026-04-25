@@ -47,8 +47,8 @@ export default function AppNavbar() {
 	const [motionKey, setMotionKey] = useState(0);
 
 	return (
-		<nav className="sticky top-0 z-40 py-3 pb-0">
-			<div className="container">
+		<nav className="sticky top-0 z-40 pt-2 lg:pt-4">
+			<div className="container px-2">
 				<div className="bg-background supports-backdrop-filter:bg-background/60 border-border flex items-center justify-between rounded-lg border p-2 pl-4 backdrop-blur-md">
 					<NavbarLogo />
 
@@ -95,7 +95,7 @@ export default function AppNavbar() {
 											</div>
 
 											<DrawerTrigger asChild>
-												<Button aria-label="Close navigation menu" size="icon-lg" variant="ghost">
+												<Button aria-label="Close navigation menu" size="icon-lg" variant="outline">
 													<XIcon className="size-5" />
 												</Button>
 											</DrawerTrigger>

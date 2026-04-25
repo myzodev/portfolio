@@ -1,6 +1,6 @@
 import type Project from "@/types/project";
 
-import projectsData from "./projects.json";
+import projectsData from "./projects-list";
 
 export type { Project };
 

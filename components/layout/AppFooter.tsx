@@ -1,11 +1,11 @@
-import { MailIcon, MoveDownRightIcon } from "lucide-react";
+import { MailIcon } from "lucide-react";
 
 import { CONTACT_ROUTE } from "@/utils/routes";
 
 import SectionHeading from "@/components/SectionHeading";
 import { Separator } from "@/components/magicui/separator";
 import ButtonLink from "@/components/ui/ButtonLink";
-import { GithubIcon } from "@/components/ui/Icon";
+import { GithubIcon, LinkedInIcon } from "@/components/ui/Icon";
 
 import CurrentPlaying from "./footer/CurrentPlaying";
 import SocialLink from "./footer/SocialLink";
@@ -16,14 +16,11 @@ export default function AppFooter() {
 			<section className="bg-muted flex flex-col gap-10 rounded-xl p-6">
 				<div className="flex flex-col justify-between gap-6 md:flex-row md:items-start">
 					<header>
-						<div className="mb-4 flex items-center gap-2">
-							<MoveDownRightIcon className="size-4" />
-							<SectionHeading>Let's talk about your idea</SectionHeading>
-						</div>
+						<SectionHeading className="mb-4">Let's talk about your idea</SectionHeading>
 
 						<nav className="flex flex-col gap-2 md:flex-row">
 							<ButtonLink size="lg" href={CONTACT_ROUTE}>
-								Let's talk
+								Contact me
 							</ButtonLink>
 
 							<ButtonLink className="gap-2" size="lg" variant="outline" href="mailto:hello@michalvalo.dev">
@@ -50,6 +47,14 @@ export default function AppFooter() {
 							<ul className="flex flex-wrap gap-2">
 								<li>
 									<SocialLink href="https://github.com/myzodev" icon={<GithubIcon />} label="Github" target="_blank" />
+								</li>
+								<li>
+									<SocialLink
+										href="https://www.linkedin.com/in/michal-valo-421762237/"
+										icon={<LinkedInIcon />}
+										label="LinkedIn"
+										target="_blank"
+									/>
 								</li>
 							</ul>
 						</nav>
