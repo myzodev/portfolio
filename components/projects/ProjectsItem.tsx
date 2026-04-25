@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { PROJECT_ROUTE } from "@/utils/routes";
+import { cn } from "@/utils/utils";
 
 import type { Project } from "@/libs/projects";
 
@@ -9,7 +10,9 @@ import ProjectsItemImage from "./ProjectsItemImage";
 
 export default function ProjectsItem(item: Project) {
 	return (
-		<li className="border-border bg-background hover:border-primary/50 link-overlay-box group rounded-lg border p-4 pb-5 transition-colors sm:p-6">
+		<li
+			className={`border-border bg-background link-overlay-box group rounded-lg border p-4 pb-5 transition-colors sm:p-6 ${cn(!item.wip && "hover:border-primary/50")}`}
+		>
 			<div className="relative mb-4">
 				<div
 					className="relative flex aspect-square size-full items-center justify-center overflow-hidden rounded-md p-4 transition-colors duration-300 sm:p-6"
