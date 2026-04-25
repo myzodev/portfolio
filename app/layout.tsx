@@ -4,6 +4,7 @@ import { cn } from "@/utils/utils";
 
 import AppFooter from "@/components/layout/AppFooter";
 import AppNavbar from "@/components/layout/AppNavbar";
+import { Toaster } from "@/components/magicui/sonner";
 import CursorDot from "@/components/ui/CursorDot";
 
 import { ClashDisplay, Nunito } from "@/assets/styles/fonts";
@@ -18,12 +19,13 @@ export default function RootLayout({
 	const fontClasses = cn(ClashDisplay.variable, Nunito.variable);
 
 	return (
-		<html lang="en" className={fontClasses}>
+		<html lang="en" className={fontClasses} suppressHydrationWarning>
 			<body>
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-					<AppNavbar />
-
+					<Toaster />
 					<CursorDot />
+
+					<AppNavbar />
 
 					{children}
 

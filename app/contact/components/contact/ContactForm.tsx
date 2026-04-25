@@ -1,11 +1,60 @@
+"use client";
+
+import { useTransition } from "react";
+
+import { toast } from "sonner";
+
 import { Button } from "@/components/magicui/button";
-import { Field, FieldGroup, FieldLabel, FieldSeparator } from "@/components/magicui/field";
+import { Field, FieldGroup, FieldLabel } from "@/components/magicui/field";
 import { Input } from "@/components/magicui/input";
+import { Spinner } from "@/components/magicui/spinner";
 import { Textarea } from "@/components/magicui/textarea";
 
 export default function ContactForm() {
+	const [isPending, startTransition] = useTransition();
+
+	const handleSubmit = (event: any) => {
+		event.preventDefault();
+
+		startTransition(async () => {
+			try {
+				const form = event.target as HTMLFormElement;
+				const formData = new FormData(event.target);
+				const messageData = Object.fromEntries(formData);
+
+				if (!messageData.name || !messageData.email || !messageData.subject || !messageData.message) {
+					toast.error("Please fill in all fields", { position: "top-center" });
+					return;
+				}
+
+				toast.promise(
+					() =>
+						fetch("https://send-email.michalvalo.dev", {
+							method: "POST",
+							body: JSON.stringify(messageData),
+						}),
+					{
+						loading: "Sending email...",
+						position: "top-center",
+						success: async (response) => {
+							const data = await response.json();
+							form.reset();
+							return data.message;
+						},
+						error: async (response) => {
+							const data = await response.json();
+							return data.message;
+						},
+					},
+				);
+			} catch (error) {
+				console.error(error);
+			}
+		});
+	};
+
 	return (
-		<form className="col-span-12 md:col-span-7">
+		<form className="col-span-12 md:col-span-7" onSubmit={handleSubmit}>
 			<FieldGroup className="gap-4">
 				<div className="grid grid-cols-1 gap-4 md:grid-cols-2">
 					<Field className="gap-1.5">
@@ -13,7 +62,7 @@ export default function ContactForm() {
 							Name
 						</FieldLabel>
 
-						<Input id="name" type="text" placeholder="Your name" required />
+						<Input id="name" type="text" name="name" placeholder="Your name" />
 					</Field>
 
 					<Field className="gap-1.5">
@@ -21,7 +70,7 @@ export default function ContactForm() {
 							Email
 						</FieldLabel>
 
-						<Input id="email" type="email" placeholder="your@email.com" required />
+						<Input id="email" type="email" name="email" placeholder="your@email.com" />
 					</Field>
 				</div>
 
@@ -30,15 +79,18 @@ export default function ContactForm() {
 						Subject
 					</FieldLabel>
 
-					<Input id="subject" type="text" placeholder="Subject" required />
+					<Input id="subject" type="text" name="subject" placeholder="Subject" />
 				</Field>
 
 				<Field>
-					<Textarea id="message" className="h-40 resize-y" placeholder="Your message" required />
+					<Textarea id="message" className="h-40 resize-y" name="message" placeholder="Your message" />
 				</Field>
 
 				<Field>
-					<Button type="submit">Submit</Button>
+					<Button type="submit" disabled={isPending}>
+						{isPending && <Spinner data-icon="inline-start" />}
+						Submit
+					</Button>
 				</Field>
 			</FieldGroup>
 		</form>
