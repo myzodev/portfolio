@@ -3,7 +3,7 @@ import { MoveDownLeftIcon } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import { ScrollVelocityContainer, ScrollVelocityRow } from "@/components/magicui/scroll-based-velocity";
 
-import { SkillBeam } from "./SkillBeam";
+import { SkillsBeam } from "./SkillsBeam";
 
 export default function SkillsBlock() {
 	return (
@@ -23,7 +23,7 @@ export default function SkillsBlock() {
 					<MoveDownLeftIcon className="size-4" />
 				</header>
 
-				<SkillBeam />
+				<SkillsBeam />
 			</div>
 		</section>
 	);

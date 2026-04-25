@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import PageHeader from "@/components/PageHeader";
+import ContactPage from "./content";
 
 export const metadata: Metadata = {
 	title: "Myžo • Let's get in touch",
@@ -8,9 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-	return (
-		<>
-			<PageHeader text="Got a question?" highlightText="Ask now" />
-		</>
-	);
+	return <ContactPage />;
 }

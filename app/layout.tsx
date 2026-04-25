@@ -25,7 +25,7 @@ export default function RootLayout({
 
 					<CursorDot />
 
-					<main>{children}</main>
+					{children}
 
 					<AppFooter />
 				</ThemeProvider>

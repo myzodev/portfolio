@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 
-import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { Menu, XIcon } from "lucide-react";
 import { FolderGitIcon, HouseIcon, MoveUpRightIcon, PhoneIcon } from "lucide-react";
 import { motion } from "motion/react";
 
 import { CONTACT_ROUTE, HOME_ROUTE, PROJECTS_ROUTE } from "@/utils/routes";
+import { cn } from "@/utils/utils";
 
 import { AnimatedThemeToggler } from "@/components/magicui/animated-theme-toggler";
 import { Button } from "@/components/magicui/button";
@@ -45,6 +46,7 @@ const linkStagger = { delayChildren: 0.06, staggerChildren: 0.07 };
 
 export default function AppNavbar() {
 	const [motionKey, setMotionKey] = useState(0);
+	const pathname = usePathname();
 
 	return (
 		<nav className="sticky top-0 z-40 pt-2 lg:pt-4">
@@ -123,7 +125,10 @@ export default function AppNavbar() {
 											>
 												<DrawerClose asChild>
 													<ButtonLink
-														className="h-10 w-full gap-3 rounded-sm text-sm font-bold uppercase"
+														className={cn(
+															"h-10 w-full gap-3 rounded-sm text-sm font-bold uppercase",
+															pathname === href && "text-primary!",
+														)}
 														href={href}
 														variant="ghost"
 													>

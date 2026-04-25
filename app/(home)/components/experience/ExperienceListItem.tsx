@@ -1,8 +1,8 @@
 import { Badge } from "@/components/magicui/badge";
 
-import type { Job } from "./ExperienceBlock";
+import type { Experience } from "@/types/experience";
 
-export default function ExperienceItem({ company, description, duration, role }: Job) {
+export default function ExperienceListItem({ company, description, duration, role }: Experience) {
 	return (
 		<li className="border-border relative mx-auto min-h-fit w-full rounded-md border p-4 transition-all duration-200">
 			<article className="flex flex-col justify-between gap-4 md:flex-row md:items-start">

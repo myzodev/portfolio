@@ -2,7 +2,7 @@
 
 import React, { forwardRef, useRef } from "react";
 
-import { ArrowDownLeft, Monitor, Paintbrush, Server } from "lucide-react";
+import { Monitor, Paintbrush, Server } from "lucide-react";
 
 import { cn } from "@/utils/utils";
 
@@ -26,21 +26,21 @@ const Circle = forwardRef<HTMLDivElement, { className?: string; children?: React
 
 Circle.displayName = "Circle";
 
-export function SkillBeam({ className }: { className?: string }) {
+const Description = ({ title, text, className }: { title: string; text: string; className?: string }) => (
+	<article className={cn("mt-2.5 flex w-full flex-col sm:mt-6", className)}>
+		<h3 className="text-foreground text-lg tracking-wider uppercase sm:text-2xl">{title}</h3>
+
+		<div className="bg-border my-4 h-px w-full" />
+
+		<p className="text-muted-foreground">{text}</p>
+	</article>
+);
+
+export function SkillsBeam({ className }: { className?: string }) {
 	const containerRef = useRef<HTMLDivElement>(null);
 	const designRef = useRef<HTMLDivElement>(null);
 	const frontendRef = useRef<HTMLDivElement>(null);
 	const backendRef = useRef<HTMLDivElement>(null);
-
-	const Description = ({ title, text, className }: { title: string; text: string; className?: string }) => (
-		<article className={cn("mt-2.5 flex w-full flex-col sm:mt-6", className)}>
-			<h3 className="text-foreground text-lg tracking-wider uppercase sm:text-2xl">{title}</h3>
-
-			<div className="bg-border my-4 h-px w-full" />
-
-			<p className="text-muted-foreground">{text}</p>
-		</article>
-	);
 
 	return (
 		<div

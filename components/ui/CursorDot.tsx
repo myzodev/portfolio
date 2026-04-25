@@ -32,14 +32,13 @@ export default function CursorDot() {
 		};
 
 		window.addEventListener("mousemove", handleMouseMove);
-		window.addEventListener("mouseover", handleOver); // Use mouseover/out for delegation
+		window.addEventListener("mouseover", handleOver);
 		window.addEventListener("mouseout", handleOut);
 
 		return () => {
 			window.removeEventListener("mousemove", handleMouseMove);
 			window.removeEventListener("mouseover", handleOver);
 			window.removeEventListener("mouseout", handleOut);
-			console.log(111);
 		};
 	}, [animate, scope]);
 

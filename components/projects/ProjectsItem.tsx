@@ -9,7 +9,7 @@ import ProjectsItemImage from "./ProjectsItemImage";
 
 export default function ProjectsItem(item: Project) {
 	return (
-		<li className="border-border bg-background link-overlay-box group rounded-lg border p-4 pb-5 sm:p-6">
+		<li className="border-border bg-background hover:border-primary/50 link-overlay-box group rounded-lg border p-4 pb-5 transition-colors sm:p-6">
 			<div className="relative mb-4">
 				<div
 					className="relative flex aspect-square size-full items-center justify-center overflow-hidden rounded-md p-4 transition-colors duration-300 sm:p-6"
@@ -21,7 +21,7 @@ export default function ProjectsItem(item: Project) {
 						<ProjectsItemImage title={item.title} slug={item.slug} />
 					)}
 
-					<span className="text-muted-foreground/10 font-heading absolute -right-0.5 -bottom-2 text-4xl md:text-6xl lg:-bottom-4 lg:text-8xl">
+					<span className="text-muted-foreground/10 font-heading absolute -right-0.5 -bottom-2 text-6xl lg:-bottom-4 lg:text-8xl">
 						{item.year}
 					</span>
 				</div>

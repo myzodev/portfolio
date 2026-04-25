@@ -29,7 +29,7 @@ export default function ProjectsBlock({
 
 	return (
 		<section className="container">
-			<div className={cn(offsetClasses, border && "border-border/50 border-t")}>
+			<div className={cn(offsetClasses, border && "border-border border-t")}>
 				<header className="mb-4 flex items-center justify-between md:mb-6">
 					<SectionHeading>{heading}</SectionHeading>
 					<MoveDownLeftIcon className="size-4" />
