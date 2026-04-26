@@ -1,5 +1,7 @@
 import { ThemeProvider } from "next-themes";
 
+import { ReactLenis } from "lenis/react";
+
 import { cn } from "@/utils/utils";
 
 import AppFooter from "@/components/layout/AppFooter";
@@ -10,6 +12,7 @@ import CursorDot from "@/components/ui/CursorDot";
 import { ClashDisplay, Nunito } from "@/assets/styles/fonts";
 
 import "@/assets/css/app.css";
+import "lenis/dist/lenis.css";
 
 export default function RootLayout({
 	children,
@@ -24,6 +27,7 @@ export default function RootLayout({
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					<Toaster />
 					<CursorDot />
+					<ReactLenis />
 
 					<AppNavbar />
 

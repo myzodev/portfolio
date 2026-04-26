@@ -1,3 +1,5 @@
+import { MoveDownRightIcon } from "lucide-react";
+
 import { CONTACT_ROUTE, PROJECTS_ROUTE } from "@/utils/routes";
 
 import { AuroraText } from "@/components/magicui/aurora-text";
@@ -34,6 +36,10 @@ export default function HeroBlock() {
 						Project showcase
 					</ButtonLink>
 				</footer>
+
+				<div className="absolute top-4 left-4">
+					<MoveDownRightIcon className="size-4" />
+				</div>
 			</article>
 		</header>
 	);

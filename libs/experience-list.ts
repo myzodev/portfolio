@@ -11,7 +11,7 @@ const experienceList: Experience[] = [
 		company: "Studio Parada s.r.o",
 		role: "Frontend Developer",
 		description: "Transforming creative design concepts into polished, pixel-perfect digital products.",
-		duration: "2023 - 2026",
+		duration: "2024 - 2026",
 	},
 	{
 		company: "VOLITA GROUP a.s.",

@@ -8,7 +8,7 @@ import { stagger, useAnimate } from "framer-motion";
 
 import { HOME_ROUTE } from "@/utils/routes";
 
-const TEXT = "myžo";
+const TEXT = "myžo.";
 
 export default function NavbarLogo() {
 	const [scope, animate] = useAnimate();

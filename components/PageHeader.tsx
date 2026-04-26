@@ -1,4 +1,4 @@
-import { HTMLAttributes } from "react";
+import { MoveDownRightIcon } from "lucide-react";
 
 import { cn } from "@/utils/utils";
 
@@ -19,6 +19,8 @@ export default function PageHeader({ offsetClasssName, text, highlightText }: Pr
 
 	return (
 		<header className={cn("relative container overflow-hidden", offsetClasses)}>
+			<MoveDownRightIcon className="mb-4 size-4" />
+
 			<h1 className="text-4xl font-bold sm:text-5xl lg:text-7xl">
 				{text} <br />
 				<AuroraText>{highlightText}</AuroraText>

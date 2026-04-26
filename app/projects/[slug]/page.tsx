@@ -1,11 +1,9 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import AppWIP from "@/components/layout/AppWIP";
-
 import { getAllProjectSlugs, getProjectBySlug } from "@/libs/projects";
 
-import ProjectHeader from "./components/ProjectHeader";
+import ProjectPage from "./content";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const { slug } = await params;
@@ -34,10 +32,5 @@ export default async function Page({ params }: Props) {
 		notFound();
 	}
 
-	return (
-		<>
-			<ProjectHeader project={project} />
-			<AppWIP size="small" showButton={false} />
-		</>
-	);
+	return <ProjectPage project={project} />;
 }

@@ -32,7 +32,7 @@ const navLinks = [
 	{ href: CONTACT_ROUTE, label: "Contact", icon: PhoneIcon },
 ] as const;
 
-const smoothSpring = { type: "spring" as const, stiffness: 320, damping: 32, mass: 0.45 };
+const smoothSpring = { type: "tween" as const, duration: 0.5 };
 
 const headerTransition = smoothSpring;
 
@@ -58,10 +58,9 @@ export default function AppNavbar() {
 						<AnimatedThemeToggler className="cursor-pointer" duration={500} />
 
 						<Drawer
-							shouldScaleBackground={false}
 							direction="right"
 							onOpenChange={(open) => {
-								if (open) setMotionKey((k) => k + 1);
+								if (open) setMotionKey((key) => key + 1);
 							}}
 						>
 							<DrawerTrigger asChild>
@@ -126,7 +125,7 @@ export default function AppNavbar() {
 												<DrawerClose asChild>
 													<ButtonLink
 														className={cn(
-															"h-10 w-full gap-3 rounded-sm text-sm font-bold uppercase",
+															"h-10 w-full justify-start gap-3 rounded-sm text-sm font-bold uppercase",
 															pathname === href && "text-primary!",
 														)}
 														href={href}
@@ -134,7 +133,6 @@ export default function AppNavbar() {
 													>
 														<Icon className="size-4" />
 														{label}
-														<MoveUpRightIcon className="ml-auto size-3" />
 													</ButtonLink>
 												</DrawerClose>
 											</motion.li>

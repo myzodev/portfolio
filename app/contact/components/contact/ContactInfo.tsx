@@ -1,7 +1,9 @@
 import { MoveDownRightIcon } from "lucide-react";
 
-import SocialLink from "@/components/layout/footer/SocialLink";
 import { GithubIcon, LinkedInIcon } from "@/components/ui/Icon";
+import SocialLink from "@/components/ui/SocialLink";
+
+import linksList from "@/libs/links-list";
 
 export default function ContactItems() {
 	return (
@@ -17,18 +19,11 @@ export default function ContactItems() {
 				<small className="text-muted-foreground mb-1 block">Links</small>
 
 				<ul className="flex flex-wrap gap-2">
-					<li>
-						<SocialLink href="https://github.com/myzodev" icon={<GithubIcon />} label="Github" target="_blank" />
-					</li>
-
-					<li>
-						<SocialLink
-							href="https://www.linkedin.com/in/michal-valo-421762237/"
-							icon={<LinkedInIcon />}
-							label="LinkedIn"
-							target="_blank"
-						/>
-					</li>
+					{linksList.map((link) => (
+						<li key={link.href}>
+							<SocialLink href={link.href} icon={link.icon} label={link.label} />
+						</li>
+					))}
 				</ul>
 			</div>
 		</aside>
