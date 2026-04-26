@@ -12,33 +12,19 @@ export default function CursorDot() {
 
 		const handleMouseMove = (event: MouseEvent) => {
 			const { clientX, clientY } = event;
-			animate(scope.current, { x: clientX, y: clientY }, { type: "tween", duration: 0.1, mass: 1 });
-		};
-
-		const handleOver = (event: MouseEvent) => {
 			const target = event.target as HTMLElement;
 
-			if (target.closest("button, a")) {
-				animate(scope.current, { scale: 0 }, { type: "tween", duration: 0.1 });
-			}
-		};
+			animate(scope.current, { x: clientX, y: clientY }, { type: "tween", duration: 0.1 });
 
-		const handleOut = (event: MouseEvent) => {
-			const target = event.target as HTMLElement;
+			const isOverInteractive = Boolean(target.closest("button, a"));
 
-			if (target.closest("button, a")) {
-				animate(scope.current, { scale: 1 }, { duration: 0.1 });
-			}
+			animate(scope.current, { scale: isOverInteractive ? 0 : 1 }, { duration: 0.1 });
 		};
 
 		window.addEventListener("mousemove", handleMouseMove);
-		window.addEventListener("mouseover", handleOver);
-		window.addEventListener("mouseout", handleOut);
 
 		return () => {
 			window.removeEventListener("mousemove", handleMouseMove);
-			window.removeEventListener("mouseover", handleOver);
-			window.removeEventListener("mouseout", handleOut);
 		};
 	}, [animate, scope]);
 
