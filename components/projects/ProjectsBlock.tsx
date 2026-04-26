@@ -1,4 +1,5 @@
 import { MoveDownLeftIcon } from "lucide-react";
+import { ArrowRightIcon } from "lucide-react";
 
 import { PROJECTS_ROUTE } from "@/utils/routes";
 import { cn } from "@/utils/utils";
@@ -11,7 +12,7 @@ import type { Project } from "@/libs/projects";
 import ProjectsItem from "./ProjectsItem";
 
 type Props = {
-	heading?: string;
+	heading: string;
 	projects: Project[];
 	border?: boolean;
 	showProjectsButton?: boolean;
@@ -19,7 +20,7 @@ type Props = {
 };
 
 export default function ProjectsBlock({
-	heading = "Recent Projects",
+	heading = "",
 	projects = [],
 	border = true,
 	showProjectsButton = true,
@@ -30,10 +31,12 @@ export default function ProjectsBlock({
 	return (
 		<section className="container">
 			<div className={cn(offsetClasses, border && "border-border border-t")}>
-				<header className="mb-4 flex items-center justify-between md:mb-6">
-					<SectionHeading>{heading}</SectionHeading>
-					<MoveDownLeftIcon className="size-4" />
-				</header>
+				{heading ? (
+					<header className="mb-4 flex items-center justify-between md:mb-6">
+						<SectionHeading>{heading}</SectionHeading>
+						<MoveDownLeftIcon className="size-4" />
+					</header>
+				) : null}
 
 				{projects.length > 0 ? (
 					<ul className="grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 sm:gap-y-12">
@@ -45,8 +48,9 @@ export default function ProjectsBlock({
 
 				{showProjectsButton ? (
 					<footer className="mt-10 flex justify-center">
-						<ButtonLink href={PROJECTS_ROUTE} size="lg">
+						<ButtonLink href={PROJECTS_ROUTE} size="lg" variant="secondary">
 							View all projects
+							<ArrowRightIcon className="size-4" />
 						</ButtonLink>
 					</footer>
 				) : null}

@@ -15,7 +15,7 @@ export default function PageHeader({ offsetClasssName, text, highlightText }: Pr
 		return null;
 	}
 
-	const offsetClasses = offsetClasssName ? offsetClasssName : "pt-18 pb-12 lg:pb-18 lg:pt-24";
+	const offsetClasses = offsetClasssName ? offsetClasssName : "pt-12 pb-12 lg:pb-20 lg:pt-24";
 
 	return (
 		<header className={cn("relative container overflow-hidden", offsetClasses)}>

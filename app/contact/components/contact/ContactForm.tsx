@@ -64,7 +64,7 @@ export default function ContactForm() {
 							Name
 						</FieldLabel>
 
-						<Input id="name" type="text" name="name" placeholder="Your name" />
+						<Input id="name" type="text" name="name" placeholder="Your Name" />
 					</Field>
 
 					<Field className="gap-1.5">
@@ -85,16 +85,21 @@ export default function ContactForm() {
 				</Field>
 
 				<Field>
-					<Textarea id="message" className="h-40 resize-y" name="message" placeholder="Your message" />
-				</Field>
-
-				<Field>
-					<Button type="submit" disabled={isSending}>
-						{isSending && <Spinner data-icon="inline-start" />}
-						Submit
-					</Button>
+					<Textarea
+						id="message"
+						className="h-40 resize-y"
+						name="message"
+						placeholder="I have a milion dollar idea..."
+					/>
 				</Field>
 			</FieldGroup>
+
+			<div className="mt-4 text-right">
+				<Button type="submit" disabled={isSending}>
+					{isSending && <Spinner data-icon="inline-start" />}
+					Ship Message
+				</Button>
+			</div>
 		</form>
 	);
 }

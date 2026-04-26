@@ -10,7 +10,7 @@ export default function HomePage() {
 	return (
 		<>
 			<HeroBlock />
-			<ProjectsBlock projects={projects.slice(0, 4)} />
+			<ProjectsBlock heading="Fresh From Development" projects={projects.slice(0, 4)} />
 			<SkillsBlock />
 			<ExperienceBlock />
 		</>

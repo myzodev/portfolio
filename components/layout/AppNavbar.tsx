@@ -32,7 +32,7 @@ const navLinks = [
 	{ href: CONTACT_ROUTE, label: "Contact", icon: PhoneIcon },
 ] as const;
 
-const smoothSpring = { type: "tween" as const, duration: 0.5 };
+const smoothSpring = { type: "tween" as const, duration: 0.3 };
 
 const headerTransition = smoothSpring;
 

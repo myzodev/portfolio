@@ -8,13 +8,15 @@ import { cn } from "@/utils/utils";
 
 import { AnimatedBeam } from "@/components/magicui/animated-beam";
 
+import skillsList from "@/libs/skills-list";
+
 const Circle = forwardRef<HTMLDivElement, { className?: string; children?: React.ReactNode }>(
 	({ className, children }, ref) => {
 		return (
 			<div
 				ref={ref}
 				className={cn(
-					"bg-muted z-10 flex size-12 shrink-0 items-center justify-center rounded-full border p-3 sm:size-16",
+					"bg-muted z-10 flex size-12 shrink-0 items-center justify-center rounded-full border p-3 md:size-16",
 					className,
 				)}
 			>
@@ -27,8 +29,8 @@ const Circle = forwardRef<HTMLDivElement, { className?: string; children?: React
 Circle.displayName = "Circle";
 
 const Description = ({ title, text, className }: { title: string; text: string; className?: string }) => (
-	<article className={cn("mt-2.5 flex w-full flex-col sm:mt-6", className)}>
-		<h3 className="text-foreground text-lg tracking-wider uppercase sm:text-2xl">{title}</h3>
+	<article className={cn("mt-2.5 flex w-full flex-col md:mt-6", className)}>
+		<h3 className="text-foreground text-lg tracking-wider uppercase md:text-2xl">{title}</h3>
 
 		<div className="bg-border my-4 h-px w-full" />
 
@@ -42,47 +44,28 @@ export function SkillsBeam({ className }: { className?: string }) {
 	const frontendRef = useRef<HTMLDivElement>(null);
 	const backendRef = useRef<HTMLDivElement>(null);
 
+	const refsMap = [designRef, frontendRef, backendRef];
+	const refsMapClasses = [
+		"md:items-start md:text-left",
+		"md:items-center md:text-center",
+		"md:items-end md:text-right",
+	];
+
 	return (
 		<div
 			className={cn("relative flex w-full flex-col items-center justify-center overflow-hidden", className)}
 			ref={containerRef}
 		>
-			<ul className="flex size-full max-w-6xl flex-col items-start justify-between gap-10 sm:flex-row sm:gap-18">
-				<li className="flex flex-1 max-md:gap-4 sm:flex-col sm:items-start">
-					<Circle ref={designRef}>
-						<Paintbrush className="size-8 text-pink-400 sm:size-6" strokeWidth={2} />
-					</Circle>
+			<ul className="flex size-full flex-col items-start justify-between gap-10 md:flex-row md:gap-18">
+				{skillsList.map((skill, index) => (
+					<li className={cn("flex flex-1 max-md:gap-4 md:flex-col", refsMapClasses[index])}>
+						<Circle ref={refsMap[index]}>
+							<skill.icon className={cn("size-8 sm:size-6", skill.iconClasses)} strokeWidth={2} />
+						</Circle>
 
-					<Description
-						className="md:text-left"
-						title="Design"
-						text="Modern, intuitive interfaces that ensure smooth interactions and a premium user experience."
-					/>
-				</li>
-
-				<li className="flex flex-1 max-md:gap-4 sm:flex-col sm:items-center">
-					<Circle ref={frontendRef}>
-						<Monitor className="size-8 text-blue-400 sm:size-6" strokeWidth={2} />
-					</Circle>
-
-					<Description
-						className="md:text-center"
-						title="Frontend"
-						text="Building fast, responsive web applications tailored for performance across all modern devices."
-					/>
-				</li>
-
-				<li className="flex flex-1 max-md:gap-4 sm:flex-col sm:items-end">
-					<Circle ref={backendRef}>
-						<Server className="text-brand-300 size-8 sm:size-6" strokeWidth={2} />
-					</Circle>
-
-					<Description
-						className="md:text-right"
-						title="Backend"
-						text="Developing stable server architectures and secure data management for scalable digital products."
-					/>
-				</li>
+						<Description title={skill.title} text={skill.description} />
+					</li>
+				))}
 			</ul>
 
 			<AnimatedBeam containerRef={containerRef} fromRef={designRef} toRef={frontendRef} duration={5} pathWidth={1} />

@@ -13,7 +13,7 @@ export default function ExperienceBlock() {
 		<section className="container">
 			<div className="border-border grid grid-cols-12 border-t py-20 lg:py-32">
 				<header className="col-span-12 mb-4 max-md:flex max-md:items-center max-md:justify-between md:col-span-4 md:mb-6">
-					<SectionHeading className="mb-2">Experience</SectionHeading>
+					<SectionHeading>Experience</SectionHeading>
 					<MoveRightIcon className="size-4 max-md:rotate-135" />
 				</header>
 

@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 
 import Link from "next/link";
 
+import { cn } from "@/utils/utils";
+
 import { SpotifyIcon } from "@/components/ui/Icon";
 
 type CurrentPlayingProps = {
@@ -14,7 +16,11 @@ type CurrentPlayingProps = {
 	url: string;
 };
 
-export default function CurrentPlaying() {
+type Props = {
+	className?: string;
+};
+
+export default function CurrentPlaying({ className }: Props) {
 	const [currentPlaying, setCurrentPlaying] = useState<CurrentPlayingProps>();
 
 	const fetchCurrentPlaying = async () => {
@@ -40,7 +46,7 @@ export default function CurrentPlaying() {
 	const { isPlaying = false, track = "", artist = "", url = "" } = currentPlaying ?? {};
 
 	return (
-		<aside className="group link-overlay-box relative flex items-center justify-end gap-3">
+		<aside className={cn("group link-overlay-box relative flex items-center justify-end gap-3", className)}>
 			<div className="min-w-0 text-right">
 				{isPlaying ? (
 					<>

@@ -87,7 +87,7 @@ const projectsData: Project[] = [
 	{
 		title: "Nivy",
 		slug: "nivy",
-		role: "Development",
+		role: "Optimization & Refactoring",
 		url: "https://nivy.com",
 		color: "orange",
 		year: "2021",

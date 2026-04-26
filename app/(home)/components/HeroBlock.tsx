@@ -1,4 +1,5 @@
 import { MoveDownRightIcon } from "lucide-react";
+import { ArrowRightIcon } from "lucide-react";
 
 import { CONTACT_ROUTE, PROJECTS_ROUTE } from "@/utils/routes";
 
@@ -10,22 +11,22 @@ import ButtonLink from "@/components/ui/ButtonLink";
 export default function HeroBlock() {
 	return (
 		<header className="relative overflow-hidden">
-			<Ripple />
+			<Ripple mainCircleOpacity={0.28} numCircles={10} />
 
 			<div className="from-background/0 to-background absolute inset-0 z-0 bg-radial to-70%" />
 
 			<article className="relative z-10 container py-20 lg:py-32">
 				<h1 className="mb-4 text-center text-4xl font-bold sm:mb-6 sm:text-5xl lg:text-7xl">
-					Enhance Your <br />
-					<AuroraText>Online Experience</AuroraText>
+					Making Your <br />
+					<AuroraText>Digital Product</AuroraText> Shine
 				</h1>
 
 				<p className="text-muted-foreground mx-auto mb-8 max-w-md text-center text-base sm:mb-10 sm:max-w-lg sm:text-lg lg:max-w-xl">
-					I'll transform your ideas into fast, responsive, and modern{" "}
-					<Highlighter action="underline" color="#7371fc" padding={0} iterations={1} animationDuration={300}>
-						websites and applications
-					</Highlighter>{" "}
-					that provide an intuitive and exceptional user experience
+					I transform your ideas into fast, responsive, and modern digital products that provide an{" "}
+					<Highlighter action="underline" color="#7371fc" padding={1} iterations={2} animationDuration={300}>
+						exceptional experience
+					</Highlighter>
+					.
 				</p>
 
 				<footer className="flex items-center justify-center gap-2">
@@ -33,7 +34,8 @@ export default function HeroBlock() {
 						Get in touch
 					</ButtonLink>
 					<ButtonLink href={PROJECTS_ROUTE} variant="outline" size="lg">
-						Project showcase
+						See projects
+						<ArrowRightIcon className="size-4" />
 					</ButtonLink>
 				</footer>
 

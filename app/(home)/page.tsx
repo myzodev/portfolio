@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import HomePage from "./content";
 
 export const metadata: Metadata = {
-	title: "Myžo • Enhance Your Online Experience",
+	title: "Myžo • Making Your Digital Product Shine",
 	description:
-		"Transform your ideas into fast, responsive, and modern websites and applications that provide an intuitive and exceptional user experience",
+		"I transform your ideas into fast, responsive, and modern digital products that provide an exceptional experience.",
 };
 
 export default function Page() {

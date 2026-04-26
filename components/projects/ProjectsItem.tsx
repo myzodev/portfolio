@@ -11,7 +11,7 @@ import ProjectsItemImage from "./ProjectsItemImage";
 export default function ProjectsItem(item: Project) {
 	return (
 		<li
-			className={`border-border bg-background link-overlay-box group rounded-lg border p-4 pb-5 transition-colors duration-500 sm:p-6 ${cn(!item.wip && "hover:border-primary/50")}`}
+			className={`border-border bg-background link-overlay-box group rounded-lg border p-4 pb-5 transition-colors duration-300 sm:p-6 ${cn(!item.wip && "hover:border-primary/50")}`}
 		>
 			<div className="relative mb-4">
 				<div
