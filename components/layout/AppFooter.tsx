@@ -1,3 +1,4 @@
+import Logo from "@/assets/images/logo.svg";
 import { MailIcon, MoveDownIcon } from "lucide-react";
 
 import { CONTACT_ROUTE } from "@/utils/routes";
@@ -5,7 +6,6 @@ import { CONTACT_ROUTE } from "@/utils/routes";
 import SectionHeading from "@/components/SectionHeading";
 import { Separator } from "@/components/magicui/separator";
 import ButtonLink from "@/components/ui/ButtonLink";
-import { GithubIcon, LinkedInIcon } from "@/components/ui/Icon";
 
 import linksList from "@/libs/links-list";
 
@@ -41,7 +41,7 @@ export default function AppFooter() {
 					</div>
 
 					<figure className="w-full max-md:order-2">
-						<img className="w-full" src="/images/logo.svg" alt="Myžo logo" />
+						<Logo className="text-foreground w-full" />
 					</figure>
 				</div>
 
