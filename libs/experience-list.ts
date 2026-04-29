@@ -25,6 +25,12 @@ const experienceList: Experience[] = [
 		description: "Mastering the core fundamentals & best practices of modern web standards.",
 		duration: "2020 - 2021",
 	},
+	{
+		company: "The Beginning",
+		role: "First Line of Code",
+		description: "Wrote my first 'Hello World' and sparked a lifelong obsession with building the web.",
+		duration: "2019",
+	},
 ];
 
 export default experienceList;

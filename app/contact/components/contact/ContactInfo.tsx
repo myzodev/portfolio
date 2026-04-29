@@ -7,8 +7,12 @@ import linksList from "@/libs/links-list";
 
 export default function ContactItems() {
 	return (
-		<aside className="col-span-12 flex flex-col gap-10 md:col-span-5">
+		<aside className="col-span-12 flex flex-col gap-8 md:col-span-5">
 			<MoveDownRightIcon className="size-4" />
+
+			<div>
+				<p className="block font-semibold">Michal Valo</p>
+			</div>
 
 			<div>
 				<small className="text-muted-foreground mb-1 block">Email</small>

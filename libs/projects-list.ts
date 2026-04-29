@@ -93,9 +93,17 @@ const projectsData: Project[] = [
 		year: "2021",
 	},
 	{
+		title: "Powerlogy",
+		slug: "powerlogy",
+		role: "Frontend Development",
+		url: "https://powerlogy.com",
+		color: "lime-green",
+		year: "2021",
+	},
+	{
 		title: "ŠARMDENT",
 		slug: "sarmdent",
-		role: "Development",
+		role: "Frontend Development",
 		url: "https://sarmdent.sk",
 		color: "pink",
 		year: "2021",

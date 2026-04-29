@@ -12,7 +12,7 @@ export default function ProjectsItemImage({ title, slug }: Props) {
 
 	return (
 		<Parallax
-			className="aspect-7/4 w-full overflow-hidden rounded-lg"
+			className="relative aspect-7/4 w-full overflow-hidden rounded-lg"
 			bgImage={`/images/projects/${slug}.png`}
 			bgImageAlt={`${title} project screenshot`}
 			bgImageStyle={{
@@ -20,8 +20,6 @@ export default function ProjectsItemImage({ title, slug }: Props) {
 				height: "110%",
 			}}
 			strength={20}
-		>
-			<div className="h-full w-full" />
-		</Parallax>
+		/>
 	);
 }
