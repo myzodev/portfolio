@@ -1,0 +1,37 @@
+@layer components {
+	.project-section {
+		@apply text-base leading-relaxed last:mb-0 md:text-lg;
+	}
+
+	.project-section h2 {
+		@apply mb-4 text-xl font-bold tracking-wide md:text-2xl;
+	}
+
+	.project-section h3 {
+		@apply mb-4 text-lg font-semibold tracking-wide md:text-xl;
+	}
+
+	.project-section p {
+		@apply mb-4 opacity-90 last:mb-0;
+	}
+
+	.project-section ul {
+		@apply ml-5 list-outside list-disc space-y-2 marker:text-gray-500;
+	}
+
+	.project-section li {
+		@apply mb-3 pl-1 leading-relaxed opacity-90;
+	}
+
+	.project-section strong {
+		@apply font-semibold;
+	}
+
+	.project-section a {
+		@apply text-primary underline decoration-2 underline-offset-4;
+	}
+
+	.project-section img {
+		@apply rounded-xl shadow-md;
+	}
+}

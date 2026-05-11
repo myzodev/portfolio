@@ -4,6 +4,8 @@ import { DotIcon, GlobeIcon } from "lucide-react";
 
 import { PROJECTS_ROUTE } from "@/utils/routes";
 
+import SectionHeading from "@/components/SectionHeading";
+import { AuroraText } from "@/components/magicui/aurora-text";
 import {
 	Breadcrumb,
 	BreadcrumbItem,
@@ -38,11 +40,13 @@ export default function ProjectHeader({ project }: { project: Project }) {
 
 			<div className="mb-3">
 				<div
-					className="relative overflow-hidden rounded-lg py-12 lg:py-20"
+					className="relative flex flex-col items-center justify-center overflow-hidden rounded-lg py-12 lg:py-20"
 					style={{ backgroundColor: `var(--color-project-${project.color})` }}
 				>
+					<SectionHeading className="mb-1">About the project</SectionHeading>
+
 					<h1 className="text-foreground relative z-10 text-center text-4xl font-bold sm:text-5xl lg:text-7xl">
-						{project.title}
+						<AuroraText>{project.title}</AuroraText>
 					</h1>
 				</div>
 			</div>
@@ -51,11 +55,15 @@ export default function ProjectHeader({ project }: { project: Project }) {
 				<Link
 					href={project.url}
 					target="_blank"
-					className="flex items-center justify-center gap-2 rounded-lg p-4 md:p-6"
+					className="group relative flex items-center justify-center gap-2 overflow-hidden rounded-lg p-4 md:p-6"
 					style={{ backgroundColor: `var(--color-project-${project.color})` }}
 				>
 					<GlobeIcon className="size-3" />
 					<h6 className="text-sm font-bold md:text-base">Website</h6>
+					<div
+						className="pointer-events-none absolute inset-0 bg-white opacity-0 transition-opacity duration-300 group-hover:opacity-5"
+						aria-hidden="true"
+					/>
 				</Link>
 
 				<div className="rounded-lg p-4 md:p-6" style={{ backgroundColor: `var(--color-project-${project.color})` }}>

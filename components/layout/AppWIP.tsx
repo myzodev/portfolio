@@ -1,7 +1,6 @@
 import { HOME_ROUTE } from "@/utils/routes";
 import { cn } from "@/utils/utils";
 
-import { AuroraText } from "../magicui/aurora-text";
 import ButtonLink from "../ui/ButtonLink";
 
 type Props = {
@@ -16,9 +15,7 @@ export default function AppWIP({ size = "screen", showButton = true }: Props) {
 		<section>
 			<div className="container">
 				<div className={cn("flex flex-col items-center justify-center", sectionSizeClasses)}>
-					<h1 className="mb-6 text-center text-4xl font-bold sm:mb-8 sm:text-5xl lg:text-7xl">
-						Work in <AuroraText>Progress</AuroraText>
-					</h1>
+					<h1 className="mb-6 text-center text-4xl font-bold sm:mb-8 sm:text-5xl lg:text-7xl">Working on it</h1>
 
 					{showButton ? (
 						<footer>
