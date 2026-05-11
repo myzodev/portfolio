@@ -58,7 +58,7 @@ export function SkillsBeam({ className }: { className?: string }) {
 		>
 			<ul className="flex size-full flex-col items-start justify-between gap-10 md:flex-row md:gap-18">
 				{skillsList.map((skill, index) => (
-					<li className={cn("flex flex-1 max-md:gap-4 md:flex-col", refsMapClasses[index])}>
+					<li key={index} className={cn("flex flex-1 max-md:gap-4 md:flex-col", refsMapClasses[index])}>
 						<Circle ref={refsMap[index]}>
 							<skill.icon className={cn("size-8 sm:size-6", skill.iconClasses)} strokeWidth={2} />
 						</Circle>

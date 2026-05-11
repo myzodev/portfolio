@@ -1,7 +1,5 @@
 import { ThemeProvider } from "next-themes";
 
-import { ReactLenis } from "lenis/react";
-
 import { cn } from "@/utils/utils";
 
 import AppFooter from "@/components/layout/AppFooter";
@@ -27,7 +25,6 @@ export default function RootLayout({
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					<Toaster />
 					<CursorDot />
-					<ReactLenis />
 
 					<AppNavbar />
 
