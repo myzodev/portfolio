@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 
 import { cn } from "@/utils/utils";
@@ -11,6 +12,13 @@ import { ClashDisplay, Nunito } from "@/assets/styles/fonts";
 
 import "@/assets/css/app.css";
 import "lenis/dist/lenis.css";
+
+export const metadata: Metadata = {
+	metadataBase: new URL("https://michalvalo.dev"),
+	openGraph: {
+		images: "/images/opengraph-image.png",
+	},
+};
 
 export default function RootLayout({
 	children,

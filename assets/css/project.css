@@ -4,15 +4,15 @@
 	}
 
 	.project-section h2 {
-		@apply mb-4 text-xl font-bold tracking-wide md:text-2xl;
+		@apply mb-2 text-xl font-bold tracking-wide md:mb-4 md:text-2xl;
 	}
 
 	.project-section h3 {
-		@apply mb-4 text-lg font-semibold tracking-wide md:text-xl;
+		@apply mb-2 text-lg font-semibold tracking-wide md:mb-4 md:text-xl;
 	}
 
 	.project-section p {
-		@apply mb-4 opacity-90 last:mb-0;
+		@apply mb-2 opacity-90 last:mb-0 md:mb-4;
 	}
 
 	.project-section ul {

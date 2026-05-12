@@ -43,7 +43,7 @@ export default function ProjectHeader({ project }: { project: Project }) {
 					className="relative flex flex-col items-center justify-center overflow-hidden rounded-lg py-12 lg:py-20"
 					style={{ backgroundColor: `var(--color-project-${project.color})` }}
 				>
-					<SectionHeading className="mb-1">About the project</SectionHeading>
+					<SectionHeading className="mb-1">About</SectionHeading>
 
 					<h1 className="text-foreground relative z-10 text-center text-4xl font-bold sm:text-5xl lg:text-7xl">
 						<AuroraText>{project.title}</AuroraText>
