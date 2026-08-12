@@ -1,12 +1,17 @@
-import type { Metadata } from "next";
+import EmailSlider from "@/components/EmailSlider";
+import PageHeader from "@/components/PageHeader";
 
-import ProjectsPage from "./content";
+import ProjectsList from "./components/ProjectsList";
 
-export const metadata: Metadata = {
-	title: "Myžo • What I've been working on",
-	description: "Showcase of projects I've been working on",
-};
+export default function ProjectsPage() {
+	return (
+		<>
+			<PageHeader>
+				What I’ve been <br /> working on
+			</PageHeader>
 
-export default function Page() {
-	return <ProjectsPage />;
+			<ProjectsList />
+			<EmailSlider />
+		</>
+	);
 }

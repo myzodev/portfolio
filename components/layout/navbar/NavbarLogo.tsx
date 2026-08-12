@@ -4,57 +4,45 @@ import { useRef } from "react";
 
 import Link from "next/link";
 
-import { stagger, useAnimate } from "framer-motion";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
-import { HOME_ROUTE } from "@/utils/routes";
+import { HOME_ROUTE } from "@/constants/routes";
+import { LOGO_TEXT } from "@/constants/site";
 
-const TEXT = "myžo.";
+const letters = LOGO_TEXT.split("");
 
-export default function NavbarLogo() {
-	const [scope, animate] = useAnimate();
-	const isAnimating = useRef(false);
+export default function NavbarLogo({ isDark = false }: { isDark?: boolean }) {
+	const logoRef = useRef<HTMLAnchorElement>(null);
+	const timelineRef = useRef<gsap.core.Timeline | null>(null);
+
+	useGSAP(
+		() => {
+			timelineRef.current = gsap
+				.timeline({ paused: true, defaults: { duration: 0.4, stagger: 0.04, ease: "power2.inOut" } })
+				.to("span", { yPercent: 100 })
+				.set("span", { yPercent: -100 })
+				.to("span", { yPercent: 0 });
+		},
+		{ scope: logoRef },
+	);
 
 	const handleMouseEnter = () => {
-		if (isAnimating.current) return;
+		const timeline = timelineRef.current;
 
-		isAnimating.current = true;
+		if (!timeline || timeline.isActive()) return;
 
-		animate(
-			"span",
-			{ y: ["0%", "100%"] },
-			{
-				duration: 0.3,
-				delay: stagger(0.04),
-				ease: "easeInOut",
-			},
-		)
-			.then(() => {
-				return animate("span", { y: "-100%" }, { duration: 0 });
-			})
-			.then(() => {
-				return animate(
-					"span",
-					{ y: ["-100%", "0%"] },
-					{
-						duration: 0.3,
-						delay: stagger(0.04),
-						ease: "easeInOut",
-					},
-				);
-			})
-			.then(() => {
-				isAnimating.current = false;
-			});
+		timeline.restart();
 	};
 
 	return (
 		<Link
-			ref={scope}
-			className="font-heading inline-block overflow-hidden text-2xl font-bold"
+			ref={logoRef}
+			className={`font-chillax relative z-50 inline-block overflow-hidden text-2xl font-bold transition-colors duration-500 ${isDark ? "text-ink-black" : "text-powder-petal"}`}
 			href={HOME_ROUTE}
 			onMouseEnter={handleMouseEnter}
 		>
-			{TEXT.split("").map((letter, index) => (
+			{letters.map((letter, index) => (
 				<span key={index} className="inline-block">
 					{letter}
 				</span>

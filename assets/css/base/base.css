@@ -1,0 +1,40 @@
+@layer base {
+	body {
+		-webkit-text-size-adjust: 100%;
+		-moz-text-size-adjust: 100%;
+		-ms-text-size-adjust: 100%;
+		-o-text-size-adjust: 100%;
+		text-size-adjust: 100%;
+		@apply bg-ink-black text-powder-petal font-synonym relative bg-[url("/images/noise.png")] bg-size-[110px_110px] bg-repeat antialiased;
+	}
+
+	a,
+	span {
+		@apply inline-block;
+	}
+
+	small {
+		@apply block text-[100%];
+	}
+
+	button {
+		@apply cursor-pointer;
+	}
+
+	strong {
+		@apply font-semibold;
+	}
+
+	svg,
+	img {
+		@apply size-full;
+	}
+
+	img {
+		@apply object-cover;
+	}
+
+	input::placeholder {
+		@apply text-gray-400;
+	}
+}

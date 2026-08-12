@@ -1,30 +1,42 @@
-import { MoveDownRightIcon } from "lucide-react";
+"use client";
 
-import { cn } from "@/utils/utils";
+import { useRef } from "react";
 
-import { AuroraText } from "./magicui/aurora-text";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
-type Props = {
-	text: string;
-	highlightText: string;
-	offsetClasssName?: string;
-};
+import { CURTAIN_EASE, REVEAL_EASE } from "@/assets/styles/eases";
 
-export default function PageHeader({ offsetClasssName, text, highlightText }: Props) {
-	if (!text || !highlightText) {
-		return null;
-	}
+export default function PageHeader({ children }: { children: React.ReactNode }) {
+	const headerRef = useRef<HTMLElement>(null);
 
-	const offsetClasses = offsetClasssName ? offsetClasssName : "pt-12 pb-12 lg:pb-20 lg:pt-24";
+	useGSAP(
+		() => {
+			if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+			gsap.set(".page-header-title", { yPercent: 110 });
+			gsap.set(".page-header-line", { scaleX: 0 });
+
+			gsap
+				.timeline({ delay: 0.5 })
+				.to(".page-header-title", { yPercent: 0, duration: 1.2, ease: REVEAL_EASE }, 0)
+				.to(".page-header-line", { scaleX: 1, duration: 1.2, ease: CURTAIN_EASE }, 0.15);
+		},
+		{ scope: headerRef },
+	);
 
 	return (
-		<header className={cn("relative container overflow-hidden", offsetClasses)}>
-			<MoveDownRightIcon className="mb-4 size-4" />
+		<header ref={headerRef} className="container mt-32 md:mt-44 lg:mt-54">
+			<div className="relative mb-10 pb-6 md:pb-10">
+				<h1 className="display-md md:display-xl lg:display-2xl overflow-hidden">
+					<span className="page-header-title block">{children}</span>
+				</h1>
 
-			<h1 className="text-4xl font-bold sm:text-5xl lg:text-7xl">
-				{text} <br />
-				<AuroraText>{highlightText}</AuroraText>
-			</h1>
+				<span
+					className="page-header-line bg-ink-black-dimmed/25 absolute bottom-0 left-0 h-px w-full origin-left"
+					aria-hidden
+				/>
+			</div>
 		</header>
 	);
 }

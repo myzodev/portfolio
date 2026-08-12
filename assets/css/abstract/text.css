@@ -1,0 +1,33 @@
+@theme {
+	/* Display */
+	--text-display-2xl: 3.75rem;
+	--leading-display-2xl: 120%;
+
+	--text-display-xl: 3rem;
+	--leading-display-xl: 120%;
+
+	--text-display-lg: 2.25rem;
+	--leading-display-lg: 120%;
+
+	--text-display-md: 1.875rem;
+	--leading-display-md: 120%;
+
+	--text-display-sm: 1.5rem;
+	--leading-display-sm: 120%;
+
+	--text-display-xs: 1.25rem;
+	--leading-display-xs: 120%;
+
+	/* Text sans */
+	--text-sans-xl: 1.25rem;
+	--leading-sans-xl: 1.875rem;
+
+	--text-sans-lg: 1.125rem;
+	--leading-sans-lg: 1.75rem;
+
+	--text-sans-md: 1rem;
+	--leading-sans-md: 1.5rem;
+
+	--text-sans-sm: 0.875rem;
+	--leading-sans-sm: 1.25rem;
+}

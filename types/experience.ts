@@ -1,6 +1,7 @@
-export type Experience = {
-	company: string;
+type Experience = {
+	title: string;
 	description: string;
-	duration: string;
-	role: string;
+	date: string;
 };
+
+export default Experience;

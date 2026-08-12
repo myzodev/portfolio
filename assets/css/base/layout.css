@@ -1,0 +1,13 @@
+@utility container {
+	max-width: 1920px;
+	padding-inline: 5rem;
+	margin-inline: auto;
+
+	@media (max-width: 1024px) {
+		padding-inline: 2.5rem;
+	}
+
+	@media (max-width: 764px) {
+		padding-inline: 1.5rem;
+	}
+}

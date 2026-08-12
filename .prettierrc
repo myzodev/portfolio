@@ -1,31 +1,29 @@
 {
-  "semi": true,
-  "printWidth": 120,
-  "tabWidth": 2,
-  "useTabs": true,
-  "tailwindFunctions": ["clsx"],
-  "tailwindPreserveWhitespace": false,
-  "tailwindPreserveDuplicates": false,
-  "plugins": [
-    "@trivago/prettier-plugin-sort-imports",
-    "prettier-plugin-tailwindcss"
-  ],
-  "importOrder": [
-    "^react",
-    "^next",
-    "<THIRD_PARTY_MODULES>",
-    "^@/lib/(.*)$",
-    "^@/hooks/(.*)$",
-    "^@/providers/(.*)$",
-    "^@/utils/(.*)$",
-    "^@/ui/(.*)$",
-    "^@/components/(.*)$",
-    "^@/(?!assets/)(.*)$",
-    "^[./]",
-    "import type",
-    "^@/assets/styles/(.*)$",
-    "^.*\\.css$"
-  ],
-  "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true
+	"semi": true,
+	"printWidth": 120,
+	"tabWidth": 2,
+	"useTabs": true,
+	"tailwindFunctions": ["clsx"],
+	"tailwindPreserveWhitespace": false,
+	"tailwindPreserveDuplicates": false,
+	"plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"],
+	"importOrder": [
+		"^react(-dom)?(/|$)",
+		"^next",
+		"<THIRD_PARTY_MODULES>",
+		"^@repo/(?!.*\\.css$)(.*)$",
+		"^@/lib/(.*)$",
+		"^@/hooks/(.*)$",
+		"^@/providers/(.*)$",
+		"^@/utils/(.*)$",
+		"^@/ui/(.*)$",
+		"^@/components/(.*)$",
+		"^@/assets/(.*)$",
+		"^@/(?!assets/)(.*)$",
+		"^[./](?!.*\\.css$)",
+		"<TS_TYPES>.*",
+		".*\\.css$"
+	],
+	"importOrderSeparation": true,
+	"importOrderSortSpecifiers": true
 }

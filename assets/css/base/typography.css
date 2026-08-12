@@ -1,0 +1,60 @@
+@utility display-2xl {
+	font-size: var(--text-display-2xl);
+	line-height: var(--leading-display-2xl);
+	font-family: var(--font-chillax);
+	letter-spacing: -2%;
+}
+
+@utility display-xl {
+	font-size: var(--text-display-xl);
+	line-height: var(--leading-display-xl);
+	font-family: var(--font-chillax);
+	letter-spacing: -2%;
+}
+
+@utility display-lg {
+	font-size: var(--text-display-lg);
+	line-height: var(--leading-display-lg);
+	font-family: var(--font-chillax);
+	letter-spacing: -2%;
+}
+
+@utility display-md {
+	font-size: var(--text-display-md);
+	line-height: var(--leading-display-md);
+	font-family: var(--font-chillax);
+}
+
+@utility display-sm {
+	font-size: var(--text-display-sm);
+	line-height: var(--leading-display-sm);
+	font-family: var(--font-chillax);
+}
+
+@utility display-xs {
+	font-size: var(--text-display-xs);
+	line-height: var(--leading-display-xs);
+	font-family: var(--font-chillax);
+}
+
+@utility sans-xl {
+	font-size: var(--text-sans-xl);
+	line-height: var(--leading-sans-xl);
+	letter-spacing: -2%;
+}
+
+@utility sans-lg {
+	font-size: var(--text-sans-lg);
+	line-height: var(--leading-sans-lg);
+	letter-spacing: -1%;
+}
+
+@utility sans-md {
+	font-size: var(--text-sans-md);
+	line-height: var(--leading-sans-md);
+}
+
+@utility sans-sm {
+	font-size: var(--text-sans-sm);
+	line-height: var(--leading-sans-sm);
+}

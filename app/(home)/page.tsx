@@ -1,13 +1,20 @@
-import type { Metadata } from "next";
+import EmailSlider from "@/components/EmailSlider";
 
-import HomePage from "./content";
+import AboutSection from "./components/AboutSection";
+import ExperienceSection from "./components/ExperienceSection";
+import HelpSection from "./components/HelpSection";
+import ProjectsSection from "./components/ProjectsSection";
+import HeroSection from "./components/hero/HeroSection";
 
-export const metadata: Metadata = {
-	title: "Myžo • Making Your Digital Product Shine",
-	description:
-		"I transform your ideas into fast, responsive, and modern digital products that provide an exceptional experience.",
-};
-
-export default function Page() {
-	return <HomePage />;
+export default function HomePage() {
+	return (
+		<>
+			<HeroSection />
+			<AboutSection />
+			<ProjectsSection />
+			<HelpSection />
+			<ExperienceSection />
+			<EmailSlider />
+		</>
+	);
 }
