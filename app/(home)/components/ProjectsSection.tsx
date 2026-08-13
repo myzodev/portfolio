@@ -2,6 +2,8 @@
 
 import { useRef, useState } from "react";
 
+import { useT } from "next-i18next/client";
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
@@ -36,6 +38,8 @@ const INITIAL_IMAGE_BG = PROJECT_PALETTES[projects[0].color].bgImage;
 
 export default function ProjectsSection() {
 	const containerRef = useRef<HTMLElement>(null);
+
+	const { t } = useT();
 
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [prevIndex, setPrevIndex] = useState<number | null>(null);
@@ -151,7 +155,7 @@ export default function ProjectsSection() {
 			ref={containerRef}
 			className="relative z-10 container w-full pb-32 md:pb-39 lg:pb-47"
 			aria-roledescription="carousel"
-			aria-label="Featured Projects"
+			aria-label={t("projects.carousel.label")}
 		>
 			<article
 				className="flex w-full flex-col-reverse overflow-hidden rounded-3xl lg:min-h-180 lg:flex-row lg:rounded-4xl"
@@ -176,11 +180,11 @@ export default function ProjectsSection() {
 
 						<nav
 							className="proj-nav-group flex items-center justify-end gap-2 max-lg:order-3 max-lg:mt-4"
-							aria-label="Carousel navigation"
+							aria-label={t("projects.carousel.navigation")}
 						>
 							<button
 								className="border-powder-petal/25 hover:border-powder-petal flex size-10 items-center justify-center rounded-full border transition-colors"
-								aria-label="View previous project"
+								aria-label={t("projects.carousel.previous")}
 								onClick={() => changeProject(-1)}
 							>
 								<ChevronLeftIcon className="mr-0.5 size-4" aria-hidden="true" />
@@ -188,7 +192,7 @@ export default function ProjectsSection() {
 
 							<button
 								className="border-powder-petal/25 hover:border-powder-petal flex size-10 items-center justify-center rounded-full border transition-colors"
-								aria-label="View next project"
+								aria-label={t("projects.carousel.next")}
 								onClick={() => changeProject(1)}
 							>
 								<ChevronRightIcon className="ml-0.5 size-4" aria-hidden="true" />
@@ -199,12 +203,12 @@ export default function ProjectsSection() {
 					<footer className="proj-footer-group relative z-10 mt-8 w-full max-lg:order-2 sm:mt-12 lg:mt-auto">
 						<div className="overflow-hidden">
 							<span className="proj-badge sans-sm border-powder-petal/25 inline-block rounded-full border px-2.5 py-0.5 font-bold sm:px-3 sm:py-1 sm:text-sm">
-								{activeTextProject.role}
+								{t(`projects.roles.${activeTextProject.role}`)}
 							</span>
 						</div>
 
 						<p className="proj-desc display-xs md:display-sm mt-4 leading-[150%]! md:mt-4">
-							{activeTextProject.description}
+							{t(`projects.items.${activeTextProject.slug}.description`)}
 						</p>
 					</footer>
 				</div>
@@ -229,7 +233,7 @@ export default function ProjectsSection() {
 								key={`curr-${currentProject.slug}`}
 								className="proj-image-next absolute inset-0 h-full w-full object-cover object-top"
 								src={currentProject.image}
-								alt={`Preview of ${currentProject.title}`}
+								alt={t("projects.carousel.preview", { title: currentProject.title })}
 							/>
 						)}
 					</div>

@@ -28,7 +28,7 @@ export default function PageHeader({ children }: { children: React.ReactNode }) 
 	return (
 		<header ref={headerRef} className="container mt-32 md:mt-44 lg:mt-54">
 			<div className="relative mb-10 pb-6 md:pb-10">
-				<h1 className="display-md md:display-xl lg:display-2xl overflow-hidden">
+				<h1 className="display-md md:display-xl lg:display-2xl max-w-[9em] overflow-hidden">
 					<span className="page-header-title block">{children}</span>
 				</h1>
 

@@ -2,6 +2,8 @@
 
 import { useRef } from "react";
 
+import { useT } from "next-i18next/client";
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -17,6 +19,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function ExperienceSection() {
 	const sectionRef = useRef<HTMLElement>(null);
+
+	const { t } = useT();
 
 	useGSAP(
 		() => {
@@ -85,11 +89,13 @@ export default function ExperienceSection() {
 		<section ref={sectionRef} className="container py-24 md:py-34">
 			<header className="mb-8 flex flex-wrap items-center justify-between gap-4">
 				<h2 className="display-lg md:display-xl overflow-hidden">
-					<span className="experience-heading block">Experience</span>
+					<span className="experience-heading block">{t("home.experience.heading")}</span>
 				</h2>
 
 				<aside>
-					<small className="experience-label sans-sm mb-2 font-semibold uppercase">SKILLS</small>
+					<small className="experience-label sans-sm mb-2 font-semibold uppercase">
+						{t("home.experience.skillsLabel")}
+					</small>
 
 					<div className="flex flex-wrap gap-x-1 gap-y-1.5">
 						{skillsData.map((skill) => (
@@ -103,7 +109,7 @@ export default function ExperienceSection() {
 
 			<ul className="relative">
 				{experienceData.map((item) => (
-					<li key={item.title} className="relative">
+					<li key={item.key} className="relative">
 						<span
 							className="experience-line bg-ink-black-dimmed/25 absolute top-0 left-0 h-px w-full origin-left"
 							aria-hidden
@@ -112,8 +118,10 @@ export default function ExperienceSection() {
 						<div className="overflow-hidden">
 							<div className="experience-row flex items-center justify-between gap-4 px-4 py-6">
 								<div>
-									<h4 className="display-sm md:display-md">{item.title}</h4>
-									<p className="sans-lg md:sans-xl text-ink-black-dimmed">{item.description}</p>
+									<h4 className="display-sm md:display-md">{t(`home.experience.items.${item.key}.title`)}</h4>
+									<p className="sans-lg md:sans-xl text-ink-black-dimmed">
+										{t(`home.experience.items.${item.key}.description`)}
+									</p>
 								</div>
 
 								<small className="sans-sm md:sans-md text-ink-black-dimmed whitespace-nowrap">{item.date}</small>

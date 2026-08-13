@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 
+import { useT } from "next-i18next/client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -9,14 +10,15 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ArrowUpRightIcon } from "lucide-react";
 
+import { useLocalizedHref } from "@/hooks/use-language";
+
 import { SOFT_EASE, SWEEP_EASE } from "@/assets/styles/eases";
 
 import { HOME_ROUTE } from "@/constants/routes";
 
 interface Props {
 	href: string;
-	label: string;
-	caption?: string;
+	linkKey: string;
 	index: number;
 	onNavigate: () => void;
 }
@@ -24,11 +26,17 @@ interface Props {
 const LABEL_CLASSES =
 	"font-chillax block text-[2.5rem] leading-[1.1] font-bold tracking-tight md:text-[3.75rem] lg:text-[5rem]";
 
-export default function NavbarMenuLink({ href, label, caption, index, onNavigate }: Props) {
+export default function NavbarMenuLink({ href, linkKey, index, onNavigate }: Props) {
 	const rowRef = useRef<HTMLAnchorElement>(null);
 	const hoverTl = useRef<gsap.core.Timeline | null>(null);
 
 	const pathname = usePathname();
+
+	const { t } = useT();
+
+	const localizeHref = useLocalizedHref();
+
+	const label = t(`common.menu.${linkKey}.label`);
 
 	const isActive = href === HOME_ROUTE ? pathname === HOME_ROUTE : pathname.startsWith(href);
 
@@ -58,7 +66,7 @@ export default function NavbarMenuLink({ href, label, caption, index, onNavigate
 		<Link
 			ref={rowRef}
 			className="menu-row group relative flex items-center gap-4 overflow-hidden py-3 md:gap-8 md:py-4"
-			href={href}
+			href={localizeHref(href)}
 			onBlur={handleLeave}
 			onClick={onNavigate}
 			onFocus={handleEnter}
@@ -82,7 +90,9 @@ export default function NavbarMenuLink({ href, label, caption, index, onNavigate
 			</span>
 
 			<span className="text-powder-petal relative ml-auto flex items-center gap-3 md:gap-5">
-				<span className="row-meta sans-sm hidden font-semibold md:block">{isActive ? "You are here" : caption}</span>
+				<span className="row-meta sans-sm hidden font-semibold md:block">
+					{isActive ? t("common.nav.youAreHere") : t(`common.menu.${linkKey}.caption`)}
+				</span>
 
 				<ArrowUpRightIcon className="row-meta size-6 md:size-8" />
 			</span>

@@ -1,6 +1,10 @@
+"use client";
+
 import Link from "next/link";
 
 import clsx from "clsx";
+
+import { useLocalizedHref } from "@/hooks/use-language";
 
 export type ButtonVariant = "peach" | "ink" | "outline";
 
@@ -31,6 +35,8 @@ export default function Button({
 	disabled = false,
 	onClick,
 }: Props) {
+	const localizeHref = useLocalizedHref();
+
 	const classes = clsx(
 		"sans-md inline-flex items-center justify-center rounded-full px-6 py-2 font-semibold whitespace-nowrap transition-colors disabled:pointer-events-none disabled:opacity-60",
 		variantClasses[variant],
@@ -41,7 +47,7 @@ export default function Button({
 
 	if (isLink) {
 		return (
-			<Link className={classes} href={href} target={target}>
+			<Link className={classes} href={localizeHref(href)} target={target}>
 				{children}
 			</Link>
 		);

@@ -2,6 +2,8 @@
 
 import { useRef } from "react";
 
+import { useT } from "next-i18next/client";
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { MapPinIcon, UserIcon } from "lucide-react";
@@ -11,11 +13,14 @@ import Badge from "@/components/Badge";
 
 import { CURTAIN_EASE, REVEAL_EASE, SOFT_EASE } from "@/assets/styles/eases";
 
-import { CONTACT_DESCRIPTION } from "@/constants/contact";
-import { LOCATION, SITE_NAME } from "@/constants/site";
+import { SITE_NAME } from "@/constants/site";
 
 export default function ContactIntro() {
 	const introRef = useRef<HTMLDivElement>(null);
+
+	const { t } = useT();
+
+	const description = t("contact.description", { returnObjects: true }) as string[];
 
 	useGSAP(
 		() => {
@@ -34,18 +39,14 @@ export default function ContactIntro() {
 
 	return (
 		<div ref={introRef}>
-			<h1 className="display-lg md:display-xl lg:display-2xl text-ink-black">
+			<h1 className="display-lg md:display-xl lg:display-2xl text-ink-black max-w-[9em]">
 				<span className="block overflow-hidden">
-					<span className="contact-line block">Got a question?</span>
-				</span>
-
-				<span className="block overflow-hidden">
-					<span className="contact-line block">Ask now</span>
+					<span className="contact-line block">{t("contact.title")}</span>
 				</span>
 			</h1>
 
 			<p className="contact-desc sans-lg md:sans-xl text-ink-black/70 mt-4 max-w-md md:mt-8">
-				{CONTACT_DESCRIPTION.map((line) => (
+				{description.map((line) => (
 					<span key={line} className="block">
 						{line}
 					</span>
@@ -62,7 +63,7 @@ export default function ContactIntro() {
 
 				<Badge className="contact-badge" variant="ink">
 					<MapPinIcon className="size-4" />
-					<span className="mb-0.5">{LOCATION}</span>
+					<span className="mb-0.5">{t("common.location")}</span>
 				</Badge>
 			</aside>
 		</div>

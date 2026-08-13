@@ -2,6 +2,8 @@
 
 import { useRef } from "react";
 
+import { useT } from "next-i18next/client";
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { MapPinIcon, UserIcon } from "lucide-react";
@@ -9,14 +11,17 @@ import { MapPinIcon, UserIcon } from "lucide-react";
 import AvailabilityBadge from "@/components/AvailabilityBadge";
 import Badge from "@/components/Badge";
 
-import { HERO_DESCRIPTION } from "@/constants/home";
-import { LOCATION, SITE_NAME } from "@/constants/site";
+import { SITE_NAME } from "@/constants/site";
 
 import HeroGradientBackground from "./HeroGradientBackground";
 import SplitWord from "./SplitWord";
 
 export default function HeroSection() {
 	const containerRef = useRef<HTMLElement>(null);
+
+	const { t } = useT();
+
+	const titleWords = (line: string) => line.split(/\s+/).filter(Boolean);
 
 	useGSAP(
 		() => {
@@ -61,16 +66,20 @@ export default function HeroSection() {
 
 			<div className="container pb-12">
 				<div className="relative flex h-[76vh] flex-col justify-end md:h-[75vh]">
-					<h1 className="display-2xl mt-auto mb-2 text-[2.5rem] font-bold md:mb-6 md:text-[4rem] lg:mb-8 lg:text-[5rem] xl:text-[6.25rem]">
-						<SplitWord>Making</SplitWord> <SplitWord>your</SplitWord> <br />
-						<SplitWord>digital</SplitWord> <SplitWord>product</SplitWord>{" "}
+					<h1 className="display-2xl mt-auto mb-2 max-w-[11em] text-[2.5rem] font-bold md:mb-6 md:text-[4rem] lg:mb-8 lg:text-[5rem] xl:text-[6.25rem]">
+						{titleWords(t("home.hero.title")).map((word, index) => (
+							<span key={`${word}-${index}`}>
+								<SplitWord>{word}</SplitWord>&nbsp;
+							</span>
+						))}
+
 						<SplitWord>
-							<strong className="text-peach">shine</strong>
+							<strong className="text-peach">{t("home.hero.titleHighlight")}</strong>
 						</SplitWord>
 					</h1>
 
 					<footer className="flex flex-wrap items-center justify-between gap-x-2 gap-y-8 md:gap-y-10 md:px-2">
-						<p className="hero-desc sans-lg md:sans-xl text-ink-black-dimmed max-w-xl">{HERO_DESCRIPTION}</p>
+						<p className="hero-desc sans-lg md:sans-xl text-ink-black-dimmed max-w-xl">{t("home.hero.description")}</p>
 
 						<aside className="flex flex-wrap gap-x-2 gap-y-2.5">
 							<AvailabilityBadge className="hero-badge" />
@@ -82,7 +91,7 @@ export default function HeroSection() {
 
 							<Badge className="hero-badge">
 								<MapPinIcon className="size-4" />
-								<span className="mb-0.5">{LOCATION}</span>
+								<span className="mb-0.5">{t("common.location")}</span>
 							</Badge>
 						</aside>
 					</footer>

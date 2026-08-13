@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useTransition } from "react";
 
+import { useT } from "next-i18next/client";
 import { usePathname, useRouter } from "next/navigation";
 
 import { useGSAP } from "@gsap/react";
@@ -34,9 +35,16 @@ export default function PageTransition() {
 	const lenis = useLenis();
 	const lenisRef = useRef(lenis);
 
+	const { t } = useT();
+	const tRef = useRef(t);
+
 	useEffect(() => {
 		lenisRef.current = lenis;
 	}, [lenis]);
+
+	useEffect(() => {
+		tRef.current = t;
+	}, [t]);
 
 	useGSAP(
 		() => {
@@ -120,7 +128,7 @@ export default function PageTransition() {
 				phaseRef.current = "covering";
 				hrefRef.current = href;
 
-				setLabel(getRouteLabel(new URL(href, window.location.origin).pathname));
+				setLabel(getRouteLabel(new URL(href, window.location.origin).pathname, tRef.current));
 
 				lenisRef.current?.stop();
 

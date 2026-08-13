@@ -2,6 +2,8 @@
 
 import { useRef } from "react";
 
+import { useT } from "next-i18next/client";
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -15,6 +17,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function HelpSection() {
 	const sectionRef = useRef<HTMLElement>(null);
+
+	const { t } = useT();
 
 	useGSAP(
 		() => {
@@ -67,7 +71,7 @@ export default function HelpSection() {
 			<article className="container flex flex-col justify-between">
 				<header>
 					<h2 id="help-heading" className="help-heading display-md md:display-xl mb-6 md:mb-18 lg:mb-24">
-						I can help you with
+						{t("home.help.heading")}
 					</h2>
 				</header>
 
@@ -75,28 +79,28 @@ export default function HelpSection() {
 					className="mt-8 grid grid-cols-1 gap-x-6 gap-y-6 md:grid-cols-2 md:gap-y-10 lg:mt-auto lg:grid-cols-3"
 					role="list"
 				>
-					{helpData.map((item, index) => (
+					{helpData.map((key, index) => (
 						<li
-							key={item.title}
+							key={key}
 							className="help-item border-ink-black-dimmed/25 bg-powder-petal border-l py-3 pl-4 md:py-4 md:pl-6"
 						>
 							<p className="text-cyan mb-6 font-mono" aria-hidden="true">
 								0{index + 1}
 							</p>
 
-							<h3 className="display-md mb-2.5">{item.title}</h3>
+							<h3 className="display-md mb-2.5">{t(`home.help.items.${key}.title`)}</h3>
 
-							<p className="display-xxs leading-[155%]">{item.description}</p>
+							<p className="display-xxs leading-[155%]">{t(`home.help.items.${key}.description`)}</p>
 						</li>
 					))}
 				</ul>
 
 				<footer className="help-footer border-ink-black-dimmed/25 mt-10 flex flex-wrap items-center justify-between gap-4 border-t pt-8 md:mt-16">
 					<p className="display-md">
-						LET’S TALK ABOUT <strong className="text-peach">YOUR IDEA</strong>
+						{t("home.help.ctaLead")} <strong className="text-peach">{t("home.help.ctaHighlight")}</strong>
 					</p>
 
-					<Button href={CONTACT_ROUTE}>Get in touch</Button>
+					<Button href={CONTACT_ROUTE}>{t("common.getInTouch")}</Button>
 				</footer>
 			</article>
 		</section>

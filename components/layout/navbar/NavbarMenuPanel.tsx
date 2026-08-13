@@ -2,6 +2,8 @@
 
 import { useRef } from "react";
 
+import { useT } from "next-i18next/client";
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
@@ -21,6 +23,8 @@ interface Props {
 export default function NavbarMenuPanel({ isOpen, onClose }: Props) {
 	const panelRef = useRef<HTMLDivElement>(null);
 	const timelineRef = useRef<gsap.core.Timeline | null>(null);
+
+	const { t } = useT();
 
 	useGSAP(
 		() => {
@@ -80,7 +84,7 @@ export default function NavbarMenuPanel({ isOpen, onClose }: Props) {
 			ref={panelRef}
 			className="fixed inset-0 z-40 overflow-hidden"
 			aria-hidden={!isOpen}
-			aria-label="Site navigation"
+			aria-label={t("common.nav.siteNavigation")}
 			id="navbar-menu"
 			inert={!isOpen}
 			role="dialog"
@@ -98,7 +102,7 @@ export default function NavbarMenuPanel({ isOpen, onClose }: Props) {
 			/>
 
 			<div className="relative container flex h-full flex-col overflow-y-auto pt-28 pb-10 md:pt-32">
-				<small className="menu-label sans-md text-powder-petal/40 uppercase">Navigation</small>
+				<small className="menu-label sans-md text-powder-petal/40 uppercase">{t("common.nav.navigation")}</small>
 
 				<nav className="my-auto">
 					<ul className="relative">
@@ -110,13 +114,7 @@ export default function NavbarMenuPanel({ isOpen, onClose }: Props) {
 								/>
 
 								<div className="overflow-hidden">
-									<NavbarMenuLink
-										caption={link.caption}
-										href={link.href}
-										index={index}
-										label={link.label}
-										onNavigate={onClose}
-									/>
+									<NavbarMenuLink href={link.href} index={index} linkKey={link.key} onNavigate={onClose} />
 								</div>
 							</li>
 						))}
@@ -130,7 +128,7 @@ export default function NavbarMenuPanel({ isOpen, onClose }: Props) {
 
 				<footer className="flex flex-wrap items-end justify-between gap-x-8 gap-y-6">
 					<div className="menu-footer-item">
-						<small className="sans-md text-powder-petal/40 mb-1 uppercase">Get in touch</small>
+						<small className="sans-md text-powder-petal/40 mb-1 uppercase">{t("common.getInTouch")}</small>
 
 						<a className="sans-lg md:sans-xl hover:text-peach font-semibold transition-colors" href={`mailto:${EMAIL}`}>
 							{EMAIL}

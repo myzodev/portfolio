@@ -1,14 +1,29 @@
+import MadeInLabel from "@/components/MadeInLabel";
+
+import { CONTACT_ROUTE } from "@/constants/routes";
 import socialLinksData from "@/data/social-links";
 
+import { getStaticT } from "../i18n/server";
 import ContactForm from "./components/ContactForm";
 import ContactIntro from "./components/ContactIntro";
 
 import type { Metadata } from "next/types";
 
-export const metadata: Metadata = {
-	title: "Myžo • Contact",
-	description: "Get in touch with me to discuss your project or collaboration.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+	const { t } = await getStaticT();
+
+	return {
+		title: t("meta.contact.title"),
+		description: t("meta.contact.description"),
+		alternates: {
+			canonical: CONTACT_ROUTE,
+			languages: {
+				sk: CONTACT_ROUTE,
+				en: `${CONTACT_ROUTE}?lang=en`,
+			},
+		},
+	};
+}
 
 export default function ContactPage() {
 	return (
@@ -40,7 +55,7 @@ export default function ContactPage() {
 						))}
 					</ul>
 
-					<small className="sans-sm text-ink-black/70 font-semibold">Made in 2026</small>
+					<MadeInLabel className="sans-sm text-ink-black/70 font-semibold" />
 				</footer>
 			</div>
 		</section>

@@ -1,0 +1,214 @@
+{
+	"common": {
+		"availability": "K dispozícii",
+		"location": "Slovensko",
+		"madeIn": "Made in 2026",
+		"getInTouch": "Napíšte mi",
+		"nav": {
+			"navigation": "Navigácia",
+			"siteNavigation": "Navigácia stránky",
+			"openMenu": "Otvoriť navigačné menu",
+			"closeMenu": "Zavrieť navigačné menu",
+			"footer": "Pätička",
+			"youAreHere": "Nachádzate sa tu"
+		},
+		"menu": {
+			"home": {
+				"label": "Domov",
+				"caption": "Začnite tu"
+			},
+			"projects": {
+				"label": "Projekty",
+				"caption": "Vybrané práce"
+			},
+			"contact": {
+				"label": "Kontakt",
+				"caption": "Poďme sa rozprávať"
+			}
+		},
+		"language": {
+			"label": "Jazyk",
+			"short": {
+				"en": "EN",
+				"sk": "SK"
+			},
+			"switchTo": {
+				"en": "Prepnúť jazyk do angličtiny",
+				"sk": "Prepnúť jazyk do slovenčiny"
+			}
+		}
+	},
+	"home": {
+		"hero": {
+			"title": "Postarám sa o to, aby váš produkt",
+			"titleHighlight": "vynikol",
+			"description": "Premeňte svoje nápady na rýchle, responzívne a moderné digitálne produkty, ktoré ľudia radi používajú."
+		},
+		"about": {
+			"label": "ČO ROBÍM",
+			"imageAlt": "Michal Valo - Portrét vývojára",
+			"paragraphs": [
+				"Spájam dizajn s vývojom, vytváram rýchle, škálovateľné a dobre vyzerajúce webové aplikácie. Od pevnej frontendovej architektúry až po dolaďovanie posledných pixelov v uživateľskom rozhraní. Sústredím sa na čistý kód, plynulú implementáciu a premyslený dizajn, ktoré reálne pomáha vášmu biznisu.",
+				"Spoluprácu staviam na spoľahlivosti a otvorenosti. Či už mám na starosti kompletne celý frontend, alebo kódujem full-stack riešnie na mieru, komunikujem priamo a rýchlo. Viem sa prispôsobiť novým technológiám a odovzdávam prácu pripravenú do produkcie, ktorá funguje na všetkých obrazovkách."
+			]
+		},
+		"help": {
+			"heading": "S čím vám viem pomôcť",
+			"ctaLead": "MÁTE NÁPAD?",
+			"ctaHighlight": "POĎME HO PREBRAŤ",
+			"items": {
+				"frontend": {
+					"title": "Frontend",
+					"description": "Staviam rýchle a responzívne webové aplikácie na moderných frameworkoch. Záleží mi na čistom kóde, plynulých interakciách a presnom dodržaní vizuálneho návrhu."
+				},
+				"backend": {
+					"title": "Backend & API",
+					"description": "Aj keď sa primárne venujem frontendu, bez problémov zastreším aj backend. Postarám sa o logiku, prepojenie cez API a nastavenie databázy tak, aby dáta plynulo prúdili a všetko fungovalo spoľahlivo."
+				},
+				"design": {
+					"title": "UI/UX dizajn",
+					"description": "Navrhujem prehľadné a intuitívne rozhrania od úplného základu. Kombinujem moderné prvky s praktickými pravidlami UX dizajnu tak, aby bol produkt pre ľudí radosť používať."
+				},
+				"fullstack": {
+					"title": "Full-stack integrácia",
+					"description": "Spájam dizajn, frontend na mieru a backendový základ do jedného fungujúceho celku. Zastrešujem celý vývoj od prvotného nápadu až po samotné nasadenie."
+				},
+				"performance": {
+					"title": "Výkon webu & SEO",
+					"description": "Riešim rýchlosť načítania, správanie na mobiloch aj štandardy prístupnosti. Vyladím váš web tak, aby šliapal bleskovo a bol ľahko nájdateľný."
+				}
+			}
+		},
+		"experience": {
+			"heading": "Skúsenosti",
+			"skillsLabel": "SKILLS",
+			"items": {
+				"freelance": {
+					"title": "Freelance",
+					"description": "Fullstack vývojár"
+				},
+				"studioParada": {
+					"title": "Studio Parada",
+					"description": "Fullstack vývojár"
+				},
+				"volita": {
+					"title": "VOLITA GROUP",
+					"description": "Fullstack vývojár & UI/UX dizajnér"
+				},
+				"webikon": {
+					"title": "Webikon",
+					"description": "Stážista / Frontend vývojár"
+				},
+				"beginning": {
+					"title": "Začiatok",
+					"description": "Prvý riadok kódu"
+				}
+			}
+		}
+	},
+	"projects": {
+		"pageTitle": "Na čom som pracoval",
+		"inProgress": "V príprave",
+		"carousel": {
+			"label": "Vybrané projekty",
+			"navigation": "Navigácia v projektoch",
+			"previous": "Zobraziť predchádzajúci projekt",
+			"next": "Zobraziť nasledujúci projekt",
+			"preview": "Ukážka projektu {{title}}"
+		},
+		"roles": {
+			"development": "Vývoj",
+			"developmentAndDesign": "Vývoj & Dizajn",
+			"templateCustomization": "Úprava šablóny",
+			"frontendDevelopment": "Frontend vývoj",
+			"optimizationAndRefactoring": "Optimalizácia & Refaktoring"
+		},
+		"items": {
+			"marker": {
+				"description": "Publikačná platforma zameraná na rýchlosť a výkon. Navrhol som frontendovú architektúru a do jedného mesiaca dodal plne funkčné MVP."
+			},
+			"mafert": {
+				"description": "Prezentačný web pre výrobný softvér, ktorého súčasťou je aj kalkulačka v reálnom čase odhadujúca finančnú úsporu klienta."
+			},
+			"legro": {
+				"description": "Moderná prezentácia pre výrobcu ťažkých oceľových konštrukcií s katalógmi, správami a ponukami práce, ktoré si klient spravuje sám."
+			},
+			"audilun": {
+				"description": "Landing page pre masteringového inžiniera. Návštevníci si tu môžu prepínať žánre a v reálnom čase porovnávať surový audio záznam s finálnym masterom."
+			},
+			"racetime": {
+				"description": "Návrh a vývoj platformy na meranie časov v pretekoch. Projekt je momentálne vo fáze vývoja."
+			},
+			"bavimi": {
+				"description": "Obchod s prémiovým čajom. Štandardnú Shopify šablónu sme prekopali na unikátny storefront na mieru bez toho, aby utrpela stabilita platformy."
+			},
+			"hypur": {
+				"description": "Návrh a vývoj pre novú značku. Projekt je momentálne v procese výroby."
+			},
+			"studio-parada": {
+				"description": "Web pre brandingové a UX štúdio, postavený tak, aby dal vyniknúť náročným prípadovým štúdiám s presnosťou na jediný pixel."
+			},
+			"volita": {
+				"description": "Kompletná práca pre firmu zameranú na servis okien a dverí — od vizuálnej identity vo Figme až po čistý frontend bez zbytočných závislostí."
+			},
+			"testar": {
+				"description": "Môj prvý klientsky projekt od A po Z: identita, návrh rozhrania aj fullstack vývoj pre inžiniersku a stavebnú firmu."
+			},
+			"nivy": {
+				"description": "Web pre multifunkčné centrum v Bratislave, kde som staval modulárny frontend napojený na živé rozvrhy a dáta z jednotlivých zón."
+			},
+			"powerlogy": {
+				"description": "Frontendový vývoj a postupné úpravy naprieč celou e-commerce platformou spoločnosti."
+			},
+			"sarmdent": {
+				"description": "Frontendový vývoj pre prezentačný web zubnej kliniky."
+			}
+		}
+	},
+	"contact": {
+		"title": "Máte otázku? Napíšte mi",
+		"description": [
+			"Chcete priviesť nápad k životu alebo potrebujete pomôcť s prebiehajúcim projektom?",
+			"Ozvite sa mi cez formulár a poďme sa o tom porozprávať."
+		],
+		"fields": {
+			"name": {
+				"label": "Meno",
+				"placeholder": "Vaše meno"
+			},
+			"email": {
+				"label": "E-mail",
+				"placeholder": "vas@email.com"
+			},
+			"subject": {
+				"label": "Predmet",
+				"placeholder": "O čom to bude?"
+			},
+			"message": {
+				"label": "Správa",
+				"placeholder": "Mám milionársky nápad..."
+			}
+		},
+		"submit": "Odoslať",
+		"submitting": "Odosielam...",
+		"toast": {
+			"loading": "Odosielam správu...",
+			"success": "Správa bola odoslaná.",
+			"error": "Odoslanie zlyhalo. Skúste to prosím znova."
+		}
+	},
+	"meta": {
+		"home": {
+			"title": "Myžo • Postarám sa o to, aby váš produkt vynikol",
+			"description": "Premeňte svoje nápady na rýchle, responzívne a moderné digitálne produkty, ktoré ľudia radi používajú."
+		},
+		"projects": {
+			"title": "Myžo • Projekty",
+			"description": "Ukážky mojej práce"
+		},
+		"contact": {
+			"title": "Myžo • Kontakt",
+			"description": "Ozvite sa mi a preberieme váš projekt alebo možnú spoluprácu."
+		}
+	}
+}

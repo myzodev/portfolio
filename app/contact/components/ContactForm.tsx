@@ -2,6 +2,8 @@
 
 import { useRef, useState } from "react";
 
+import { useT } from "next-i18next/client";
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import toast from "react-hot-toast";
@@ -10,7 +12,7 @@ import Button from "@/components/Button";
 
 import { SOFT_EASE } from "@/assets/styles/eases";
 
-import { CONTACT_FIELDS, CONTACT_MESSAGE_FIELD } from "@/constants/contact";
+import { CONTACT_FIELDS, CONTACT_MESSAGE_FIELD_NAME } from "@/constants/contact";
 import { SEND_EMAIL_ENDPOINT } from "@/constants/site";
 
 const FIELD_CLASSES =
@@ -20,6 +22,8 @@ export default function ContactForm() {
 	const formRef = useRef<HTMLFormElement>(null);
 
 	const [isSending, setIsSending] = useState(false);
+
+	const { t } = useT();
 
 	useGSAP(
 		() => {
@@ -58,16 +62,15 @@ export default function ContactForm() {
 
 			form.reset();
 
-			return data.message ?? "Message sent.";
+			return data.message ?? t("contact.toast.success");
 		};
 
 		toast.promise(
 			send().finally(() => setIsSending(false)),
 			{
-				loading: "Sending message...",
+				loading: t("contact.toast.loading"),
 				success: (message: string) => message,
-				error: (error: unknown) =>
-					error instanceof Error && error.message ? error.message : "Sending failed. Please try again.",
+				error: (error: unknown) => (error instanceof Error && error.message ? error.message : t("contact.toast.error")),
 			},
 		);
 	};
@@ -77,14 +80,14 @@ export default function ContactForm() {
 			{CONTACT_FIELDS.map((field) => (
 				<div key={field.name} className="contact-field">
 					<label className="sans-sm text-ink-black mb-1 block font-bold" htmlFor={field.name}>
-						{field.label}
+						{t(`contact.fields.${field.name}.label`)}
 					</label>
 
 					<input
 						className={FIELD_CLASSES}
 						id={field.name}
 						name={field.name}
-						placeholder={field.placeholder}
+						placeholder={t(`contact.fields.${field.name}.placeholder`)}
 						type={field.type}
 						required
 					/>
@@ -92,22 +95,22 @@ export default function ContactForm() {
 			))}
 
 			<div className="contact-field">
-				<label className="sans-sm text-ink-black mb-1 block font-bold" htmlFor={CONTACT_MESSAGE_FIELD.name}>
-					{CONTACT_MESSAGE_FIELD.label}
+				<label className="sans-sm text-ink-black mb-1 block font-bold" htmlFor={CONTACT_MESSAGE_FIELD_NAME}>
+					{t("contact.fields.message.label")}
 				</label>
 
 				<textarea
 					className={`${FIELD_CLASSES} min-h-40 resize-none`}
-					id={CONTACT_MESSAGE_FIELD.name}
-					name={CONTACT_MESSAGE_FIELD.name}
-					placeholder={CONTACT_MESSAGE_FIELD.placeholder}
+					id={CONTACT_MESSAGE_FIELD_NAME}
+					name={CONTACT_MESSAGE_FIELD_NAME}
+					placeholder={t("contact.fields.message.placeholder")}
 					required
 				/>
 			</div>
 
 			<div className="contact-field flex justify-end">
 				<Button disabled={isSending} type="submit">
-					{isSending ? "Sending..." : "Ship it"}
+					{isSending ? t("contact.submitting") : t("contact.submit")}
 				</Button>
 			</div>
 		</form>

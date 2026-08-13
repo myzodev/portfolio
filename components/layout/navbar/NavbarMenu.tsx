@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useRef } from "react";
 
+import { useT } from "next-i18next/client";
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useLenis } from "lenis/react";
@@ -22,6 +24,8 @@ export default function NavbarMenu({ isDark, isOpen, onOpenChange }: Props) {
 	const hasOpenedRef = useRef(false);
 
 	const lenis = useLenis();
+
+	const { t } = useT();
 
 	const close = useCallback(() => onOpenChange(false), [onOpenChange]);
 
@@ -95,7 +99,7 @@ export default function NavbarMenu({ isDark, isOpen, onOpenChange }: Props) {
 				className={`relative z-50 flex size-8 items-center justify-center rounded-full transition-colors duration-500 ${isDark ? "bg-ink-black" : "bg-powder-petal"}`}
 				aria-controls="navbar-menu"
 				aria-expanded={isOpen}
-				aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+				aria-label={isOpen ? t("common.nav.closeMenu") : t("common.nav.openMenu")}
 				onClick={() => onOpenChange(!isOpen)}
 			>
 				<span

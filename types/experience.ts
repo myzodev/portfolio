@@ -1,6 +1,5 @@
 type Experience = {
-	title: string;
-	description: string;
+	key: string;
 	date: string;
 };
 

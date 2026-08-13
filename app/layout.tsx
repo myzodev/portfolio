@@ -1,11 +1,17 @@
 import { ReactLenis } from "lenis/react";
 import { Toaster } from "react-hot-toast";
 
+import LanguageProvider from "@/providers/LanguageProvider";
+
 import PageTransition from "@/components/PageTransition";
 import AppFooter from "@/components/layout/AppFooter";
 import AppNavbar from "@/components/layout/AppNavbar";
 
 import { Chillax, Synonym } from "@/assets/styles/fonts";
+
+import { DEFAULT_LANGUAGE } from "@/constants/i18n";
+
+import { getResources, getStaticT } from "./i18n/server";
 
 import type { Metadata } from "next";
 
@@ -18,37 +24,43 @@ export const metadata: Metadata = {
 	},
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+	const { i18n } = await getStaticT();
+
+	const resources = getResources(i18n);
+
 	return (
-		<html lang="en" className={`${Synonym.variable} ${Chillax.variable}`}>
+		<html lang={DEFAULT_LANGUAGE} className={`${Synonym.variable} ${Chillax.variable}`}>
 			<body>
-				<ReactLenis options={{ duration: 1 }} root />
+				<LanguageProvider resources={resources}>
+					<ReactLenis options={{ duration: 1 }} root />
 
-				<PageTransition />
+					<PageTransition />
 
-				<AppNavbar />
+					<AppNavbar />
 
-				<main>{children}</main>
+					<main>{children}</main>
 
-				<AppFooter />
+					<AppFooter />
 
-				<Toaster
-					position="top-center"
-					toastOptions={{
-						className: "sans-sm font-semibold",
-						style: {
-							background: "var(--color-ink-black)",
-							color: "var(--color-powder-petal)",
-							border: "1px solid color-mix(in oklab, var(--color-powder-petal) 15%, transparent)",
-							borderRadius: "9999px",
-							maxWidth: "32rem",
-						},
-						iconTheme: {
-							primary: "var(--color-peach)",
-							secondary: "var(--color-ink-black)",
-						},
-					}}
-				/>
+					<Toaster
+						position="top-center"
+						toastOptions={{
+							className: "sans-sm font-semibold",
+							style: {
+								background: "var(--color-ink-black)",
+								color: "var(--color-powder-petal)",
+								border: "1px solid color-mix(in oklab, var(--color-powder-petal) 15%, transparent)",
+								borderRadius: "9999px",
+								maxWidth: "32rem",
+							},
+							iconTheme: {
+								primary: "var(--color-peach)",
+								secondary: "var(--color-ink-black)",
+							},
+						}}
+					/>
+				</LanguageProvider>
 			</body>
 		</html>
 	);

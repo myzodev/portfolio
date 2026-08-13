@@ -2,16 +2,22 @@
 
 import { useRef } from "react";
 
+import { useT } from "next-i18next/client";
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import { ABOUT_IMAGE, ABOUT_LABEL, ABOUT_PARAGRAPHS } from "@/constants/home";
+import { ABOUT_IMAGE_SRC } from "@/constants/home";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutSection() {
 	const sectionRef = useRef<HTMLElement>(null);
+
+	const { t } = useT();
+
+	const paragraphs = t("home.about.paragraphs", { returnObjects: true }) as string[];
 
 	useGSAP(
 		() => {
@@ -62,12 +68,12 @@ export default function AboutSection() {
 	return (
 		<section ref={sectionRef} className="relative z-20 container overflow-hidden">
 			<div className="border-ink-black-dimmed/25 border-t pt-24 pb-50 md:pt-32 md:pb-39 lg:pt-40 lg:pb-47">
-				<small className="about-label sans-xl text-ink-black-dimmed block max-lg:mb-6">{ABOUT_LABEL}</small>
+				<small className="about-label sans-xl text-ink-black-dimmed block max-lg:mb-6">{t("home.about.label")}</small>
 
 				<div className="relative ml-auto md:w-4/5 lg:w-3/5">
 					<div className="about-text-wrapper">
 						<h2 className="about-text display-sm md:display-md relative z-10 leading-[150%]!">
-							{ABOUT_PARAGRAPHS.map((paragraph, index) => (
+							{paragraphs.map((paragraph, index) => (
 								<span key={index} className="mt-8 block first:mt-0">
 									{paragraph}
 								</span>
@@ -80,7 +86,7 @@ export default function AboutSection() {
 						aria-hidden
 					>
 						<figure className="about-image size-48 overflow-hidden rounded-2xl duration-300 md:h-98 md:w-74.5 md:rounded-3xl lg:h-115 lg:w-82.5">
-							<img className="h-full w-full object-cover" src={ABOUT_IMAGE.src} alt={ABOUT_IMAGE.alt} />
+							<img className="h-full w-full object-cover" src={ABOUT_IMAGE_SRC} alt={t("home.about.imageAlt")} />
 						</figure>
 					</div>
 				</div>

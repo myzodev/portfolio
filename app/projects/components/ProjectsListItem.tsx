@@ -1,3 +1,7 @@
+"use client";
+
+import { useT } from "next-i18next/client";
+
 import clsx from "clsx";
 import { ArrowUpRightIcon } from "lucide-react";
 
@@ -12,6 +16,8 @@ interface Props {
 
 export default function ProjectsListItem({ project, className = "" }: Props) {
 	const palette = PROJECT_PALETTES[project.color];
+
+	const { t } = useT();
 
 	const content = (
 		<>
@@ -39,7 +45,7 @@ export default function ProjectsListItem({ project, className = "" }: Props) {
 							style={{ color: palette.textColor }}
 							className="sans-sm flex size-full items-center justify-center font-semibold"
 						>
-							In progress
+							{t("projects.inProgress")}
 						</span>
 					)}
 				</figure>
@@ -66,7 +72,7 @@ export default function ProjectsListItem({ project, className = "" }: Props) {
 
 				<p className="sans-sm md:sans-md text-ink-black-dimmed text-right">
 					<span className="block">{project.year}</span>
-					<span className="block">{project.role}</span>
+					<span className="block">{t(`projects.roles.${project.role}`)}</span>
 				</p>
 			</div>
 		</>

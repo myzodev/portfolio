@@ -1,31 +1,11 @@
 import type Experience from "@/types/experience";
 
 const experienceData: Experience[] = [
-	{
-		title: "Freelance",
-		description: "Fullstack Developer",
-		date: "2026 - now",
-	},
-	{
-		title: "Studio Parada",
-		description: "Fullstack Developer",
-		date: "2024 - 2025",
-	},
-	{
-		title: "VOLITA GROUP",
-		description: "Fullstack Developer & UI / UX Designer",
-		date: "2022 - 2023",
-	},
-	{
-		title: "Webikon",
-		description: "Intern / Frontend Developer",
-		date: "2020 - 2021",
-	},
-	{
-		title: "The Beginning",
-		description: "First Line of Code",
-		date: "2019",
-	},
+	{ key: "freelance", date: "2026 - now" },
+	{ key: "studioParada", date: "2024 - 2025" },
+	{ key: "volita", date: "2022 - 2023" },
+	{ key: "webikon", date: "2020 - 2021" },
+	{ key: "beginning", date: "2019" },
 ];
 
 export default experienceData;

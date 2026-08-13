@@ -1,5 +1,6 @@
 "use client";
 
+import { useT } from "next-i18next/client";
 import { usePathname } from "next/navigation";
 
 import Logo from "@/assets/images/logo.svg";
@@ -10,6 +11,8 @@ import socialLinksData from "@/data/social-links";
 export default function AppFooter() {
 	const pathname = usePathname();
 
+	const { t } = useT();
+
 	if (pathname.startsWith(CONTACT_ROUTE)) return null;
 
 	return (
@@ -19,7 +22,7 @@ export default function AppFooter() {
 			</figure>
 
 			<aside className="border-ink-black-dimmed/25 flex flex-wrap items-center justify-between gap-x-10 gap-y-6 border-t py-4 md:py-8">
-				<nav aria-label="Footer">
+				<nav aria-label={t("common.nav.footer")}>
 					<ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
 						{socialLinksData.map((link) => (
 							<li key={link.href}>
@@ -36,7 +39,7 @@ export default function AppFooter() {
 					</ul>
 				</nav>
 
-				<small className="sans-sm text-ink-black-dimmed font-semibold">Made in 2026</small>
+				<small className="sans-sm text-ink-black-dimmed font-semibold">{t("common.madeIn")}</small>
 			</aside>
 		</footer>
 	);

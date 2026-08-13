@@ -1,0 +1,214 @@
+{
+	"common": {
+		"availability": "Available for work",
+		"location": "Slovakia",
+		"madeIn": "Made in 2026",
+		"getInTouch": "Get in touch",
+		"nav": {
+			"navigation": "Navigation",
+			"siteNavigation": "Site navigation",
+			"openMenu": "Open navigation menu",
+			"closeMenu": "Close navigation menu",
+			"footer": "Footer",
+			"youAreHere": "You are here"
+		},
+		"menu": {
+			"home": {
+				"label": "Home",
+				"caption": "Start here"
+			},
+			"projects": {
+				"label": "Projects",
+				"caption": "Selected work"
+			},
+			"contact": {
+				"label": "Contact",
+				"caption": "Let’s talk"
+			}
+		},
+		"language": {
+			"label": "Language",
+			"short": {
+				"en": "EN",
+				"sk": "SK"
+			},
+			"switchTo": {
+				"en": "Switch language to English",
+				"sk": "Switch language to Slovak"
+			}
+		}
+	},
+	"home": {
+		"hero": {
+			"title": "Making your digital product",
+			"titleHighlight": "really shine",
+			"description": "Transform your ideas into fast, responsive, and modern digital products that provide a great user experience."
+		},
+		"about": {
+			"label": "WHAT I DO BEST",
+			"imageAlt": "Michal Valo - Developer profile portrait",
+			"paragraphs": [
+				"I translate design into functional code to build fast, scalable, and visually polished web applications. From setting up solid frontend architectures to fine-tuning UI details, I focus on clean code, smooth performance, and thoughtful user experiences that solve real business problems.",
+				"Collaboration and reliability are core to how I work. Whether leading frontend development or building custom full-stack solutions, I communicate transparently, adapt quickly to new tech stacks, and deliver production-ready products that perform seamlessly across all devices."
+			]
+		},
+		"help": {
+			"heading": "I can help you with",
+			"ctaLead": "LET’S TALK ABOUT",
+			"ctaHighlight": "YOUR IDEA",
+			"items": {
+				"frontend": {
+					"title": "Frontend Development",
+					"description": "Building fast, responsive web applications with clean code and modern frameworks. I focus on smooth interactions, optimized assets, and pixel-perfect design execution."
+				},
+				"backend": {
+					"title": "Backend & APIs",
+					"description": "While frontend is my main focus, I can comfortably handle the backend side when needed. I cover the application logic, API integrations, and database setup to keep data flowing smoothly and reliably."
+				},
+				"design": {
+					"title": "UI/UX Design",
+					"description": "Designing clean, intuitive interfaces and visual systems from scratch. I combine modern aesthetics with functional UX principles to create products people love to use."
+				},
+				"fullstack": {
+					"title": "Full-Stack Integration",
+					"description": "Connecting design, custom frontend, and solid backend into one cohesive product. I manage the end-to-end development process to deliver production-ready web platforms."
+				},
+				"performance": {
+					"title": "Web Performance & SEO",
+					"description": "Optimizing load speeds, cross-device responsiveness, and accessibility standards. I refine platforms to ensure flawless performance and an effortlessly smooth user experience."
+				}
+			}
+		},
+		"experience": {
+			"heading": "Experience",
+			"skillsLabel": "SKILLS",
+			"items": {
+				"freelance": {
+					"title": "Freelance",
+					"description": "Fullstack developer"
+				},
+				"studioParada": {
+					"title": "Studio Parada",
+					"description": "Fullstack developer"
+				},
+				"volita": {
+					"title": "VOLITA GROUP",
+					"description": "Fullstack developer & UI / UX Designer"
+				},
+				"webikon": {
+					"title": "Webikon",
+					"description": "Intern / Frontend developer"
+				},
+				"beginning": {
+					"title": "The Beginning",
+					"description": "First Line of Code"
+				}
+			}
+		}
+	},
+	"projects": {
+		"pageTitle": "What I’ve been working on",
+		"inProgress": "In progress",
+		"carousel": {
+			"label": "Featured Projects",
+			"navigation": "Carousel navigation",
+			"previous": "View previous project",
+			"next": "View next project",
+			"preview": "Preview of {{title}}"
+		},
+		"roles": {
+			"development": "Development",
+			"developmentAndDesign": "Development & Design",
+			"templateCustomization": "Template Customization",
+			"frontendDevelopment": "Frontend Development",
+			"optimizationAndRefactoring": "Optimization & Refactoring"
+		},
+		"items": {
+			"marker": {
+				"description": "A performance-driven publishing platform where I led the frontend architecture and delivered a fully usable MVP in one month."
+			},
+			"mafert": {
+				"description": "A presentation site for production management software, including a real-time calculator that estimates a client's savings."
+			},
+			"legro": {
+				"description": "A modern presence for a heavy steel manufacturer, with catalogs, news and job postings the client manages on their own."
+			},
+			"audilun": {
+				"description": "A landing page for a mastering engineer where visitors switch genres and compare raw against mastered audio in real time."
+			},
+			"racetime": {
+				"description": "Design and development for a race timing platform. Currently in progress."
+			},
+			"bavimi": {
+				"description": "A premium tea store where a stock Shopify theme was reworked into a bespoke storefront without giving up the platform's reliability."
+			},
+			"hypur": {
+				"description": "Design and development for a new brand. Currently in progress."
+			},
+			"studio-parada": {
+				"description": "The presentation site for a branding and UX studio, built to carry high-profile case studies with pixel-perfect accuracy."
+			},
+			"volita": {
+				"description": "End-to-end design and development for a window and door service company, from the Figma identity to a dependency-free frontend."
+			},
+			"testar": {
+				"description": "My first end-to-end freelance project: identity, interface and fullstack build for an engineering and construction company."
+			},
+			"nivy": {
+				"description": "A landmark multi-functional center in Bratislava, where I structured a modular frontend around live schedules and zone-specific data."
+			},
+			"powerlogy": {
+				"description": "Frontend development across the company's web platform."
+			},
+			"sarmdent": {
+				"description": "Frontend development on the presentation website."
+			}
+		}
+	},
+	"contact": {
+		"title": "Got a question? Ask now",
+		"description": [
+			"Have an idea you want to bring to life or need a hand with a project?",
+			"Reach out below and let's start the conversation."
+		],
+		"fields": {
+			"name": {
+				"label": "Your name",
+				"placeholder": "Your Name"
+			},
+			"email": {
+				"label": "Your email",
+				"placeholder": "your@email.com"
+			},
+			"subject": {
+				"label": "Subject",
+				"placeholder": "What's on your mind?"
+			},
+			"message": {
+				"label": "Message",
+				"placeholder": "I have a milion dollar idea..."
+			}
+		},
+		"submit": "Ship it",
+		"submitting": "Sending...",
+		"toast": {
+			"loading": "Sending message...",
+			"success": "Message sent.",
+			"error": "Sending failed. Please try again."
+		}
+	},
+	"meta": {
+		"home": {
+			"title": "Myžo • Making your digital product shine",
+			"description": "Transform your ideas into fast, responsive, and modern digital products that provide an exceptional experience."
+		},
+		"projects": {
+			"title": "Myžo • Projects",
+			"description": "What I’ve been working on"
+		},
+		"contact": {
+			"title": "Myžo • Contact",
+			"description": "Get in touch with me to discuss your project or collaboration."
+		}
+	}
+}
