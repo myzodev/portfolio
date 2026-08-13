@@ -213,7 +213,7 @@ export default function ProjectsSection() {
 					style={{ backgroundColor: INITIAL_IMAGE_BG }}
 					className="proj-image-panel flex w-full items-center justify-center overflow-hidden sm:p-8 lg:w-1/2 lg:p-14"
 				>
-					<div className="relative aspect-6/4 w-full overflow-hidden rounded-lg md:rounded-xl">
+					<div className="relative aspect-video w-full overflow-hidden rounded-lg md:rounded-xl">
 						{prevProject?.image && (
 							<img
 								key={`prev-${prevProject.slug}`}
