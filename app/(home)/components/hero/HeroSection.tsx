@@ -21,7 +21,7 @@ export default function HeroSection() {
 
 	const { t } = useT();
 
-	const titleWords = (line: string) => line.split(/\s+/).filter(Boolean);
+	const titleWords = t("home.hero.title").split(/\s+/).filter(Boolean);
 
 	useGSAP(
 		() => {
@@ -57,7 +57,10 @@ export default function HeroSection() {
 					"bottomReveal",
 				);
 		},
-		{ scope: containerRef },
+		// Keyed on word count so a translation with a different number of words still gets the
+		// reveal applied to every span. Same-length switches reuse the nodes and keep the
+		// running tween instead of replaying the intro.
+		{ scope: containerRef, dependencies: [titleWords.length] },
 	);
 
 	return (
@@ -67,8 +70,8 @@ export default function HeroSection() {
 			<div className="container pb-12">
 				<div className="relative flex h-[76vh] flex-col justify-end md:h-[75vh]">
 					<h1 className="display-2xl mt-auto mb-2 max-w-[11em] text-[2.5rem] font-bold md:mb-6 md:text-[4rem] lg:mb-8 lg:text-[5rem] xl:text-[6.25rem]">
-						{titleWords(t("home.hero.title")).map((word, index) => (
-							<span key={`${word}-${index}`}>
+						{titleWords.map((word, index) => (
+							<span key={index}>
 								<SplitWord>{word}</SplitWord>&nbsp;
 							</span>
 						))}
