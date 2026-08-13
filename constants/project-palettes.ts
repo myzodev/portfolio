@@ -1,13 +1,58 @@
 import type { ProjectColor, ProjectPalette } from "@/types/project";
 
 export const PROJECT_PALETTES: Record<ProjectColor, ProjectPalette> = {
-	green: { bgImage: "#1B281F", bgText: "#27382D", textColor: "#D8EFE6", accentColor: "#79C895" },
-	"lime-green": { bgImage: "#22281B", bgText: "#303827", textColor: "#E0EEE0", accentColor: "#A0C470" },
-	red: { bgImage: "#281C1B", bgText: "#382927", textColor: "#E9E2E0", accentColor: "#CB8B81" },
-	orange: { bgImage: "#281F1B", bgText: "#382D27", textColor: "#EAE4DE", accentColor: "#C79377" },
-	yellow: { bgImage: "#28251B", bgText: "#383427", textColor: "#E7EBDE", accentColor: "#C2AE6B" },
-	blue: { bgImage: "#1B2128", bgText: "#272F38", textColor: "#D7E7F0", accentColor: "#759CC6" },
-	"sky-blue": { bgImage: "#1B2628", bgText: "#273538", textColor: "#D3EAEE", accentColor: "#67B2C1" },
-	pink: { bgImage: "#281B20", bgText: "#38272E", textColor: "#E9E1E9", accentColor: "#D08DAB" },
-	gray: { bgImage: "#1F2223", bgText: "#2D3032", textColor: "#DDE7E9", accentColor: "#8FA0A6" },
+	green: {
+		bgImage: "#132323",
+		bgText: "#182c2c",
+		textColor: "#cce5dd",
+		accentColor: "#5eb381",
+	},
+	"lime-green": {
+		bgImage: "#162320",
+		bgText: "#1f2e29",
+		textColor: "#d8e7d7",
+		accentColor: "#8fb363",
+	},
+	red: {
+		bgImage: "#1b1e22",
+		bgText: "#262327",
+		textColor: "#e3dad8",
+		accentColor: "#bf7971",
+	},
+	orange: {
+		bgImage: "#1a1f22",
+		bgText: "#252528",
+		textColor: "#e3dbd5",
+		accentColor: "#ba8366",
+	},
+	yellow: {
+		bgImage: "#1a2122",
+		bgText: "#242828",
+		textColor: "#e1e2d6",
+		accentColor: "#b29e59",
+	},
+	blue: {
+		bgImage: "#122026",
+		bgText: "#182730",
+		textColor: "#ccddf0",
+		accentColor: "#618bb3",
+	},
+	"sky-blue": {
+		bgImage: "#122227",
+		bgText: "#172b32",
+		textColor: "#cae2e8",
+		accentColor: "#529ea3",
+	},
+	pink: {
+		bgImage: "#1a1d23",
+		bgText: "#252229",
+		textColor: "#e3d8e3",
+		accentColor: "#c17a99",
+	},
+	gray: {
+		bgImage: "#142022",
+		bgText: "#1d292c",
+		textColor: "#d0dbde",
+		accentColor: "#798c92",
+	},
 };
