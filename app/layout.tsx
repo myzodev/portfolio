@@ -12,12 +12,9 @@ import type { Metadata } from "next";
 import "../assets/css/app.css";
 
 export const metadata: Metadata = {
-	title: "Myžo • Making Your Digital Product Shine",
-	description:
-		"Transform your ideas into fast, responsive, and modern digital products that provide an exceptional experience.",
 	metadataBase: new URL("https://michalvalo.dev"),
 	openGraph: {
-		images: "/images/opengraph-image.png",
+		images: "/images/opengraph-image.jpg",
 	},
 };
 

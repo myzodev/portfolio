@@ -1,5 +1,5 @@
 export const HERO_DESCRIPTION =
-	"I transform your ideas into fast, responsive, and modern digital products that provide an exceptional experience.";
+	"Transform your ideas into fast, responsive, and modern digital products that provide an exceptional experience.";
 
 export const ABOUT_LABEL = "WHAT I DO BEST";
 

@@ -3,6 +3,13 @@ import socialLinksData from "@/data/social-links";
 import ContactForm from "./components/ContactForm";
 import ContactIntro from "./components/ContactIntro";
 
+import type { Metadata } from "next/types";
+
+export const metadata: Metadata = {
+	title: "Myžo • Contact",
+	description: "Get in touch with me to discuss your project or collaboration.",
+};
+
 export default function ContactPage() {
 	return (
 		<section className="bg-powder-petal text-ink-black flex min-h-screen flex-col rounded-[48px] pt-32 pb-8 md:rounded-[64px] md:pt-44 lg:pt-54">
