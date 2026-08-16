@@ -119,6 +119,7 @@
 		"roles": {
 			"development": "Development",
 			"developmentAndDesign": "Development & Design",
+			"frontendDevelopmentAndDesign": "Frontend Development & Design",
 			"templateCustomization": "Template Customization",
 			"frontendDevelopment": "Frontend Development",
 			"optimizationAndRefactoring": "Optimization & Refactoring"

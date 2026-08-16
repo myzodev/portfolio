@@ -2,6 +2,15 @@ import type Project from "@/types/project";
 
 const projectsData: Project[] = [
 	{
+		title: "Racetime",
+		slug: "racetime",
+		role: "developmentAndDesign",
+		url: "https://racetime.sk",
+		color: "red",
+		wip: true,
+		year: "2026",
+	},
+	{
 		title: "Marker",
 		slug: "marker",
 		role: "development",
@@ -42,15 +51,6 @@ const projectsData: Project[] = [
 		image: "/images/projects/audilun.png",
 	},
 	{
-		title: "Racetime",
-		slug: "racetime",
-		role: "developmentAndDesign",
-		url: "https://racetime.sk",
-		color: "red",
-		wip: true,
-		year: "2025",
-	},
-	{
 		title: "Bavimi",
 		slug: "bavimi",
 		role: "templateCustomization",
@@ -62,7 +62,7 @@ const projectsData: Project[] = [
 	{
 		title: "Hypur",
 		slug: "hypur",
-		role: "developmentAndDesign",
+		role: "frontendDevelopmentAndDesign",
 		url: "https://hypur.sk",
 		color: "sky-blue",
 		wip: true,

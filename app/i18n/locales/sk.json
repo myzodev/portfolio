@@ -119,6 +119,7 @@
 		"roles": {
 			"development": "Vývoj",
 			"developmentAndDesign": "Vývoj & Dizajn",
+			"frontendDevelopmentAndDesign": "Frontend vývoj & Dizajn",
 			"templateCustomization": "Úprava šablóny",
 			"frontendDevelopment": "Frontend vývoj",
 			"optimizationAndRefactoring": "Optimalizácia & Refaktoring"

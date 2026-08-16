@@ -3,6 +3,7 @@ export type ProjectColor = "green" | "lime-green" | "red" | "orange" | "yellow" 
 export type ProjectRole =
 	| "development"
 	| "developmentAndDesign"
+	| "frontendDevelopmentAndDesign"
 	| "templateCustomization"
 	| "frontendDevelopment"
 	| "optimizationAndRefactoring";
