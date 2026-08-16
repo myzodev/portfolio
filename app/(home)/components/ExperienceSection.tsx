@@ -29,8 +29,8 @@ export default function ExperienceSection() {
 			const tl = gsap.timeline({
 				scrollTrigger: {
 					trigger: sectionRef.current,
-					start: "top 70%",
-					end: "80% center",
+					start: "top 80%",
+					end: "70% 55%",
 					scrub: 1,
 				},
 			});

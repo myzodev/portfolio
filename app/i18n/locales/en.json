@@ -83,21 +83,21 @@
 			"heading": "Experience",
 			"skillsLabel": "SKILLS",
 			"items": {
-				"freelance": {
-					"title": "Freelance",
-					"description": "Fullstack developer"
+				"gecora": {
+					"title": "Gecora",
+					"description": "Fullstack & Lead Frontend Developer"
 				},
 				"studioParada": {
 					"title": "Studio Parada",
-					"description": "Fullstack developer"
+					"description": "Fullstack Developer"
 				},
 				"volita": {
 					"title": "VOLITA GROUP",
-					"description": "Fullstack developer & UI / UX Designer"
+					"description": "Fullstack Developer & UI/UX Designer"
 				},
 				"webikon": {
 					"title": "Webikon",
-					"description": "Intern / Frontend developer"
+					"description": "Frontend Developer (Intern)"
 				},
 				"beginning": {
 					"title": "The Beginning",

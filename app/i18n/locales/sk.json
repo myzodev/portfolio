@@ -83,9 +83,9 @@
 			"heading": "Skúsenosti",
 			"skillsLabel": "SKILLS",
 			"items": {
-				"freelance": {
-					"title": "Freelance",
-					"description": "Fullstack vývojár"
+				"gecora": {
+					"title": "Gecora",
+					"description": "Fullstack & Lead Frontend vývojár"
 				},
 				"studioParada": {
 					"title": "Studio Parada",
@@ -97,7 +97,7 @@
 				},
 				"webikon": {
 					"title": "Webikon",
-					"description": "Stážista / Frontend vývojár"
+					"description": "Frontend vývojár (stáž)"
 				},
 				"beginning": {
 					"title": "Začiatok",
