@@ -41,8 +41,8 @@
 	"home": {
 		"hero": {
 			"title": "Making your digital product",
-			"titleHighlight": "really shine",
-			"description": "Transform your ideas into fast, responsive, and modern digital products that provide a great user experience."
+			"titleHighlight": "shine",
+			"description": "I transform your ideas into fast, responsive, and modern digital products that provide a great user experience."
 		},
 		"about": {
 			"label": "WHAT I DO BEST",
@@ -134,7 +134,7 @@
 				"description": "A modern presence for a heavy steel manufacturer, with catalogs, news and job postings the client manages on their own."
 			},
 			"audilun": {
-				"description": "A landing page for a mastering engineer where visitors switch genres and compare raw against mastered audio in real time."
+				"description": "A landing page for a mastering engineer where visitors compare raw against mastered audio in real time."
 			},
 			"racetime": {
 				"description": "Design and development for a race timing platform. Currently in progress."
@@ -155,7 +155,7 @@
 				"description": "My first end-to-end freelance project: identity, interface and fullstack build for an engineering and construction company."
 			},
 			"nivy": {
-				"description": "A landmark multi-functional center in Bratislava, where I structured a modular frontend around live schedules and zone-specific data."
+				"description": "My first big project at the beginning of my career - a web for a multifunctional center in Bratislava, where I took care of the frontend functionality."
 			},
 			"powerlogy": {
 				"description": "Frontend development across the company's web platform."

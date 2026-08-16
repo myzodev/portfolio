@@ -105,6 +105,7 @@ const projectsData: Project[] = [
 		color: "orange",
 		year: "2021",
 		image: "/images/projects/nivy.png",
+		selected: true,
 	},
 	{
 		title: "Powerlogy",

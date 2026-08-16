@@ -22,12 +22,6 @@ export const metadata: Metadata = {
 	openGraph: {
 		images: "/images/opengraph-image.jpg",
 	},
-	alternates: {
-		canonical: "https://michalvalo.dev",
-		languages: {
-			en: "?lang=en",
-		},
-	},
 };
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {

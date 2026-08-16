@@ -116,8 +116,8 @@ export default function PageTransition() {
 					timeoutRef.current = null;
 				}
 
-				if (lenisRef.current) lenisRef.current.scrollTo(0, { immediate: true, force: true });
-				else window.scrollTo(0, 0);
+				lenisRef.current?.resize();
+				lenisRef.current?.scrollTo(0, { immediate: true, force: true });
 
 				ScrollTrigger.refresh();
 

@@ -18,6 +18,7 @@ import SplitWord from "./SplitWord";
 
 export default function HeroSection() {
 	const containerRef = useRef<HTMLElement>(null);
+	const hasRevealed = useRef(false);
 
 	const { t } = useT();
 
@@ -25,9 +26,14 @@ export default function HeroSection() {
 
 	useGSAP(
 		() => {
+			if (hasRevealed.current) return;
+
 			const tl = gsap.timeline({
 				defaults: { ease: "power4.out" },
 				delay: 0.25,
+				onComplete: () => {
+					hasRevealed.current = true;
+				},
 			});
 
 			tl.from(".hero-word", {
@@ -57,10 +63,7 @@ export default function HeroSection() {
 					"bottomReveal",
 				);
 		},
-		// Keyed on word count so a translation with a different number of words still gets the
-		// reveal applied to every span. Same-length switches reuse the nodes and keep the
-		// running tween instead of replaying the intro.
-		{ scope: containerRef, dependencies: [titleWords.length] },
+		{ scope: containerRef, dependencies: [titleWords.length], revertOnUpdate: true },
 	);
 
 	return (
