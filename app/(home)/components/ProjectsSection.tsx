@@ -6,7 +6,7 @@ import { useT } from "next-i18next/client";
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
+import { ArrowUpRightIcon, ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
 import { PROJECT_PALETTES } from "@/constants/project-palettes";
 import projectsData from "@/data/projects";
@@ -215,9 +215,9 @@ export default function ProjectsSection() {
 
 				<figure
 					style={{ backgroundColor: INITIAL_IMAGE_BG }}
-					className="proj-image-panel flex w-full items-center justify-center overflow-hidden sm:p-8 lg:w-1/2 lg:p-14"
+					className="proj-image-panel group relative flex w-full items-center justify-center overflow-hidden sm:p-8 lg:w-1/2 lg:p-14"
 				>
-					<div className="relative aspect-video w-full overflow-hidden rounded-lg md:rounded-xl">
+					<div className="relative aspect-video w-full overflow-hidden rounded-lg transition-all duration-500 group-hover:scale-98 group-hover:opacity-30 md:rounded-xl">
 						{prevProject?.image && (
 							<img
 								key={`prev-${prevProject.slug}`}
@@ -237,6 +237,23 @@ export default function ProjectsSection() {
 							/>
 						)}
 					</div>
+
+					<span
+						className="absolute inset-0 z-10 flex items-center justify-center opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+						aria-hidden
+					>
+						<span className="bg-peach flex size-16 items-center justify-center rounded-full transition-transform duration-500 group-hover:scale-110">
+							<ArrowUpRightIcon className="size-6" />
+						</span>
+					</span>
+
+					<a
+						className="absolute inset-0 z-10"
+						href={currentProject.url}
+						target="_blank"
+						rel="noreferrer noopener"
+						aria-label={t("projects.carousel.preview", { title: currentProject.title })}
+					/>
 				</figure>
 			</article>
 		</section>
