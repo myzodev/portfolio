@@ -28,12 +28,29 @@ export default function EmailSlider() {
 
 		gsap.set(track, { xPercent: -50 });
 
-		gsap.to(track, {
+		const animation = gsap.to(track, {
 			xPercent: 0,
 			duration: track.scrollWidth / 2 / SPEED,
 			ease: "none",
 			repeat: -1,
 		});
+
+		track.addEventListener("mouseenter", () => {
+			animation.pause();
+		});
+
+		track.addEventListener("mouseleave", () => {
+			animation.play();
+		});
+
+		return () => {
+			track.removeEventListener("mouseenter", () => {
+				animation.pause();
+			});
+			track.removeEventListener("mouseleave", () => {
+				animation.play();
+			});
+		};
 	});
 
 	return (
@@ -42,7 +59,7 @@ export default function EmailSlider() {
 				{items.map((_, index) => (
 					<div key={index} className="flex shrink-0 items-center gap-4 pr-4 md:gap-10 md:pr-10">
 						<Link
-							className="display-md md:display-lg font-semibold"
+							className="display-md md:display-lg font-semibold hover:underline"
 							aria-hidden={index > 0 ? true : undefined}
 							href={`mailto:${EMAIL}`}
 							tabIndex={index > 0 ? -1 : undefined}
