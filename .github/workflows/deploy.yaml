@@ -31,7 +31,6 @@ jobs:
                   password: ${{ secrets.FTP_PASSWORD }}
                   local-dir: ./out/
                   server-dir: /web/
-                  security: loose
                   exclude: |
                       **/.git*
                       **/.git*/**
